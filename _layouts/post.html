@@ -1,0 +1,51 @@
+---
+layout: default
+---
+
+<div class="post">
+    <div class="post-info">
+        <div class="post-type-tag">
+            {% if page.draft == true %}
+            <div class="catalogue-tag">
+                Coming Soon
+            </div>
+            {% endif %}
+            <div class="post-type">
+                {{ page.type }}
+            </div>
+        </div>
+        <h1 class="post-title">
+            {{ page.title }}
+        </h1>
+        <h2 class="post-subtitle">
+            {{ page.subtitle }}
+        </h2>
+  </div>
+    {{ content }}
+
+    {% if page.draft == true %}
+        <div class="catalogue-draft-message">
+            <h1>
+                &#x1F64B; Coming Soon!
+            </h1>
+            현재 열심히 글을 쓰고 있어요. 조금만 기다려주세요!
+        </div>
+    {% endif %}
+
+
+    <div class="post-disqus">
+
+        <!-- 아래 내용 추가
+    _config.yml 파일에 있는 변수 값은 site.변수명 으로 참조할 수 있다.
+    즉, 아래 if 문은 _config.yml 에 아래 설정이 있을 경우 include 구문을 실행하라는 의미이다.
+        disqus:
+          shortname:
+    -->
+
+        {% if site.disqus.shortname %}
+        {% include disqus_comments.html %}
+        {% endif %}
+
+    </div>
+    
+</div>

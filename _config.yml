@@ -1,0 +1,32 @@
+# Permalinks
+permalink:      /:year-:month-:day/:title
+
+# Setup
+title:          DsKim
+baseurl:        ""
+url:            "http://dskim.github.io/"
+
+# Assets
+sass:
+  sass_dir:     _sass
+  style:        :compressed
+
+# Build settings
+markdown:       kramdown
+
+# About
+author:
+  name:         Deasung Kim
+  url:          http://dskim.github.io/
+  email:        deasung.kim2622@gmail.com
+  github:       deasung
+  twitter:      comecome2622
+
+# Custom vars
+version:        3.4.1
+github:
+  repo:         https://github.com/deasung/dskim.github.io
+
+# Disqus settings
+disqus:
+  shortname: blog-tutor

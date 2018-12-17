@@ -2,7 +2,7 @@
 layout: post
 title:  "Ubuntu 16.04 openssh-server"
 subtitle: "Ubuntu 16.04 openssh-server"
-type: "Seminar"
+type: "DevOps"
 blog: true
 text: true
 author: "Deasung Kim"

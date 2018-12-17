@@ -2,7 +2,7 @@
 layout: post
 title:  "Ubuntu 16.04 MySQL 설치"
 subtitle: "Ubuntu 16.04 MySQL 설치"
-type: "Seminar"
+type: "DevOps"
 blog: true
 text: true
 author: "Deasung Kim"

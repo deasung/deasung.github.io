@@ -6,7 +6,7 @@ type: "Seminar"
 blog: true
 text: true
 author: "Deasung Kim"
-post-header: true
+post-header: false
 order: 1
 ---
 

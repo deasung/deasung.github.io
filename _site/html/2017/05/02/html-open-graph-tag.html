@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="HTML OPEN GRAPH 태그링크의 미리보기 제목, 설명, 이미지를 결정하는 open graph 태그">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@jeonghwan0424" />
+  <meta name="twitter:creator" content="@jeonghwan0424" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://localhost:4000/html/2017/05/02/html-open-graph-tag.html" />
+  <meta property="og:title" content="HTML OPEN GRAPH 태그" />
+  <meta property="og:description" content="HTML OPEN GRAPH 태그링크의 미리보기 제목, 설명, 이미지를 결정하는 open graph 태그" />
+  <meta property="og:image" content="http://localhost:4000/assets/imgs/me.jpg" />
+  <meta property="og:site_name" content="김대성 블로그" />
+  <meta property="og:locale" content="ko_kr" />
+  <title>HTML OPEN GRAPH 태그</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/html/2017/05/02/html-open-graph-tag.html">
+  <link rel="alternate" type="application/rss+xml" title="김대성 블로그" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/assets/imgs/favicon.ico" />
+</head>
+
+  <body>
+    <div class='row'>
+      <header class="site-header">
+  <div class="wrapper">
+    <h1 class="site-title site-title-sm">
+      <a class="" href="/">김대성 블로그</a>
+    </h1>
+  </div>
+</header>
+
+      <div class="page-content">
+        <article id="post" class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <div class="wrapper">
+      <h1 class="post-title" itemprop="name headline">HTML OPEN GRAPH 태그</h1>
+      <div class="post-meta">
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 05월 02일
+</span>
+
+</div>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <div class="post-content" itemprop="articleBody">
+      <h2 id="html-open-graph-태그">HTML OPEN GRAPH 태그</h2>
+<p><a href="http://blog.ab180.co/open-graph-as-a-website-preview/">링크의 미리보기 제목, 설명, 이미지를 결정하는 open graph 태그</a></p>
+
+<p>페이스북이나, 네이버 블로그, 카카오톡 등에서 어떤 링크에 대한 미리보기 제목, 설명, 이미지를 제공하고 있습니다. 링크를 붙여넣을 때 생기는 미리보기 제목, 설명, 이미지는 도대체 어디에서 오는 것일까?</p>
+
+<p>메타 데이터란 쉽게 말하면 해당 웹페이지를 구성하는 여러 구조화된 정보들 예컨대 제목, 설명, 이미지 등을 아예 명시적으로 웹페이지쪽에서 직접 정해서 표기해준 것을 말합</p>
+
+<p><img src="/assets/imgs/2017/05/02/open-grapth-tag-preview-201705021040.png" alt="" /></p>
+
+<p>결론적으로 우리가 미리보기를 통해 보는 제목, 설명, 이미지는 이렇게 HTML 문서의 head에 표기된 오픈그래프 프로토콜에 의해서 나타나고 있습니다. 그 구체적인 작동 원래는 아래와 같다.</p>
+
+<blockquote>
+  <ul>
+    <li>사용자가 링크를 입력창에 입력합니다.</li>
+    <li>페이스북, 네이버 블로그, 카카오톡은 입력창의 문자열이 “링크”라는 것을 파악합니다. (흔히 말하는 정규표현식으로 해당 문자열이 링크라는 것을 알아냄.)</li>
+    <li>링크라는 것이 파악되면 페이스북, 네이버 블로그, 카카오톡의 크롤러는 미리 그 웹사이트를 방문해서 HTML head의 오픈그래프(Open Graph) 메타 데이터를 긁어옴.</li>
+    <li>이중에서도 og:title, og:description, og:image가 각각 제목, 설명, 이미지의 정보를 나타냄.</li>
+    <li>그리고 그 정보를 바탕으로 미리보기 화면을 생성해주게 됨.</li>
+  </ul>
+</blockquote>
+
+    </div>
+    <div class="post-meta">
+
+<span>
+      
+      <a class="tag-link" data-tag-name="html"
+        href="/tags.html#html">#html</a>
+    <a class="tag-link" data-tag-name="open graph tag"
+        href="/tags.html#open graph tag">#open graph tag</a>
+    </span>
+</div>
+    <div><div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.0&appId=116889428386183&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like" data-href="http://localhost:4000/html/2017/05/02/html-open-graph-tag.html" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></div>
+    <div><div id="disqus_thread"></div>
+<script>
+  /**
+   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+   */
+  /*
+   var disqus_config = function () {
+   this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+   this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+   };
+   */
+  (function() {  // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+
+    s.src = '//dskim-1.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+  </div>
+</article>
+
+      </div>
+    </div>
+    <div class="wrapper">
+  <footer class="site-footer">
+    <ul class="site-footer-links list-inline">
+      <li class="site-footer-link">
+        <a href="/feed.xml">
+          RSS
+        </a>
+      </li>
+      
+      <li class="site-footer-link">
+        <a href="mailto:deasung.kim2622@gmail.com">
+          이메일
+        </a>
+      </li>
+      
+      
+      <li class="site-footer-link">
+        <a href="https://github.com/deasung">
+          깃헙
+        </a>
+      </li>
+      
+    </ul>
+  </footer>
+</div>
+
+<script src="/assets/js/main.js"></script>
+
+  </body>
+</html>

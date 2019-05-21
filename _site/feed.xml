@@ -1,0 +1,704 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>김대성 블로그</title>
+    <description>개발하면서 삽질했던것들 메모용</description>
+    <link>http://localhost:4000/</link>
+    <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Mon, 20 May 2019 17:20:57 +0900</pubDate>
+    <lastBuildDate>Mon, 20 May 2019 17:20:57 +0900</lastBuildDate>
+    <generator>Jekyll v3.8.5</generator>
+    
+      <item>
+        <title>AWS read replica 생성</title>
+        <description>&lt;h2 id=&quot;aws-read-replica-생성&quot;&gt;AWS read replica 생성&lt;/h2&gt;
+
+&lt;h1 id=&quot;aws-read-replica&quot;&gt;AWS read replica&lt;/h1&gt;
+&lt;p&gt;이렇게 한 이유는 디비 이중화를 하기위해서 이렇게 했다
+read replica 옵션은 AWS RDS Aurora만 되는 걸로 알고 있지만 자세한건 공식 문서로
+https://aws.amazon.com/ko/rds/details/read-replicas/&lt;/p&gt;
+
+&lt;h3 id=&quot;1디비-클릭한후-인스턴스-작업을-클릭후에-리전-간-읽기-전용-복제본-만들기-클릭&quot;&gt;1.디비 클릭한후 인스턴스 작업을 클릭후에 리전 간 읽기 전용 복제본 만들기 클릭&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/07/09/aws-read-replica/aws-read-replica-01.png&quot; alt=&quot;AWS_read_replica_1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/07/09/aws-read-replica/aws-read-replica-02.png&quot; alt=&quot;AWS_read_replica_2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/07/09/aws-read-replica/aws-read-replica-03.png&quot; alt=&quot;AWS_read_replica_3&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;2복제본-생성버튼-클릭&quot;&gt;2.복제본 생성버튼 클릭&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/07/09/aws-read-replica/aws-read-replica-04.png&quot; alt=&quot;AWS_read_replica_4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;마무리를~&lt;/p&gt;
+
+&lt;p&gt;여기에서 더붙이면 Route53에 디비 퍼블릭엑세스 주소를 연결해놓으면 나름 2차도메인으로 써서
+더욱 관리하기가 쉽다&lt;/p&gt;
+
+&lt;p&gt;추후에 개발했을때 문제는
+쓰기 디비에서 insert,update,delete후에 바로 읽기디비에서는 잘갱신이 안되는듯한 바로 먼가
+설정이 있는데 찾으면 다시 포스팅을 하겠다~&lt;/p&gt;
+</description>
+        <pubDate>Sun, 08 Jul 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/aws/2018/07/08/aws-read-replica.html</link>
+        <guid isPermaLink="true">http://localhost:4000/aws/2018/07/08/aws-read-replica.html</guid>
+        
+        <category>aws</category>
+        
+        
+        <category>aws</category>
+        
+      </item>
+    
+      <item>
+        <title>Aws Email Module Java</title>
+        <description>
+</description>
+        <pubDate>Mon, 28 May 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2018/05/28/aws-email-module-java.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2018/05/28/aws-email-module-java.html</guid>
+        
+        
+      </item>
+    
+      <item>
+        <title>멜팅콘 컨퍼런스 후기</title>
+        <description>&lt;h1 id=&quot;멜팅콘-컨퍼런스-후기&quot;&gt;멜팅콘 컨퍼런스 후기&lt;/h1&gt;
+
+&lt;h2 id=&quot;1keynote-노량진-스타일로-알려주는-build-컨퍼런스-2018-핵심-요약&quot;&gt;1.(Keynote) 노량진 스타일로 알려주는 Build 컨퍼런스 2018 핵심 요약&lt;/h2&gt;
+
+&lt;p&gt;1.Microsoft Build&lt;/p&gt;
+
+&lt;p&gt;Opportunity &amp;amp; Responsibiliy&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;코딩은 책임 &amp;amp; 기회&lt;/li&gt;
+  &lt;li&gt;윤리의식을 가지자&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Azure AI 이미지인식&lt;/p&gt;
+
+&lt;p&gt;커스텀비전 API 내가가지고 있는 데이터가지고 학습을 시킨다&lt;/p&gt;
+
+&lt;p&gt;생각보다 쉽게 쓸수 있는 API들이 많음&lt;/p&gt;
+
+&lt;p&gt;키넥트&lt;/p&gt;
+
+&lt;p&gt;코타나 &amp;amp; 알렉사&lt;/p&gt;
+
+&lt;p&gt;대화형 디바이스&lt;/p&gt;
+
+&lt;p&gt;MS도 모바일 First 추구&lt;/p&gt;
+
+&lt;p&gt;Github - App Center&lt;/p&gt;
+
+&lt;p&gt;AI는 윤리적이어야 한다 MS회장&lt;/p&gt;
+
+&lt;h2 id=&quot;2facebook-vs-google&quot;&gt;2.Facebook vs Google&lt;/h2&gt;
+
+&lt;p&gt;유투브 키노트 하이라이트&lt;/p&gt;
+
+&lt;p&gt;구글 IO는 큰텐트에서 한다고함&lt;/p&gt;
+
+&lt;p&gt;등록관련 특이사항 
+Facebook F8&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;F8 페이스북 사내 해커톤이 8시간정도해서 그렇게 해서 이름됬다고함&lt;/li&gt;
+  &lt;li&gt;글로벌 네트워킹하기엔 좋다고 함&lt;/li&gt;
+  &lt;li&gt;Dev Circle 가입&lt;/li&gt;
+  &lt;li&gt;페스티벌룸 페이스북의 신기술 시연&lt;/li&gt;
+  &lt;li&gt;메신저 관련 기능 시연 (+AR)&lt;/li&gt;
+  &lt;li&gt;개발 API나 기능들에 대한 설명하는 곳&lt;/li&gt;
+  &lt;li&gt;Facebook VR Platform인 Facebook Space(리얼 심즈라고 함)&lt;/li&gt;
+  &lt;li&gt;세션예약이 불가능&lt;/li&gt;
+  &lt;li&gt;세션 시간이 균일하지 않음&lt;/li&gt;
+  &lt;li&gt;밥은 괜찮은편&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;구글 I/O&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;구글 파트너들은 별도의 티켓존재 (유료)&lt;/li&gt;
+  &lt;li&gt;GDG -&amp;gt; Google Develop Group 매니저 추천이 별로도 존재&lt;/li&gt;
+  &lt;li&gt;여성우대 할인 티켓이 별도로 존재(유료)&lt;/li&gt;
+  &lt;li&gt;행사 기간 3일&lt;/li&gt;
+  &lt;li&gt;세션 시작시간 8시반부터 시작 너무 힘들었다&lt;/li&gt;
+  &lt;li&gt;참석인원 7000명&lt;/li&gt;
+  &lt;li&gt;식사는 샌드위치&lt;/li&gt;
+  &lt;li&gt;세션은 7개 동시에 지정&lt;/li&gt;
+  &lt;li&gt;Code Labs(신기술 튜토리얼)&lt;/li&gt;
+  &lt;li&gt;노트북 들고가면 입장이 빠름&lt;/li&gt;
+  &lt;li&gt;구글러의 코드리뷰&lt;/li&gt;
+  &lt;li&gt;체험존이 많다&lt;/li&gt;
+  &lt;li&gt;Google IO Zero day Google IO 전날 Intel과 Netfilx에서 행사를    하며 묻어감 , 경품도 줌&lt;/li&gt;
+  &lt;li&gt;셔틀이 잘되어 있음&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Facebok : Social로 시작 
+Google : Search로 시작&lt;/p&gt;
+
+&lt;p&gt;F8 키노트 하이라이트&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;청문회 이후 공격적인 저커버그&lt;/li&gt;
+  &lt;li&gt;Watch Party&lt;/li&gt;
+  &lt;li&gt;Dating 진출&lt;/li&gt;
+  &lt;li&gt;마켓 플레이스 의외로 성업&lt;/li&gt;
+  &lt;li&gt;Instagram Explorer 추가&lt;/li&gt;
+  &lt;li&gt;AR Camera, Video Chat을 하나 만들어서 3개의 플랫폼에서&lt;/li&gt;
+  &lt;li&gt;와츠앱도 이제 비지니스 플랫폼이라고 주장&lt;/li&gt;
+  &lt;li&gt;메신저의 약진 페이스북의 차세대 플랫폼?&lt;/li&gt;
+  &lt;li&gt;오큘러스 VR&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Google IO 하이라이트&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;머신러닝에 의한 자동완성 기능 성숙&lt;/li&gt;
+  &lt;li&gt;모스코드 입력치 자동완성으로 일반 대화급 타이핑&lt;/li&gt;
+  &lt;li&gt;문장을 제안하는 gmail&lt;/li&gt;
+  &lt;li&gt;어시스턴트의 약진&lt;/li&gt;
+  &lt;li&gt;사람하고 통화하며 예약 가능&lt;/li&gt;
+  &lt;li&gt;연동 시스템을 통한 예약,구매 가능&lt;/li&gt;
+  &lt;li&gt;머신러닝이 적용되어 제안과 보정을 해주는 구글포토&lt;/li&gt;
+  &lt;li&gt;보다 자연스러워진 TTS&lt;/li&gt;
+  &lt;li&gt;어디서 본듯한 구글뉴스&lt;/li&gt;
+  &lt;li&gt;안드로이드P 배터리관리와 다음 사용할 앱을 예측하는&lt;/li&gt;
+  &lt;li&gt;카메라와 AR이 추가된 구글맵&lt;/li&gt;
+  &lt;li&gt;텍스트와 패션을 업은 구글렌즈&lt;/li&gt;
+  &lt;li&gt;취향분석해서 추천기능이 들어간 구글맵&lt;/li&gt;
+  &lt;li&gt;개선된 TPU&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;F8소감&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;돈되는 데이팅에 진출 데이팅 앱의 특성을 이해&lt;/li&gt;
+  &lt;li&gt;차세대 플랫폼은 VR&lt;/li&gt;
+  &lt;li&gt;메신저 챗봇과 결제 플랫폼을 변화중&lt;/li&gt;
+  &lt;li&gt;돈 될만한걸 다 추가하기 시작했다&lt;/li&gt;
+  &lt;li&gt;Snow 유사품,Instagram의 Group video call,Whatsapp의 Group call&lt;/li&gt;
+  &lt;li&gt;청문회를 다소 신경쓴 듯한 분위기다&lt;/li&gt;
+  &lt;li&gt;기술이 아니라 플랫폼 회사다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;구글 I/O 소감&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;정말 많은 것을 한다&lt;/li&gt;
+  &lt;li&gt;머신러닝,TPU 개발,웹 개선 ..&lt;/li&gt;
+  &lt;li&gt;머신러닝에 많은 역량을 집중&lt;/li&gt;
+  &lt;li&gt;안드로이드 세션 정말 많다 .. Jetpack&lt;/li&gt;
+  &lt;li&gt;광고세션이 비중이 낮음&lt;/li&gt;
+  &lt;li&gt;굿바이 데이드림,지못미 Analytics&lt;/li&gt;
+  &lt;li&gt;Waymo와 Nest 보여줌&lt;/li&gt;
+  &lt;li&gt;구글은 기술회사다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;3리액트를-사용하기-가장-쉬운방법-nextjs&quot;&gt;3.리액트를 사용하기 가장 쉬운방법 Next.js&lt;/h2&gt;
+&lt;p&gt;Seoul.js&lt;/p&gt;
+
+&lt;p&gt;https://nextjs.org/learn&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Index.getInitialProps = async() = {
+
+
+}
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;앱 배포하기 
+now&lt;/p&gt;
+
+&lt;p&gt;배포 자체를 커밋으로 봄&lt;/p&gt;
+
+&lt;p&gt;커스텀 다큐먼트/앱&lt;/p&gt;
+
+&lt;p&gt;next 플러그인 
+https://github.com/zeit/next-plugins&lt;/p&gt;
+
+&lt;p&gt;구글 workbox
+https://developers.google.com/web/tools/workbox/&lt;/p&gt;
+
+&lt;p&gt;CODEBUSKING&lt;/p&gt;
+
+&lt;p&gt;https://www.youtube.com/channel/UCrKE8ihOKHxYHBzI0Ys-Oow&lt;/p&gt;
+
+&lt;p&gt;인스턴스 3개까지는 무료&lt;/p&gt;
+
+</description>
+        <pubDate>Sat, 26 May 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/seminar/2018/05/26/MeltingCon-2018.html</link>
+        <guid isPermaLink="true">http://localhost:4000/seminar/2018/05/26/MeltingCon-2018.html</guid>
+        
+        <category>seminar</category>
+        
+        
+        <category>seminar</category>
+        
+      </item>
+    
+      <item>
+        <title>AWS CodeStar 구축</title>
+        <description>&lt;h2 id=&quot;codestar-구축&quot;&gt;CodeStar 구축&lt;/h2&gt;
+
+&lt;p&gt;1.CodeStar 프로젝트이름을 적는다&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;s3버킷도 비슷한 이름으로 생성되니 중복되어있는게 없는지 생각하고 만든다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/04/10/awscodestar-setting/awscodestar-setting01.png&quot; alt=&quot;CODESTAR 연동1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2.프로젝트 세부정보 codestar는 이렇게 된다라는것을 보여주는듯&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/04/10/awscodestar-setting/awscodestar-setting02.png&quot; alt=&quot;CODESTAR 연동2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3.EC2 키페어 셋팅을 해줘야함&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/04/10/awscodestar-setting/awscodestar-setting03.png&quot; alt=&quot;CODESTAR 연동3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;4.코드 편집용 툴 선택하는듯 난 건너뛰기를 함
+&lt;img src=&quot;/assets/imgs/2018/04/10/awscodestar-setting/awscodestar-setting04.png&quot; alt=&quot;CODESTAR 연동4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;5.CodeCommit 연동용&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;하기전에 AWS IAM 사용자 git https권한을 줘야한다&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/04/10/awscodestar-setting/awscodestar-setting05.png&quot; alt=&quot;CODESTAR 연동5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/04/10/awscodestar-setting/awscodestar-setting06.png&quot; alt=&quot;CODESTAR 연동6&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;6.AWSCLI 설치 (MAC기준)&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;awscli를 설치를 해줘야한다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ pip install awscli --upgrade --user
+$ was -- version 
+(command not found나오면 구글링,mac이면 homebrew로 설치로 일단 해결함)
+
+$ brew install awscli
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;ul&gt;
+  &lt;li&gt;awscli 설정
+우선 AWS IAM 로 가서 ‘NEW User’로 User를 하나 생성하고, Add permissions로 
+‘AWSCodeCommitFullAccess’ 권한을 부여하고,AWS Access Key ID와 Secret Access Key를
+잘 적어두었다가 아래에서 처럼 활용&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/04/10/awscodestar-setting/awscodestar-setting07.png&quot; alt=&quot;CODESTAR 연동7&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;터미널창에서&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ git config --global credential.helper '!aws code commit credential-helper $@'
+
+$ git config --global credential.UseHttpPath true
+$ git clone 주소 
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;git clone를 하고 Intellj에서 gradle 방식으로 import를 한후 
+pom.xml -&amp;gt; build.gradle로 변환&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;# 프로젝트 폴더 (pom.xml이 있는곳) 으로 이동
+gradle init --type pom
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/04/10/awscodestar-setting/awscodestar-setting08.png&quot; alt=&quot;CODESTAR 연동8&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;내용이 많아서… 집에가서 마저 적어야지 ㅋㅋ;;&lt;/p&gt;
+</description>
+        <pubDate>Tue, 10 Apr 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/aws/2018/04/10/awscodestar-setting.html</link>
+        <guid isPermaLink="true">http://localhost:4000/aws/2018/04/10/awscodestar-setting.html</guid>
+        
+        <category>aws</category>
+        
+        
+        <category>aws</category>
+        
+      </item>
+    
+      <item>
+        <title>EC2 TimeZone 변경</title>
+        <description>&lt;h2 id=&quot;1timezone-&quot;&gt;1.TimeZone ?&lt;/h2&gt;
+
+&lt;p&gt;리눅스를 새로 설치하고 나면 (AWS EC2 AMI도 Linux와 동일) 시간대(Timezone)을 맞추지 않으면, 리눅스의 date가 미국 태평양 시간인 PST로 표시됩니다. 즉 캘리포니아 현지 시간으로 표시됩니다. 이럴경우 한국 표준시인 KST로 변경해주어야 합니다.&lt;/p&gt;
+
+&lt;h2 id=&quot;2-ec2-터미널에서-timezone-변경&quot;&gt;2. EC2 터미널에서 TimeZone 변경&lt;/h2&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[ec2-user@ip-172-31-7-180 ~]$ date
+Fri Aug  8 06:41:49 UTC 2014
+
+[ec2-user@ip-172-31-7-180 ~]$ sudo date
+Fri Aug  8 06:42:01 UTC 2014
+
+[ec2-user@ip-172-31-7-180 ~]$ sudo cat /etc/localtime
+TZif2UTCTZif2UTC
+UTC0
+
+[ec2-user@ip-172-31-7-180 ~]$ sudo rm /etc/localtime
+[ec2-user@ip-172-31-7-180 ~]$ sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+
+[ec2-user@ip-172-31-7-180 ~]$ date
+Fri Aug  8 15:48:27 KST 2014
+
+[ec2-user@ip-172-31-7-180 ~]$ sudo date
+Fri Aug  8 15:48:40 KST 2014
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Fri, 30 Mar 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/aws/2018/03/30/aws-ec2-timezone.html</link>
+        <guid isPermaLink="true">http://localhost:4000/aws/2018/03/30/aws-ec2-timezone.html</guid>
+        
+        <category>aws</category>
+        
+        <category>ec2</category>
+        
+        
+        <category>aws</category>
+        
+      </item>
+    
+      <item>
+        <title>Jenkins 설치 &amp; Gitlab 연동</title>
+        <description>&lt;h2 id=&quot;jenkins--gitlab-연동&quot;&gt;Jenkins &amp;amp; Gitlab 연동&lt;/h2&gt;
+
+&lt;h1 id=&quot;jenins-설치&quot;&gt;Jenins 설치&lt;/h1&gt;
+
+&lt;h3 id=&quot;자바-설치&quot;&gt;자바 설치&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;sudo apt-add-repository ppa:webupd8team/java
+
+sudo apt-get update
+
+sudo apt-get install oracle-java8-installer
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;gradle-설치&quot;&gt;gradle 설치&lt;/h3&gt;
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo apt-get install gradle
+$ gradle -version
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;jenkins-설치&quot;&gt;Jenkins 설치&lt;/h3&gt;
+
+&lt;p&gt;패키지 주소를 apt-key에 더한후 젠킨스 다운&lt;/p&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+OK
+
+$ echo deb http://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list
+
+
+$ sudo apt-get update
+$ sudo apt-get install jenkins
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h3 id=&quot;jenkins-시작하기&quot;&gt;Jenkins 시작하기&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;sudo systemctl start jenkins 젠킨스 시작&lt;/li&gt;
+  &lt;li&gt;sudo systemctl status jenkins 젠킨스가 제대로 시작되고 있는지 로그 볼수 있는?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo systemctl start jenkins
+$ sudo systemctl status jenkins
+● jenkins.service - LSB: Start Jenkins at boot time
+  Loaded: loaded (/etc/init.d/jenkins; bad; vendor preset: enabled)
+  Active:active (exited) since Thu 2017-04-20 16:51:13 UTC; 2min 7s ago
+    Docs: man:systemd-sysv-generator(8)
+    …
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Jenkins를 설치할 때 /var/lib/jenkins/secrets/initialAdminPassword 파일의 내용을 빈칸에 입력해야한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/03/25/jenkins-gitlab/01.png&quot; alt=&quot;Jenkins 설치1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/03/25/jenkins-gitlab/06.png&quot; alt=&quot;Jenkins 설치2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/03/25/jenkins-gitlab/02.png&quot; alt=&quot;Jenkins 설치3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/03/25/jenkins-gitlab/03.png&quot; alt=&quot;Jenkins 설치4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/03/25/jenkins-gitlab/04.png&quot; alt=&quot;Jenkins 설치5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/03/25/jenkins-gitlab/05.png&quot; alt=&quot;Jenkins 설치6&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;gitlab연동&quot;&gt;GITLAB연동&lt;/h1&gt;
+
+&lt;p&gt;gitlab에 접속해서 로그인을 한후 셋팅을 클릭하면&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/03/25/jenkins-gitlab/15.png&quot; alt=&quot;GITLAB 연동1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/03/25/jenkins-gitlab/07.png&quot; alt=&quot;GITLAB 연동2&quot; /&gt;
+ACCESS TOKEN을 발급을 받아야한다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/03/25/jenkins-gitlab/08.png&quot; alt=&quot;GITLAB 연동3&quot; /&gt;
+젠킨스화면에서 Credentials 만들어야 한다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/03/25/jenkins-gitlab/09.png&quot; alt=&quot;GITLAB 연동4&quot; /&gt;
+현재는 등록되어 있는게 없으므로 만들어야 한다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/03/25/jenkins-gitlab/10.png&quot; alt=&quot;GITLAB 연동5&quot; /&gt;
+Gitlab 관련 정보를 등록한다 ID/설명은 괜찮지만 토큰값은 실제로 
+Gitlab에서 발급받은 토큰값을 입력한다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/03/25/jenkins-gitlab/11.png&quot; alt=&quot;GITLAB 연동6&quot; /&gt;
+등록되면 이렇게 보임~!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/03/25/jenkins-gitlab/12.png&quot; alt=&quot;GITLAB 연동7&quot; /&gt;
+젠킨스 새작업을 만들고&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/03/25/jenkins-gitlab/13.png&quot; alt=&quot;GITLAB 연동8&quot; /&gt;
+젠킨스 프로젝트를 Github project의 프로젝트 URL과 설명을 달고&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/03/25/jenkins-gitlab/14.png&quot; alt=&quot;GITLAB 연동9&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;하단에 전역으로 설정되어 있는거를 연동하면 이렇게 일단은 연동될것이다&lt;/p&gt;
+
+&lt;p&gt;부족하지만 일단은 나도 여러 블로그의 내용을 보고 따라한거를 정리한거라&lt;/p&gt;
+
+&lt;p&gt;역시 구글링은 필수다..&lt;/p&gt;
+</description>
+        <pubDate>Sun, 25 Mar 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/jenkins/2018/03/25/jenkins-gitlab.html</link>
+        <guid isPermaLink="true">http://localhost:4000/jenkins/2018/03/25/jenkins-gitlab.html</guid>
+        
+        <category>jenkins</category>
+        
+        <category>gitlab</category>
+        
+        
+        <category>jenkins</category>
+        
+      </item>
+    
+      <item>
+        <title>EC2 인스턴스 Swap 파티션 추가하는 방법</title>
+        <description>&lt;h2 id=&quot;ec2-인스턴스-swap-파티션-추가하는-방법&quot;&gt;EC2 인스턴스 Swap 파티션 추가하는 방법&lt;/h2&gt;
+
+&lt;h1 id=&quot;ec2-인스턴스-swap-파티션-추가하는-방법-1&quot;&gt;EC2 인스턴스 Swap 파티션 추가하는 방법&lt;/h1&gt;
+
+&lt;p&gt;메모리가 부족한 경우를 제외하고는 Swap 자체를 안쓰는 것을 추천&lt;/p&gt;
+
+&lt;p&gt;EC2 인스턴스를 만들면 Swap 파티션이 없음&lt;/p&gt;
+
+&lt;p&gt;자바 애플리케이션 서버 2개정도 테스트서버로 돌릴려면 t1.micro로 힘들고 버겹다&lt;/p&gt;
+
+&lt;p&gt;그래서 Swap 메모리가 필수&lt;/p&gt;
+
+&lt;h3 id=&quot;방법&quot;&gt;방법&lt;/h3&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ sudo dd if=/dev/zero of=/swapfile bs=1M count=512     # 512MB 스왑용 파일 생성
+   
+$ sudo chown root:root /swapfile    # root 소유
+   
+$ sudo chmod 600 /swapfile          # 권한설정
+   
+$ sudo mkswap /swapfile
+   
+$ sudo swapon /swapfile
+  
+$ sudo swapon -a
+  
+   
+ 
+$ sudo vi /etc/fstab        # 리부팅시 인식할 수 있도록 fstab에 등록 (실수할 경우 부팅이 안될 수 있으니 스냅샷 + 조심!)
+   
+가장 아래줄에 내용추가
+   
+/swapfile   swap   swap   defaults  0  0
+   
+ 
+$ sudo swapon -s    # sanity test  Swap 에 설정한 용량이 사용되었는지 확인
+   
+$ free -m           # sanity test  Swap 에 설정한 용량이 사용되었는지 확인
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/03/22/ec2-swap/01.png&quot; alt=&quot;EC2-SWAP 1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;그나마 숨통이 트힌 … 서버 2개정도는 테스트로 돌릴수 있게 되었다&lt;/p&gt;
+</description>
+        <pubDate>Thu, 22 Mar 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/aws/2018/03/22/ec2-swap.html</link>
+        <guid isPermaLink="true">http://localhost:4000/aws/2018/03/22/ec2-swap.html</guid>
+        
+        <category>aws</category>
+        
+        <category>linux</category>
+        
+        
+        <category>aws</category>
+        
+      </item>
+    
+      <item>
+        <title>신경망 첫걸음 공부중</title>
+        <description>&lt;h2 id=&quot;인공신경망-및-파이썬도-같이-공부하면서&quot;&gt;인공신경망 및 파이썬도 같이 공부하면서&lt;/h2&gt;
+
+&lt;h2 id=&quot;jupyter&quot;&gt;Jupyter&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;(https://aws.amazon.com/ko/route53/)&quot;&gt;jupyter&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2017/11/26/20171126_01.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;파이썬은 들여쓰기
+코드가 다른 코드에 종속되는지 여부를 나타내는 매우 중요한 역할&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2017/11/26/20171126_02.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2017/11/26/20171126_03.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2017/11/26/20171126_04.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;def 바로 함수를 정의하는 키워드&lt;/p&gt;
+
+&lt;p&gt;import 명령어는 외부로부터 추가적인 기능을 가져올 때 사용하는 명령어&lt;/p&gt;
+
+&lt;p&gt;numpy라는 모듈 -&amp;gt; 배열 계산 등 유용한 기능을 포함&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;zeros&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;print&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2017/11/26/20171126_05.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;배열 또는 행렬은 신경망에서 입력의 전파와 오차의 역전파 과정
+계산에 대한 명령을 간단히 하도록 도와주는 매우 유용한 개념&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2017/11/26/20171126_06.png&quot; alt=&quot;&quot; /&gt;
+import matplotlib.pyplot 시각화 기능 담당 라이브러리&lt;/p&gt;
+
+&lt;p&gt;시각화 imshow(배열,속성)&lt;/p&gt;
+
+&lt;p&gt;interpolation=”nearest”
+같은 값을 가지는 원소는 같은 색상으로 표시&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2017/11/26/20171126_07.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;객체를 정의할 때에는 class라는 키워드&lt;/p&gt;
+
+&lt;p&gt;클래스를 가지고 만든 객체 = 클래스의 인스턴스(instance)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2017/11/26/20171126_08.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;매개변수로 self 적는이유 파이썬이 함수를 생성할 때
+올바른 객체에 할당하기 위해&lt;/p&gt;
+
+&lt;p&gt;클래스는 정의이며 객체는 그정의를 현실에서 구현한 인스턴스&lt;/p&gt;
+
+&lt;p&gt;파이썬에서는 최초로 객체를 생성될때 
+&lt;strong&gt;init&lt;/strong&gt;()함수를 호출하도록 약속되어있음&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2017/11/26/20171126_09.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2017/11/26/20171126_10.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;파이썬으로-인공-신경망-만들기&quot;&gt;파이썬으로 인공 신경망 만들기&lt;/h2&gt;
+
+&lt;p&gt;뼈대 코드&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;초기화: 입력,은닉,출력 노드의 수 설정&lt;/li&gt;
+  &lt;li&gt;학습: 학습 데이터들을 통해 학습하고 이에 따라 가중치를 업데이트&lt;/li&gt;
+  &lt;li&gt;질의: 입력을 받아 연산한 후 출력 노드에서 답을 전달&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2017/11/26/20171126_11.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;신경망의-핵심인-가중치&quot;&gt;신경망의 핵심인 가중치&lt;/h2&gt;
+&lt;p&gt;연결 노드의 가중치 
+가중치 전파시 전달되는 신호와 역전파 시 오차를 계산하는 데 쓰임 
+신경망을 개선하는 역할을 수행함&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;p&gt;(은닉노드 X 입력노드)의 크기를 가지는 입력계층과 은닉 계층사이의 가중치의 행렬 W(input_hidden)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;(출력노드 X 은닉노드)의 크기를 가지는 은닉 계층과 출력 계층 사이의 가중치의 행렬 W(hidden_output)&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2017/11/26/20171126_12.png&quot; alt=&quot;&quot; /&gt;
+가중치는 양수가 아니라 음수 일수도 있음&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2017/11/26/20171126_13.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2017/11/26/20171126_14.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;더-정교한-가중치&quot;&gt;더 정교한 가중치&lt;/h2&gt;
+
+&lt;p&gt;numpy.random.normal()&lt;/p&gt;
+
+&lt;p&gt;이 변수에 필요한 매개변수는 정규분포의 중심,표준편차,numpy 행렬&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;wih&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hnodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hnodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;who&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;numpy&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;pow&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;onodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;onodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hnodes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+&lt;span class=&quot;c&quot;&gt;## 표준편차는 파이썬의 문법으로 pow(self.hnodes, -0.5) 루트를 씌우고 역수&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+</description>
+        <pubDate>Sun, 26 Nov 2017 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/ai/2017/11/26/Artificial-neural-network.html</link>
+        <guid isPermaLink="true">http://localhost:4000/ai/2017/11/26/Artificial-neural-network.html</guid>
+        
+        <category>ai</category>
+        
+        <category>인공신경망</category>
+        
+        
+        <category>ai</category>
+        
+      </item>
+    
+      <item>
+        <title>MYSQL DUMP 뜨고 삽입</title>
+        <description>&lt;h2 id=&quot;mysql-dump&quot;&gt;MYSQL DUMP&lt;/h2&gt;
+
+&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;BACKUP_DATE=$(date +%Y%m%d)
+BACKUP_PATH=&quot;/home/zipdockr/backup/DB&quot;
+DELETE_DATE=$(date -d '10 day ago' +%Y%m%d)
+DELETE_FILE=&quot;$BACKUP_PATH/zipdockr_$DELETE_DATE.sql.gz&quot;
+echo &quot;backup start : $BACKUP_DATE&quot;
+
+cd ~/backup/DB
+mysqldump -uzipdockr -p'zipdoc!@#' zipdockr | gzip &amp;gt; zipdockr_$BACKUP_DATE.sql.gz
+
+echo &quot;backup end : $BACKUP_DATE&quot;
+echo &quot;delete start : $DELETE_FILE&quot;
+
+if [ -f &quot;$DELETE_FILE&quot; ]; then
+echo &quot;file exist&quot;
+rm $DELETE_FILE
+fi
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+</description>
+        <pubDate>Wed, 30 Aug 2017 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/mysql/2017/08/30/mysql-dump.html</link>
+        <guid isPermaLink="true">http://localhost:4000/mysql/2017/08/30/mysql-dump.html</guid>
+        
+        <category>mysql</category>
+        
+        <category>mysql-dump</category>
+        
+        
+        <category>mysql</category>
+        
+      </item>
+    
+      <item>
+        <title>Kotlin 03</title>
+        <description>
+</description>
+        <pubDate>Fri, 28 Jul 2017 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/2017/07/28/kotlin-03.html</link>
+        <guid isPermaLink="true">http://localhost:4000/2017/07/28/kotlin-03.html</guid>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

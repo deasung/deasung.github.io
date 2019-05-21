@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="코틀린 스터디하기 좋은 사이트">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@jeonghwan0424" />
+  <meta name="twitter:creator" content="@jeonghwan0424" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://localhost:4000/kotlin/2017/07/22/kotlin-02.html" />
+  <meta property="og:title" content="kotlin 공부 2일차" />
+  <meta property="og:description" content="코틀린 스터디하기 좋은 사이트" />
+  <meta property="og:image" content="http://localhost:4000/assets/imgs/me.jpg" />
+  <meta property="og:site_name" content="김대성 블로그" />
+  <meta property="og:locale" content="ko_kr" />
+  <title>kotlin 공부 2일차</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/kotlin/2017/07/22/kotlin-02.html">
+  <link rel="alternate" type="application/rss+xml" title="김대성 블로그" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/assets/imgs/favicon.ico" />
+</head>
+
+  <body>
+    <div class='row'>
+      <header class="site-header">
+  <div class="wrapper">
+    <h1 class="site-title site-title-sm">
+      <a class="" href="/">김대성 블로그</a>
+    </h1>
+  </div>
+</header>
+
+      <div class="page-content">
+        <article id="post" class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <div class="wrapper">
+      <h1 class="post-title" itemprop="name headline">kotlin 공부 2일차</h1>
+      <div class="post-meta">
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 07월 22일
+</span>
+
+</div>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <div class="post-content" itemprop="articleBody">
+      <h2 id="코틀린-스터디하기-좋은-사이트">코틀린 스터디하기 좋은 사이트</h2>
+
+<p><img src="/assets/imgs/2017/07/22/2017-07-22-kotlin-01.png" alt="Kotlin 공식사이트" /></p>
+
+<blockquote>
+  <ul>
+    <li><a href="https://kotlinlang.org/">공식사이트</a></li>
+    <li><a href="https://www.youtube.com/watch?v=3KlUW6k4vsk&amp;list=PLbJr8hAHHCP6iFwufkM8E5MVBMMcw90iF">새차원 코틀린유투브강좌</a></li>
+    <li><a href="https://try.kotlinlang.org/#/Examples/Hello,%20world!/Simplest%20version/Simplest%20version.kt">공식사이트 웹환경에서 튜토리얼사이트</a></li>
+  </ul>
+</blockquote>
+
+<h2 id="코틀린-디폴트-패키지를-include-합니다">코틀린 디폴트 패키지를 include 합니다</h2>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Default</span> <span class="n">Imports</span>
+
+<span class="n">A</span> <span class="n">number</span> <span class="n">of</span> <span class="n">packages</span> <span class="n">are</span> <span class="n">imported</span> <span class="n">into</span> <span class="n">every</span> <span class="n">Kotlin</span> <span class="n">file</span> <span class="k">by</span> <span class="n">default</span><span class="p">:</span>
+
+<span class="n">kotlin</span><span class="p">.*</span>
+<span class="n">kotlin</span><span class="p">.</span><span class="k">annotation</span><span class="p">.*</span>
+<span class="n">kotlin</span><span class="p">.</span><span class="n">collections</span><span class="p">.*</span>
+<span class="n">kotlin</span><span class="p">.</span><span class="n">comparisons</span><span class="p">.*</span> <span class="p">(</span><span class="n">since</span> <span class="m">1.1</span><span class="p">)</span>
+<span class="n">kotlin</span><span class="p">.</span><span class="n">io</span><span class="p">.*</span>
+<span class="n">kotlin</span><span class="p">.</span><span class="n">ranges</span><span class="p">.*</span>
+<span class="n">kotlin</span><span class="p">.</span><span class="n">sequences</span><span class="p">.*</span>
+<span class="n">kotlin</span><span class="p">.</span><span class="n">text</span><span class="p">.*</span>
+
+<span class="n">Additional</span> <span class="n">packages</span> <span class="n">are</span> <span class="n">imported</span> <span class="n">depending</span> <span class="n">on</span> <span class="n">the</span> <span class="n">target</span> <span class="n">platform</span><span class="p">:</span>
+
+<span class="err">추가적으로</span> <span class="err">타겟</span> <span class="err">플랫폼에</span> <span class="err">맞게</span> <span class="err">몇개를</span> <span class="err">좀더</span> <span class="err">추가합니다</span>
+<span class="n">JVM</span><span class="p">:</span>
+<span class="n">java</span><span class="p">.</span><span class="n">lang</span><span class="p">.*</span>
+<span class="n">kotlin</span><span class="p">.</span><span class="n">jvm</span><span class="p">.*</span>
+<span class="n">JS</span><span class="p">:</span>
+<span class="n">kotlin</span><span class="p">.</span><span class="n">js</span><span class="p">.*</span>
+</code></pre></div></div>
+
+<h2 id="코틀린은-같은-패키지의-속한-파일이-동일할경우-as로-별칭으로-구분할수-있는-기능이-있습니다">코틀린은 같은 패키지의 속한 파일이 동일할경우 as로 별칭으로 구분할수 있는 기능이 있습니다</h2>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nn">foo.Bar</span> <span class="c1">// Bar is accessible
+</span><span class="k">import</span> <span class="nn">bar.Bar</span> <span class="k">as</span> <span class="n">bBar</span> <span class="c1">// bBar stands for'bar.Bar'
+</span></code></pre></div></div>
+
+<h2 id="코틀린의-함수는-fun-키워드를-통해서-선언합니다">코틀린의 함수는 fun 키워드를 통해서 선언합니다</h2>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;){</span>
+
+    <span class="kd">val</span> <span class="py">result</span> <span class="p">=</span> <span class="n">double</span><span class="p">(</span><span class="m">2</span><span class="p">)</span>
+
+    <span class="n">println</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+<span class="p">}</span>
+
+
+<span class="k">fun</span> <span class="nf">double</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="n">Int</span><span class="p">):</span> <span class="n">Int</span> <span class="p">{</span>
+    <span class="k">return</span> <span class="m">2</span><span class="p">*</span><span class="n">x</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h2 id="코틀린의-함수는-리턴-타입을-추론할수-있다">코틀린의 함수는 리턴 타입을 추론할수 있다</h2>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">sum</span><span class="p">(</span><span class="n">a</span><span class="p">:</span> <span class="n">Int</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">Int</span><span class="p">)</span> <span class="p">=</span> <span class="n">a</span> <span class="p">+</span> <span class="n">b</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"sum of 19 and 23 is ${sum(19, 23)}"</span><span class="p">)</span>
+<span class="p">}</span>
+
+
+</code></pre></div></div>
+
+<h2 id="코틀린의-지역-변수">코틀린의 지역 변수</h2>
+<ul>
+  <li>타입을 명시해줘야한다</li>
+  <li>타입은 추론이가능하다 값으로</li>
+  <li>val은 오직 읽을수 있는 변수만 선언가능</li>
+</ul>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">a</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="m">1</span>  <span class="c1">// immediate assignment
+</span>    <span class="kd">var</span> <span class="py">b</span> <span class="p">=</span> <span class="m">2</span>   <span class="c1">// `Int` type is inferred
+</span>    <span class="kd">val</span> <span class="py">c</span><span class="p">:</span> <span class="n">Int</span>  <span class="c1">// Type required when no initializer is provided
+</span>    <span class="n">c</span> <span class="p">=</span> <span class="m">3</span>       <span class="c1">// deferred assignment
+</span>    <span class="n">println</span><span class="p">(</span><span class="s">"a = $a, b = $b, c = $c"</span><span class="p">)</span>
+
+    <span class="c1">//c = 4  //&lt;- 오류 값을 한번초기화 한후 다시 재할당해주면 에러
+</span><span class="p">}</span>
+
+</code></pre></div></div>
+
+<h2 id="코틀린의-지속적인-변경을-할수-있는-변수-타입">코틀린의 지속적인 변경을 할수 있는 변수 타입</h2>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="py">x</span> <span class="p">=</span> <span class="m">5</span> <span class="c1">// `Int` type is inferred
+</span>    <span class="n">x</span> <span class="p">+=</span> <span class="m">1</span>
+    <span class="n">println</span><span class="p">(</span><span class="s">"x = $x"</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="코틀린의-주석은-주석라인안에-중첩-주석으로-선언가능">코틀린의 주석은 주석라인안에 중첩 주석으로 선언가능</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+/*
+  
+ /*
+
+ */
+
+*/
+
+</code></pre></div></div>
+
+<h2 id="코틀린의-string-template">코틀린의 String template</h2>
+
+<ul>
+  <li>$ 키워드로 선언해줘야 쓸수 있습니다</li>
+  <li>string template 안에 $를 쓸려면 이스케이프 ‘ ‘ 감싸서 표현해줘야합니다</li>
+</ul>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">var</span> <span class="py">a</span> <span class="p">=</span> <span class="m">1</span>
+    <span class="c1">// simple name in template:
+</span>    <span class="kd">val</span> <span class="py">s1</span> <span class="p">=</span> <span class="s">"a is $a"</span>
+    <span class="n">a</span> <span class="p">=</span> <span class="m">2</span>
+    <span class="c1">// arbitrary expression in template:
+</span>    <span class="kd">val</span> <span class="py">s2</span> <span class="p">=</span> <span class="s">"${s1.replace("</span><span class="k">is</span><span class="s">", "</span><span class="n">was</span><span class="s">")}, but now is $a"</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">s2</span><span class="p">)</span>
+
+    <span class="kd">val</span> <span class="py">price</span> <span class="p">=</span> <span class="s">"""
+    ${'$'}9.99
+    """</span>
+
+    <span class="n">println</span><span class="p">(</span><span class="n">price</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="err">결과</span> <span class="p">:</span> <span class="n">a</span> <span class="n">was</span> <span class="m">1</span><span class="p">,</span> <span class="n">but</span> <span class="n">now</span> <span class="k">is</span> <span class="m">2</span>
+      <span class="err">$</span><span class="m">9.99</span>
+</code></pre></div></div>
+
+<h2 id="코틀린의-조건문">코틀린의 조건문</h2>
+
+<p><a href="http://kotlinlang.org/docs/reference/control-flow.html#if-expression">코틀린 if표현식</a></p>
+
+<blockquote>
+  <ul>
+    <li>자바 삼항연산자 처럼 
+  코틀린은 더 간단히 표현 가능 if를 이용해서 val max = if (a &gt; b) a else b</li>
+    <li>블록의 마지막표현식을 return 값으로 넘길수 있음<br />
+```kotlin
+fun maxOf(a: Int, b: Int): Int {
+  if (a &gt; b) {
+      return a
+  } else {
+      return b
+  }
+}</li>
+  </ul>
+</blockquote>
+
+<p>fun maxOf2(a: Int, b: Int) = if (a &gt; b) a else b</p>
+
+<p>fun maxOf3(a: Int, b: Int) = if (a &gt; b) {
+    print(“Choose a”)
+    a
+} else {
+    println(“Choose b”)
+    b // &lt;- 마지막 표현식의 대한 값을 넘길수 있음 return 을 명시안해줘도
+}</p>
+
+<p>fun main(args: Array<String>) {
+    println("max of 0 and 42 is ${maxOf(0, 42)}")</String></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>println("max of 0 and 42 is ${maxOf2(0, 42)}")
+
+println("max of 0 and 42 is ${maxOf3(0, 42)}") } ```
+</code></pre></div></div>
+
+<h2 id="코틀린에서-null일수도-있고-null이-아닐수도-있는-타입을-지정하려면-">코틀린에서 null일수도 있고 null이 아닐수도 있는 타입을 지정하려면 ?</h2>
+
+<p><a href="https://kotlinlang.org/docs/reference/null-safety.html">코틀린 null-safety</a>
+코틀린 String 자료타입은 기본적으로 null을 허용하지 않는다
+  regular variable of type String can not hold null:</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="py">a</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">"abc"</span>
+<span class="n">a</span> <span class="p">=</span> <span class="k">null</span> <span class="c1">//compilation error
+</span></code></pre></div></div>
+
+<p>null을 허용하게 하려면 ?를 이용해서 타입뒤에 선언</p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="py">b</span><span class="p">:</span> <span class="n">String</span><span class="p">?</span> <span class="p">=</span> <span class="s">"abc"</span>
+<span class="n">b</span> <span class="p">=</span> <span class="k">null</span> <span class="c1">// ok
+</span></code></pre></div></div>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+
+    <span class="kd">var</span> <span class="py">a</span><span class="p">:</span> <span class="n">String</span> <span class="p">=</span> <span class="s">"abc"</span>
+    <span class="c1">//a = null // compilation error
+</span>
+    <span class="kd">var</span> <span class="py">b</span><span class="p">:</span> <span class="n">String</span><span class="p">?</span> <span class="p">=</span> <span class="s">"abc"</span>
+    <span class="n">b</span> <span class="p">=</span> <span class="k">null</span> <span class="c1">// ok
+</span>
+    <span class="c1">//val l = a.length
+</span>    <span class="c1">//val l = b.length // error: variable 'b' can be null
+</span>
+    <span class="c1">//명시적으로 if를 이용해서 null체크를 한경우
+</span>    <span class="kd">val</span> <span class="py">l</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="n">b</span><span class="p">.</span><span class="n">length</span> <span class="k">else</span> <span class="p">-</span><span class="m">1</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+
+    <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="p">!=</span> <span class="k">null</span> <span class="p">&amp;&amp;</span> <span class="n">b</span><span class="p">.</span><span class="n">length</span> <span class="p">&gt;</span> <span class="m">0</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">print</span><span class="p">(</span><span class="s">"String of length ${b.length}"</span><span class="p">)</span>
+    <span class="p">}</span> <span class="k">else</span> <span class="p">{</span>
+        <span class="n">print</span><span class="p">(</span><span class="s">"Empty string"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Safe Calls</p>
+
+<p>코틀린에서 제공하는 Safe 한 방법을 사용
+전체적으로는 ?. 의 형태</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">b</span><span class="o">?.</span><span class="n">length</span>
+</code></pre></div></div>
+
+<p>NULL을 완전히 배제하려면?
+예를 들면 list에서 null을 제외한 값을 사용해야 하는 경우
+코틀린에서는 let{} 키워드를 사용
+.let{}는 ?.을 함께 사용할 경우 if (type != null) {} 을 대체할 수 있음</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+
+
+    <span class="kd">val</span> <span class="py">listWithNulls</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">String</span><span class="p">?&gt;</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="s">"A"</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="s">"B"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">item</span> <span class="k">in</span> <span class="n">listWithNulls</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">item</span><span class="o">?.</span><span class="n">let</span> <span class="p">{</span> <span class="n">println</span><span class="p">(</span><span class="n">it</span><span class="p">)</span> <span class="p">}</span> <span class="c1">// prints A and ignores null
+</span>    <span class="p">}</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>?.을 이용하면 null이 return 되는데 다른 값으로 하려면?</p>
+
+<p>if 표현식으로 가능하긴함</p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">l</span><span class="p">:</span> <span class="n">Int</span> <span class="p">=</span> <span class="k">if</span> <span class="p">(</span><span class="n">b</span> <span class="p">!=</span> <span class="k">null</span><span class="p">)</span> <span class="n">b</span><span class="p">.</span><span class="n">length</span> <span class="k">else</span> <span class="p">-</span><span class="m">1</span>
+</code></pre></div></div>
+
+<p>더간단하게는 ?:</p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">l</span> <span class="p">=</span> <span class="n">b</span><span class="o">?.</span><span class="n">length</span> <span class="o">?:</span> <span class="p">-</span><span class="m">1</span>
+
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+
+    <span class="kd">val</span> <span class="py">b</span><span class="p">:</span><span class="n">String</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
+
+    <span class="kd">val</span> <span class="py">l</span> <span class="p">=</span> <span class="n">b</span><span class="o">?.</span><span class="n">length</span> <span class="o">?:</span> <span class="p">-</span><span class="m">1</span>
+
+    <span class="n">println</span><span class="p">(</span><span class="n">l</span><span class="p">)</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>NullPointerException을 발생시키는 방법</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+
+<span class="c1">//    var temp: String? = null
+//    val size = temp?.length ?: throw IllegalArgumentException("temp is null")
+</span>
+    <span class="c1">//단순히 NPE를 발생하려면
+</span>    <span class="kd">var</span> <span class="py">temp</span><span class="p">:</span> <span class="n">String</span><span class="p">?</span> <span class="p">=</span> <span class="k">null</span>
+    <span class="kd">val</span> <span class="py">size</span> <span class="p">=</span> <span class="n">temp</span><span class="o">!!</span><span class="p">.</span><span class="n">length</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>안전하게 타입캐스팅하려면 
+보통 캐스팅하다가 예외가 생기면 주로 ClassCastException 생깁니다
+그래서 코틀린에서는 안전하게 타입캐스팅을 하려면</p>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">val</span> <span class="py">aInt</span><span class="p">:</span> <span class="n">Int</span><span class="p">?</span> <span class="p">=</span> <span class="n">a</span> <span class="k">as</span><span class="p">?</span> <span class="n">Int</span>
+</code></pre></div></div>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+
+    <span class="kd">val</span> <span class="py">a</span><span class="p">:</span> <span class="n">String</span><span class="p">?</span> <span class="p">=</span> <span class="s">"ABC"</span>
+
+    <span class="c1">// String을 강제로 형 변환 할 경우에는 CastException이 발생하여 이 경우 null이 저장
+</span>    <span class="kd">val</span> <span class="py">aInt</span><span class="p">:</span> <span class="n">Int</span><span class="p">?</span> <span class="p">=</span> <span class="n">a</span> <span class="k">as</span><span class="p">?</span> <span class="n">Int</span>
+
+    <span class="c1">// null이 아닌 0을 저장하려면
+</span>    <span class="kd">val</span> <span class="py">bInt</span><span class="p">:</span> <span class="n">Int</span><span class="p">?</span> <span class="p">=</span> <span class="n">a</span> <span class="k">as</span><span class="p">?</span> <span class="n">Int</span> <span class="o">?:</span> <span class="m">0</span>
+
+    <span class="n">println</span><span class="p">(</span><span class="n">aInt</span><span class="p">)</span>
+
+    <span class="n">println</span><span class="p">(</span><span class="n">bInt</span><span class="p">)</span>
+
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Collections of Nullable Type
+컬렉션 객체에 null을 제외한 값을 저장하고 싶으면 
+filterNotNull 메소드이용</p>
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+
+    <span class="kd">val</span> <span class="py">nullableList</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">?&gt;</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="k">null</span><span class="p">,</span> <span class="m">4</span><span class="p">)</span>
+    <span class="kd">val</span> <span class="py">intList</span><span class="p">:</span> <span class="n">List</span><span class="p">&lt;</span><span class="n">Int</span><span class="p">&gt;</span> <span class="p">=</span> <span class="n">nullableList</span><span class="p">.</span><span class="n">filterNotNull</span><span class="p">()</span>
+
+    <span class="k">for</span><span class="p">(</span><span class="n">temp</span> <span class="k">in</span> <span class="n">intList</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">println</span><span class="p">(</span><span class="n">temp</span><span class="p">)</span>
+    <span class="p">}</span>
+
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h2 id="코틀린은-is-타입체크해서-이상없으면-따로-타입캐스팅하지않아도-저절로-타입캐스팅됨">코틀린은 is 타입체크해서 이상없으면 따로 타입캐스팅하지않아도 저절로 타입캐스팅됨</h2>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">getStringLength</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span> <span class="n">Int</span><span class="p">?</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">obj</span> <span class="p">!</span><span class="k">is</span> <span class="n">String</span><span class="p">)</span> <span class="k">return</span> <span class="k">null</span>
+
+    <span class="c1">// `obj` is automatically cast to `String` in this branch
+</span>    <span class="k">return</span> <span class="n">obj</span><span class="p">.</span><span class="n">length</span>
+<span class="p">}</span>
+
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="k">fun</span> <span class="nf">printLength</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">"'$obj' string length is ${getStringLength(obj) ?: "</span><span class="o">..</span><span class="p">.</span> <span class="n">err</span><span class="p">,</span> <span class="n">not</span> <span class="n">a</span> <span class="n">string</span><span class="s">"} "</span><span class="p">)</span>
+    <span class="p">}</span>
+    <span class="n">printLength</span><span class="p">(</span><span class="s">"Incomprehensibilities"</span><span class="p">)</span>
+    <span class="n">printLength</span><span class="p">(</span><span class="m">1000</span><span class="p">)</span>
+    <span class="n">printLength</span><span class="p">(</span><span class="n">listOf</span><span class="p">(</span><span class="n">Any</span><span class="p">()))</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h2 id="코틀린-for-loop">코틀린 for loop</h2>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">items</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="s">"apple"</span><span class="p">,</span> <span class="s">"banana"</span><span class="p">,</span> <span class="s">"kiwi"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">item</span> <span class="k">in</span> <span class="n">items</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">println</span><span class="p">(</span><span class="n">item</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="코틀린-for-loop-중-index가-필요한-경우">코틀린 for loop 중 index가 필요한 경우</h2>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">items</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="s">"apple"</span><span class="p">,</span> <span class="s">"banana"</span><span class="p">,</span> <span class="s">"kiwi"</span><span class="p">)</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">index</span> <span class="k">in</span> <span class="n">items</span><span class="p">.</span><span class="n">indices</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">"item at $index is ${items[index]}"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">items</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="s">"apple"</span><span class="p">,</span> <span class="s">"banana"</span><span class="p">,</span> <span class="s">"kiwi"</span><span class="p">)</span>
+    <span class="kd">var</span> <span class="py">index</span> <span class="p">=</span> <span class="m">0</span>
+    <span class="k">while</span> <span class="p">(</span><span class="n">index</span> <span class="p">&lt;</span> <span class="n">items</span><span class="p">.</span><span class="n">size</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">"item at $index is ${items[index]}"</span><span class="p">)</span>
+        <span class="n">index</span><span class="p">++</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+</code></pre></div></div>
+
+<h2 id="코틀린-when">코틀린 when</h2>
+<ul>
+  <li>switch 자바에서 switch 숫자,문자만되는데</li>
+  <li>코틀린은 다양한 타입을 비교할수 있음</li>
+  <li>더이상 비교할 조건이 없을경우 else로</li>
+</ul>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">describe</span><span class="p">(</span><span class="n">obj</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span> <span class="n">String</span> <span class="p">=</span>
+        <span class="k">when</span> <span class="p">(</span><span class="n">obj</span><span class="p">)</span> <span class="p">{</span>
+            <span class="m">1</span>          <span class="p">-&gt;</span> <span class="s">"One"</span>
+            <span class="s">"Hello"</span>    <span class="p">-&gt;</span> <span class="s">"Greeting"</span>
+            <span class="k">is</span> <span class="n">Long</span>    <span class="p">-&gt;</span> <span class="s">"Long"</span>
+            <span class="p">!</span><span class="k">is</span> <span class="n">String</span> <span class="p">-&gt;</span> <span class="s">"Not a string"</span>
+            <span class="k">else</span>       <span class="p">-&gt;</span> <span class="s">"Unknown"</span>
+        <span class="p">}</span>
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">describe</span><span class="p">(</span><span class="m">1</span><span class="p">))</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">describe</span><span class="p">(</span><span class="s">"Hello"</span><span class="p">))</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">describe</span><span class="p">(</span><span class="m">1000L</span><span class="p">))</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">describe</span><span class="p">(</span><span class="m">2</span><span class="p">))</span>
+    <span class="n">println</span><span class="p">(</span><span class="n">describe</span><span class="p">(</span><span class="s">"other"</span><span class="p">))</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<h2 id="코틀린--범위연산자">코틀린 .. 범위연산자</h2>
+
+<div class="language-kotlin highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">x</span> <span class="p">=</span> <span class="m">10</span>
+    <span class="kd">val</span> <span class="py">y</span> <span class="p">=</span> <span class="m">9</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">1</span><span class="o">..</span><span class="n">y</span><span class="p">+</span><span class="m">1</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">"fits in range"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="kd">val</span> <span class="py">list</span> <span class="p">=</span> <span class="n">listOf</span><span class="p">(</span><span class="s">"a"</span><span class="p">,</span> <span class="s">"b"</span><span class="p">,</span> <span class="s">"c"</span><span class="p">)</span>
+
+    <span class="kd">var</span> <span class="py">test1</span> <span class="p">=</span> <span class="n">list</span><span class="p">.</span><span class="n">lastIndex</span>
+
+    <span class="k">if</span> <span class="p">(-</span><span class="m">1</span> <span class="p">!</span><span class="k">in</span> <span class="m">0</span><span class="o">..</span><span class="n">list</span><span class="p">.</span><span class="n">lastIndex</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">"-1 is out of range"</span><span class="p">)</span>
+    <span class="p">}</span>
+
+    <span class="kd">val</span> <span class="py">test2</span> <span class="p">=</span> <span class="n">list</span><span class="p">.</span><span class="n">indices</span>
+    <span class="kd">val</span> <span class="py">test3</span> <span class="p">=</span> <span class="n">list</span><span class="p">.</span><span class="n">size</span>
+    <span class="k">if</span> <span class="p">(</span><span class="n">list</span><span class="p">.</span><span class="n">size</span> <span class="p">!</span><span class="k">in</span> <span class="n">list</span><span class="p">.</span><span class="n">indices</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">println</span><span class="p">(</span><span class="s">"list size is out of valid list indices range too"</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+
+
+
+<span class="k">fun</span> <span class="nf">main</span><span class="p">(</span><span class="n">args</span><span class="p">:</span> <span class="n">Array</span><span class="p">&lt;</span><span class="n">String</span><span class="p">&gt;)</span> <span class="p">{</span>
+    <span class="k">for</span> <span class="p">(</span><span class="n">x</span> <span class="k">in</span> <span class="m">1</span><span class="o">..</span><span class="m">5</span><span class="p">)</span> <span class="p">{</span>
+        <span class="n">print</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+    </div>
+    <div class="post-meta">
+
+<span>
+      
+      
+      <a class="tag-link" data-tag-name="kotlin"
+        href="/tags.html#kotlin">#kotlin</a>
+    <a class="tag-link" data-tag-name="java"
+        href="/tags.html#java">#java</a>
+    <a class="tag-link" data-tag-name="IT꾸자갤"
+        href="/tags.html#IT꾸자갤">#IT꾸자갤</a>
+    </span>
+</div>
+    <div><div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.0&appId=116889428386183&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like" data-href="http://localhost:4000/kotlin/2017/07/22/kotlin-02.html" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></div>
+    <div><div id="disqus_thread"></div>
+<script>
+  /**
+   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+   */
+  /*
+   var disqus_config = function () {
+   this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+   this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+   };
+   */
+  (function() {  // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+
+    s.src = '//dskim-1.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+  </div>
+</article>
+
+      </div>
+    </div>
+    <div class="wrapper">
+  <footer class="site-footer">
+    <ul class="site-footer-links list-inline">
+      <li class="site-footer-link">
+        <a href="/feed.xml">
+          RSS
+        </a>
+      </li>
+      
+      <li class="site-footer-link">
+        <a href="mailto:deasung.kim2622@gmail.com">
+          이메일
+        </a>
+      </li>
+      
+      
+      <li class="site-footer-link">
+        <a href="https://github.com/deasung">
+          깃헙
+        </a>
+      </li>
+      
+    </ul>
+  </footer>
+</div>
+
+<script src="/assets/js/main.js"></script>
+
+  </body>
+</html>

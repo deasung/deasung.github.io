@@ -1,48 +1,39 @@
-//initialize
+$base-font-family:  "IropkeBatangM", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$mono-font-family: Courier, "Lucida Console", monospace;
 
-p, h2 {
-    margin: 0;
-}
+$font-size-default: 18px;
+$font-size-large: 18px;
+$font-size-small: 14px;
 
-// color 정의
-$default-shade: #10171f;
-$default-tint: #8898aa;
-$grey-0: #333e4c;
-$grey-1: #90949a;
-$grey-2: #D8E0E7;
-$grey-2-70: rgba(216, 224, 231, .7);
-$grey-3: #f6f9fc;
-$grey-4: #ebeff2;
-$grey-5: #c1cad4;
-$grey-6: #b3bcc4;
-$white: #fff;
-$yellow: #FEE85A;
-$shadow-color: rgba(0, 0, 0, .2);
-$ridi-blue: #1f8ce6;
-$ridi-skyblue: #66baff;
-$purple: #8565fc;
-$light-purple: #997EFA;
+$font-weight-default: 400;
+$font-weight-light: 100;
+$font-weight-heavy: 900;
 
-// media
-$break-medium: 900px;
-$break-small: 670px;
+$line-height-default: 1.8;
+$line-height-small: 1.1;
 
-// font-family 정의
-$san-serif: "Source Sans Pro", "APPLE SD Gothic Neo", HelveticaNeue, Helvetica, "NanumGothic", "맑은 고딕", "Malgun Gothic", arial, sans-serif;
-$serif: "Nanum Myeongjo",sans-serif;
-$source: 'Source Sans Pro', sans-serif;
+$spacing-unit: 30px;
 
-$monospaced-font: Menlo, Monaco, monospace;
-$code-color: #bf616a;
+$color-text: #111;
+$color-background: #fff;
+$color-brand: #0070c9;
+$light-grey-color: #f5f5f5;
+$grey-color: #828282;
+$grey-color-light: lighten($grey-color, 40%);
+$grey-color-dark: darken($grey-color, 25%);
+$white-color: rgb(254, 254, 254);
+$no-color: rgba(0, 0, 0, 0);
+$site-header-background-color: rgb(56, 56, 56);
 
-@mixin box-sizing($type: border-box) {
-  -webkit-box-sizing: $type;
-     -moz-box-sizing: $type;
-          box-sizing: $type;
-}
 
-@mixin transition($args...) {
-  -webkit-transition: $args;
-     -moz-transition: $args;
-          transition: $args;
-}
+$site-header-height: auto;
+$site-header-color: rgba(255, 255, 255, 0.901961);
+
+// Width of the content area
+$content-width: 800px;
+$on-palm: 800px;
+
+$profile-image-width: 150px;
+
+$post-list-featured-image-width: 90px;
+$post-list-featured-image-height: $post-list-featured-image-width;

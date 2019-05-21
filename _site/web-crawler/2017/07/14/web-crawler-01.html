@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="크롤러 공부 1일차">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@jeonghwan0424" />
+  <meta name="twitter:creator" content="@jeonghwan0424" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://localhost:4000/web-crawler/2017/07/14/web-crawler-01.html" />
+  <meta property="og:title" content="크롤러 공부 1일차" />
+  <meta property="og:description" content="크롤러 공부 1일차" />
+  <meta property="og:image" content="http://localhost:4000/assets/imgs/me.jpg" />
+  <meta property="og:site_name" content="김대성 블로그" />
+  <meta property="og:locale" content="ko_kr" />
+  <title>크롤러 공부 1일차</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/web-crawler/2017/07/14/web-crawler-01.html">
+  <link rel="alternate" type="application/rss+xml" title="김대성 블로그" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/assets/imgs/favicon.ico" />
+</head>
+
+  <body>
+    <div class='row'>
+      <header class="site-header">
+  <div class="wrapper">
+    <h1 class="site-title site-title-sm">
+      <a class="" href="/">김대성 블로그</a>
+    </h1>
+  </div>
+</header>
+
+      <div class="page-content">
+        <article id="post" class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <div class="wrapper">
+      <h1 class="post-title" itemprop="name headline">크롤러 공부 1일차</h1>
+      <div class="post-meta">
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 07월 14일
+</span>
+
+</div>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <div class="post-content" itemprop="articleBody">
+      <h2 id="크롤러-공부-1일차">크롤러 공부 1일차</h2>
+
+<h2 id="rhinonashorn">Rhino,Nashorn</h2>
+<ul>
+  <li>자바스크립트 엔진은 자바로 구현</li>
+  <li>자바스크립트 엔진 최대 장점은 자바의 기능에 접근가능 
+(방대한 API나 라이브러리를 이용할수 있음)</li>
+</ul>
+
+<h2 id="에이전트">에이전트</h2>
+<p>사용자 혹은 다른 소프트웨어를 대신해서 다양한 작업을 수행해주는 프로그램</p>
+
+<ul>
+  <li>지능형 에이전트
+    <ul>
+      <li>환경과의 상호작용을 통해 학습하며 동작 개선</li>
+      <li>온라인으로 실시간 적응</li>
+      <li>대량의 데이터를 고속으로 학습</li>
+      <li>새로운 문제 해결 규칙에 적용</li>
+      <li>자신의 동작에 대해 성공과 실패를 스스로 분석</li>
+    </ul>
+  </li>
+  <li>바이어 에이전트
+    <ul>
+      <li>구매봇</li>
+      <li>상품 추천용</li>
+    </ul>
+  </li>
+  <li>
+    <p>사용자 에이전트</p>
+  </li>
+  <li>감시 에이전트
+    <ul>
+      <li>시스템 감시 보고</li>
+      <li>다운되면 통지 자동복구</li>
+      <li>재고 부족을 예측</li>
+    </ul>
+  </li>
+  <li>데이터 마이닝 에이전트
+    <ul>
+      <li>크고 다양한 데이터로부터 유용한 정보를 발굴</li>
+      <li>정보 수집 모은 데이터 분류 , 분석</li>
+    </ul>
+  </li>
+</ul>
+
+<pre><code class="language-node">//모듈 글로벌 설치
+$ npm install -g(모듈 이름)
+
+//관리자 권한으로 글로벌 설치
+sudo npm install -g
+
+//글로벌 설치 경로 확인
+npm root -g
+</code></pre>
+
+<h2 id="스트래핑이란">스트래핑이란?</h2>
+<p>웹사이트에서 HTML 데이터를 수집하고, 특정 데이터를 추출,가공하여 저장하는것을 말함</p>
+
+<p>cheerio-httpcli 모듈</p>
+<ul>
+  <li>파일 손쉽게 다운로드</li>
+  <li>JQuery 비슷하게 요소 획득</li>
+  <li>웹페이지의 문자 코드 자동으로 판정 읽어줌</li>
+  <li>페이지 안의 데이터를 꺼낼 때 간편하게 지정한 요소를 추출 = 가장 큰 장점</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//모듈 로드
+var client = require('cheerio-httpcli');
+
+// 다운로드 ---- ( ※ 2)
+var url = "http://jpub.tistory.com";
+var param = {};
+
+client.fetch(url, param, function (err, $, res) {
+    // 에러 체크
+    if (err) { console.log("Error:", err); return; }
+    
+    // 다운로드한 결과를 화면에 출력  ---- ( ※ 3)
+    var body = $.html();
+    console.log(body);
+});
+
+</code></pre></div></div>
+
+<h2 id="fetch-메소드">fetch() 메소드</h2>
+<p>인자 URL,파라미터,콜백 함수
+콜백함수는 웹사이트에서 데이터 취득이 완료된 시점에서 실행</p>
+
+<p>콜백 함수 인자 오류는 정보(err),취득한 데이터($),서버의 응답 정보(res)</p>
+
+<h2 id="html-파일에서-링크-추출">HTML 파일에서 링크 추출</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 모듈 로드
+var client = require('cheerio-httpcli');
+
+// 다운로드
+var url = "http://jpub.tistory.com";
+var param = {};
+
+client.fetch(url, param, function(err, $, res) { //----( ※ 1)
+    if (err) { console.log("error"); return; }
+    
+    // 링크를 추출하여 표시 --- ( ※ 2)
+    $("a").each(function(idx) {
+        var text = $(this).text();
+        var href = $(this).attr('href');
+        console.log(text+":"+href);
+    });
+});
+</code></pre></div></div>
+
+<h2 id="상대-url을-절대-url로-변경">상대 URL을 절대 URL로 변경</h2>
+<p>상대 경로란? 현재 웹 페이지의 위치를 기준으로 
+기술한 대상 파일의 경로를 말함</p>
+
+<p>Node.js 상대경로 -&gt; 절대경로 변경</p>
+
+<p>Node.js url이라는 표준 모듈을 사용하면 절대 경로로 바꿀 수 있다</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var urlType = require('url');
+var res = urlType.resolve(기본 URL,상대 URL)
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 모듈 로드
+var client = require('cheerio-httpcli');
+var urlType = require('url');
+
+// URL과 파라미터 
+var url = "http://jpub.tistory.com";
+var param = {};
+
+// 다운로드
+client.fetch(url, param, function(err, $, res) {
+  if (err) { console.log("error"); return; }
+
+  // 링크 추출하여 출력
+  $("a").each(function(idx) {
+    var text = $(this).text();
+    var href = $(this).attr('href');
+    if (!href) return;
+
+    // 상대경로를 절대경로로 변환--- (※1)
+    var href2 = urlType.resolve(url, href);
+    
+    // 결과를 표시
+    console.log(text + " : " + href);
+    console.log("  =&gt; " + href2 + "\n");
+  });
+});
+
+
+</code></pre></div></div>
+
+<h2 id="이미지-파일-추출">이미지 파일 추출</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 모듈 로드
+var client = require('cheerio-httpcli');
+var URL = require('url');
+
+// 다운로드
+var url = "https://ko.wikipedia.org/wiki/" + encodeURIComponent("강아지");
+var param = {};
+
+client.fetch(url, param, function(err, $, res) {
+  if (err) { console.log("error"); return; }
+  
+  // 링크를 추출하여 표시
+  $("img").each(function(idx) {
+    var src = $(this).attr('src');
+    src = URL.resolve(url, src);
+    console.log(src);
+  });
+});
+
+
+</code></pre></div></div>
+
+<h2 id="request-모듈-사용">request 모듈 사용</h2>
+<ul>
+  <li>이미지를 다운로드 하는 데 편리한 모듈</li>
+  <li>리다이렉트 지시가 있으면 자동으로 리다이렉트 된곳으로 파일 다운</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install request
+</code></pre></div></div>
+
+<h2 id="fsmkdirsync-메소드">fs.mkdirSync() 메소드</h2>
+<ul>
+  <li>디렉토리 생성</li>
+</ul>
+
+<p>__dirname -&gt; 스크립트의 실행 디렉토리
+저장경로를 지정 가능</p>
+
+<p>기존에도 fs.exists(),fs.mkdir() 메소드 존재 
+이것들은 비동기적으로 동작</p>
+
+<p>fs.mkdir() 메소드는 파일이나 디렉토리의 작성이 완료된 시점에서 
+두번째 지정한 콜백 함수가 호출됨</p>
+
+<p>fs.mkdirSync() 메소드는 디렉토리의 작성이 완료될 때까지 스크립트의 흐름을 멈추고 대기</p>
+
+<h2 id="xmlrss-해석">XML/RSS 해석</h2>
+
+<h2 id="xml-extensible-markup-language">XML (Extensible Markup Language)</h2>
+<ul>
+  <li>범용적인 데이터 형식</li>
+  <li>기본적으로 텍스트 데이터</li>
+  <li>데이터에 태그를 붙임으로써 문서나 데이터 구조화</li>
+  <li>다른 종류의 시스템 간에, 구조화된 문서와 데이터를 쉽게 공유하는 것</li>
+</ul>
+
+<h2 id="nodejs에서-xml을-다루는-방법">Node.js에서 XML을 다루는 방법</h2>
+<ul>
+  <li>xml2js 모듈 XML 데이터를 자바스크립트 객체로 변환 가능</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm install xml2js
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 모듈 로드
+var parseString = require('xml2js').parseString;
+
+// 테스트 용 XML 데이터 
+var xml = "&lt;fruits shop='AAA'&gt;" +
+  "&lt;item price='140'&gt;Banana&lt;/item&gt;" +
+  "&lt;item price='200'&gt;Apple&lt;/item&gt;" +
+  "&lt;/fruits&gt;";
+
+// XML 전달 
+parseString(xml, function (err, result) {
+  // 파싱된 결과에 대한 처리를 여기에 작성 
+  console.log(JSON.stringify(result));
+});
+</code></pre></div></div>
+
+<p>XML에는 업는 ‘$’,’<em>‘과 같은 키가 존재함 
+JSON과 일대일 대응이 되지 않기 때문에 
+요소의 내용은 ‘</em>‘이라는 키의 값으로 대입 
+속성은 ‘$’ 키의 객체로 대입</p>
+
+<p>#RSS</p>
+<ul>
+  <li>
+    <p>RSS는 뉴스와 블로그등 각종 웹사이트의 갱신 정보를 요약
+전송할 때 사용한 데이터 형식</p>
+  </li>
+  <li>RSS1.0,RSS2.0,Atom</li>
+  <li>XML 바탕</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// 기상청 기상예보 RSS(cheerio이용) for Node.js
+
+// 기상 RSS
+var RSS = "http://web.kma.go.kr/weather/forecast/mid-term-rss3.jsp?stnId=109";
+
+// 모듈 로드
+var client = require('cheerio-httpcli');
+
+// RSS 다운로드
+client.fetch(RSS, {}, function(err, $, res) {
+  if (err) { 
+    console.log("error"); return; 
+  }
+
+  console.dir($);
+
+  var city = $("location:nth-child(1) &gt; city").text();
+
+  // 필요한 항목을 추출해서 표시 ---------------------- (※1)
+  $("location:nth-child(1) &gt; data").each(function(idx) {
+
+    var tmEf = $(this).find('tmEf').text();
+    var wf = $(this).find('wf').text();
+    var tmn = $(this).find('tmn').text();
+    var tmx = $(this).find('tmx').text();
+    
+    console.log(city + " " + tmEf + " " + wf + " " + tmn +"~" + tmx);
+  });
+});
+</code></pre></div></div>
+
+<h2 id="정기적으로-다운로드">정기적으로 다운로드</h2>
+
+<ul>
+  <li>
+    <p>정기적인 처리를 수행</p>
+  </li>
+  <li>
+    <p>정기적인 실행을 위한 힌트</p>
+    <ul>
+      <li>데이터 수집과 같은 애플리케이션의 정기적인 처리</li>
+      <li>로그,백업 등 시스템과 관련된 정기적인 처리</li>
+      <li>시스템이 제대로 동작하고 있는지 정기적으로 감시하는 처리</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="cron-설정을-위한-crontab">cron 설정을 위한 crontab</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>crontab -e
+//매일 아침7시에 앞서 작성한 js실행
+0 7 * * * /user/bin/node /path/to/kawase-usd_krw.js
+</code></pre></div></div>
+
+<h2 id="crontab-다양한-설정-방법">crontab 다양한 설정 방법</h2>
+<p>분 시 일 월 요일 실행 명령</p>
+
+    </div>
+    <div class="post-meta">
+
+<span>
+      
+      
+      <a class="tag-link" data-tag-name="web-crawler"
+        href="/tags.html#web-crawler">#web-crawler</a>
+    <a class="tag-link" data-tag-name="nodejs"
+        href="/tags.html#nodejs">#nodejs</a>
+    <a class="tag-link" data-tag-name="javascript"
+        href="/tags.html#javascript">#javascript</a>
+    </span>
+</div>
+    <div><div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.0&appId=116889428386183&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like" data-href="http://localhost:4000/web-crawler/2017/07/14/web-crawler-01.html" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></div>
+    <div><div id="disqus_thread"></div>
+<script>
+  /**
+   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+   */
+  /*
+   var disqus_config = function () {
+   this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+   this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+   };
+   */
+  (function() {  // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+
+    s.src = '//dskim-1.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+  </div>
+</article>
+
+      </div>
+    </div>
+    <div class="wrapper">
+  <footer class="site-footer">
+    <ul class="site-footer-links list-inline">
+      <li class="site-footer-link">
+        <a href="/feed.xml">
+          RSS
+        </a>
+      </li>
+      
+      <li class="site-footer-link">
+        <a href="mailto:deasung.kim2622@gmail.com">
+          이메일
+        </a>
+      </li>
+      
+      
+      <li class="site-footer-link">
+        <a href="https://github.com/deasung">
+          깃헙
+        </a>
+      </li>
+      
+    </ul>
+  </footer>
+</div>
+
+<script src="/assets/js/main.js"></script>
+
+  </body>
+</html>

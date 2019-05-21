@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Jenkins &amp; Gitlab 연동">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@jeonghwan0424" />
+  <meta name="twitter:creator" content="@jeonghwan0424" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://localhost:4000/jenkins/2018/03/25/jenkins-gitlab.html" />
+  <meta property="og:title" content="Jenkins 설치 & Gitlab 연동" />
+  <meta property="og:description" content="Jenkins &amp; Gitlab 연동" />
+  <meta property="og:image" content="http://localhost:4000/assets/imgs/me.jpg" />
+  <meta property="og:site_name" content="김대성 블로그" />
+  <meta property="og:locale" content="ko_kr" />
+  <title>Jenkins 설치 &amp; Gitlab 연동</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/jenkins/2018/03/25/jenkins-gitlab.html">
+  <link rel="alternate" type="application/rss+xml" title="김대성 블로그" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/assets/imgs/favicon.ico" />
+</head>
+
+  <body>
+    <div class='row'>
+      <header class="site-header">
+  <div class="wrapper">
+    <h1 class="site-title site-title-sm">
+      <a class="" href="/">김대성 블로그</a>
+    </h1>
+  </div>
+</header>
+
+      <div class="page-content">
+        <article id="post" class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <div class="wrapper">
+      <h1 class="post-title" itemprop="name headline">Jenkins 설치 & Gitlab 연동</h1>
+      <div class="post-meta">
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2018년 03월 25일
+</span>
+
+</div>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <div class="post-content" itemprop="articleBody">
+      <h2 id="jenkins--gitlab-연동">Jenkins &amp; Gitlab 연동</h2>
+
+<h1 id="jenins-설치">Jenins 설치</h1>
+
+<h3 id="자바-설치">자바 설치</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-add-repository ppa:webupd8team/java
+
+sudo apt-get update
+
+sudo apt-get install oracle-java8-installer
+</code></pre></div></div>
+
+<h3 id="gradle-설치">gradle 설치</h3>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install gradle
+$ gradle -version
+</code></pre></div></div>
+
+<h3 id="jenkins-설치">Jenkins 설치</h3>
+
+<p>패키지 주소를 apt-key에 더한후 젠킨스 다운</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+OK
+
+$ echo deb http://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list
+
+
+$ sudo apt-get update
+$ sudo apt-get install jenkins
+
+</code></pre></div></div>
+
+<h3 id="jenkins-시작하기">Jenkins 시작하기</h3>
+
+<ul>
+  <li>sudo systemctl start jenkins 젠킨스 시작</li>
+  <li>sudo systemctl status jenkins 젠킨스가 제대로 시작되고 있는지 로그 볼수 있는?</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo systemctl start jenkins
+$ sudo systemctl status jenkins
+● jenkins.service - LSB: Start Jenkins at boot time
+  Loaded: loaded (/etc/init.d/jenkins; bad; vendor preset: enabled)
+  Active:active (exited) since Thu 2017-04-20 16:51:13 UTC; 2min 7s ago
+    Docs: man:systemd-sysv-generator(8)
+    …
+
+</code></pre></div></div>
+
+<p>Jenkins를 설치할 때 /var/lib/jenkins/secrets/initialAdminPassword 파일의 내용을 빈칸에 입력해야한다.</p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/01.png" alt="Jenkins 설치1" /></p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/06.png" alt="Jenkins 설치2" /></p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/02.png" alt="Jenkins 설치3" /></p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/03.png" alt="Jenkins 설치4" /></p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/04.png" alt="Jenkins 설치5" /></p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/05.png" alt="Jenkins 설치6" /></p>
+
+<h1 id="gitlab연동">GITLAB연동</h1>
+
+<p>gitlab에 접속해서 로그인을 한후 셋팅을 클릭하면</p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/15.png" alt="GITLAB 연동1" /></p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/07.png" alt="GITLAB 연동2" />
+ACCESS TOKEN을 발급을 받아야한다.</p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/08.png" alt="GITLAB 연동3" />
+젠킨스화면에서 Credentials 만들어야 한다</p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/09.png" alt="GITLAB 연동4" />
+현재는 등록되어 있는게 없으므로 만들어야 한다</p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/10.png" alt="GITLAB 연동5" />
+Gitlab 관련 정보를 등록한다 ID/설명은 괜찮지만 토큰값은 실제로 
+Gitlab에서 발급받은 토큰값을 입력한다</p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/11.png" alt="GITLAB 연동6" />
+등록되면 이렇게 보임~!</p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/12.png" alt="GITLAB 연동7" />
+젠킨스 새작업을 만들고</p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/13.png" alt="GITLAB 연동8" />
+젠킨스 프로젝트를 Github project의 프로젝트 URL과 설명을 달고</p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/14.png" alt="GITLAB 연동9" /></p>
+
+<p>하단에 전역으로 설정되어 있는거를 연동하면 이렇게 일단은 연동될것이다</p>
+
+<p>부족하지만 일단은 나도 여러 블로그의 내용을 보고 따라한거를 정리한거라</p>
+
+<p>역시 구글링은 필수다..</p>
+
+    </div>
+    <div class="post-meta">
+
+<span>
+      
+      <a class="tag-link" data-tag-name="jenkins"
+        href="/tags.html#jenkins">#jenkins</a>
+    <a class="tag-link" data-tag-name="gitlab"
+        href="/tags.html#gitlab">#gitlab</a>
+    </span>
+</div>
+    <div><div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.0&appId=116889428386183&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like" data-href="http://localhost:4000/jenkins/2018/03/25/jenkins-gitlab.html" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></div>
+    <div><div id="disqus_thread"></div>
+<script>
+  /**
+   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+   */
+  /*
+   var disqus_config = function () {
+   this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+   this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+   };
+   */
+  (function() {  // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+
+    s.src = '//dskim-1.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+  </div>
+</article>
+
+      </div>
+    </div>
+    <div class="wrapper">
+  <footer class="site-footer">
+    <ul class="site-footer-links list-inline">
+      <li class="site-footer-link">
+        <a href="/feed.xml">
+          RSS
+        </a>
+      </li>
+      
+      <li class="site-footer-link">
+        <a href="mailto:deasung.kim2622@gmail.com">
+          이메일
+        </a>
+      </li>
+      
+      
+      <li class="site-footer-link">
+        <a href="https://github.com/deasung">
+          깃헙
+        </a>
+      </li>
+      
+    </ul>
+  </footer>
+</div>
+
+<script src="/assets/js/main.js"></script>
+
+  </body>
+</html>

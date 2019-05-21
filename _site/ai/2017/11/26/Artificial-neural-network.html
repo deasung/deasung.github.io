@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="인공신경망 및 파이썬도 같이 공부하면서">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@jeonghwan0424" />
+  <meta name="twitter:creator" content="@jeonghwan0424" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://localhost:4000/ai/2017/11/26/Artificial-neural-network.html" />
+  <meta property="og:title" content="신경망 첫걸음 공부중" />
+  <meta property="og:description" content="인공신경망 및 파이썬도 같이 공부하면서" />
+  <meta property="og:image" content="http://localhost:4000/assets/imgs/me.jpg" />
+  <meta property="og:site_name" content="김대성 블로그" />
+  <meta property="og:locale" content="ko_kr" />
+  <title>신경망 첫걸음 공부중</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/ai/2017/11/26/Artificial-neural-network.html">
+  <link rel="alternate" type="application/rss+xml" title="김대성 블로그" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/assets/imgs/favicon.ico" />
+</head>
+
+  <body>
+    <div class='row'>
+      <header class="site-header">
+  <div class="wrapper">
+    <h1 class="site-title site-title-sm">
+      <a class="" href="/">김대성 블로그</a>
+    </h1>
+  </div>
+</header>
+
+      <div class="page-content">
+        <article id="post" class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <div class="wrapper">
+      <h1 class="post-title" itemprop="name headline">신경망 첫걸음 공부중</h1>
+      <div class="post-meta">
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 11월 26일
+</span>
+
+</div>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <div class="post-content" itemprop="articleBody">
+      <h2 id="인공신경망-및-파이썬도-같이-공부하면서">인공신경망 및 파이썬도 같이 공부하면서</h2>
+
+<h2 id="jupyter">Jupyter</h2>
+<p><a href="(https://aws.amazon.com/ko/route53/)">jupyter</a></p>
+
+<p><img src="/assets/imgs/2017/11/26/20171126_01.png" alt="" /></p>
+
+<p>파이썬은 들여쓰기
+코드가 다른 코드에 종속되는지 여부를 나타내는 매우 중요한 역할</p>
+
+<p><img src="/assets/imgs/2017/11/26/20171126_02.png" alt="" /></p>
+
+<p><img src="/assets/imgs/2017/11/26/20171126_03.png" alt="" /></p>
+
+<p><img src="/assets/imgs/2017/11/26/20171126_04.png" alt="" /></p>
+
+<p>def 바로 함수를 정의하는 키워드</p>
+
+<p>import 명령어는 외부로부터 추가적인 기능을 가져올 때 사용하는 명령어</p>
+
+<p>numpy라는 모듈 -&gt; 배열 계산 등 유용한 기능을 포함</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">a</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">zeros</span><span class="p">(</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span> <span class="p">)</span>
+<span class="k">print</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+
+</code></pre></div></div>
+
+<p><img src="/assets/imgs/2017/11/26/20171126_05.png" alt="" /></p>
+
+<p>배열 또는 행렬은 신경망에서 입력의 전파와 오차의 역전파 과정
+계산에 대한 명령을 간단히 하도록 도와주는 매우 유용한 개념</p>
+
+<p><img src="/assets/imgs/2017/11/26/20171126_06.png" alt="" />
+import matplotlib.pyplot 시각화 기능 담당 라이브러리</p>
+
+<p>시각화 imshow(배열,속성)</p>
+
+<p>interpolation=”nearest”
+같은 값을 가지는 원소는 같은 색상으로 표시</p>
+
+<p><img src="/assets/imgs/2017/11/26/20171126_07.png" alt="" /></p>
+
+<p>객체를 정의할 때에는 class라는 키워드</p>
+
+<p>클래스를 가지고 만든 객체 = 클래스의 인스턴스(instance)</p>
+
+<p><img src="/assets/imgs/2017/11/26/20171126_08.png" alt="" /></p>
+
+<p>매개변수로 self 적는이유 파이썬이 함수를 생성할 때
+올바른 객체에 할당하기 위해</p>
+
+<p>클래스는 정의이며 객체는 그정의를 현실에서 구현한 인스턴스</p>
+
+<p>파이썬에서는 최초로 객체를 생성될때 
+<strong>init</strong>()함수를 호출하도록 약속되어있음</p>
+
+<p><img src="/assets/imgs/2017/11/26/20171126_09.png" alt="" /></p>
+
+<p><img src="/assets/imgs/2017/11/26/20171126_10.png" alt="" /></p>
+
+<h2 id="파이썬으로-인공-신경망-만들기">파이썬으로 인공 신경망 만들기</h2>
+
+<p>뼈대 코드</p>
+<ul>
+  <li>초기화: 입력,은닉,출력 노드의 수 설정</li>
+  <li>학습: 학습 데이터들을 통해 학습하고 이에 따라 가중치를 업데이트</li>
+  <li>질의: 입력을 받아 연산한 후 출력 노드에서 답을 전달</li>
+</ul>
+
+<p><img src="/assets/imgs/2017/11/26/20171126_11.png" alt="" /></p>
+
+<h2 id="신경망의-핵심인-가중치">신경망의 핵심인 가중치</h2>
+<p>연결 노드의 가중치 
+가중치 전파시 전달되는 신호와 역전파 시 오차를 계산하는 데 쓰임 
+신경망을 개선하는 역할을 수행함</p>
+
+<ul>
+  <li>
+    <p>(은닉노드 X 입력노드)의 크기를 가지는 입력계층과 은닉 계층사이의 가중치의 행렬 W(input_hidden)</p>
+  </li>
+  <li>
+    <p>(출력노드 X 은닉노드)의 크기를 가지는 은닉 계층과 출력 계층 사이의 가중치의 행렬 W(hidden_output)</p>
+  </li>
+</ul>
+
+<p><img src="/assets/imgs/2017/11/26/20171126_12.png" alt="" />
+가중치는 양수가 아니라 음수 일수도 있음</p>
+
+<p><img src="/assets/imgs/2017/11/26/20171126_13.png" alt="" /></p>
+
+<p><img src="/assets/imgs/2017/11/26/20171126_14.png" alt="" /></p>
+
+<h2 id="더-정교한-가중치">더 정교한 가중치</h2>
+
+<p>numpy.random.normal()</p>
+
+<p>이 변수에 필요한 매개변수는 정규분포의 중심,표준편차,numpy 행렬</p>
+
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="bp">self</span><span class="o">.</span><span class="n">wih</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hnodes</span><span class="p">,</span><span class="o">-</span><span class="mf">0.5</span><span class="p">),</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">hnodes</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">inodes</span><span class="p">))</span>
+
+<span class="bp">self</span><span class="o">.</span><span class="n">who</span> <span class="o">=</span> <span class="n">numpy</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">normal</span><span class="p">(</span><span class="mf">0.0</span><span class="p">,</span> <span class="nb">pow</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">onodes</span><span class="p">,</span> <span class="o">-</span><span class="mf">0.5</span><span class="p">),(</span><span class="bp">self</span><span class="o">.</span><span class="n">onodes</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">hnodes</span><span class="p">))</span>
+
+<span class="c">## 표준편차는 파이썬의 문법으로 pow(self.hnodes, -0.5) 루트를 씌우고 역수</span>
+
+</code></pre></div></div>
+
+
+    </div>
+    <div class="post-meta">
+
+<span>
+      
+      <a class="tag-link" data-tag-name="ai"
+        href="/tags.html#ai">#ai</a>
+    <a class="tag-link" data-tag-name="인공신경망"
+        href="/tags.html#인공신경망">#인공신경망</a>
+    </span>
+</div>
+    <div><div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.0&appId=116889428386183&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like" data-href="http://localhost:4000/ai/2017/11/26/Artificial-neural-network.html" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></div>
+    <div><div id="disqus_thread"></div>
+<script>
+  /**
+   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+   */
+  /*
+   var disqus_config = function () {
+   this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+   this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+   };
+   */
+  (function() {  // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+
+    s.src = '//dskim-1.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+  </div>
+</article>
+
+      </div>
+    </div>
+    <div class="wrapper">
+  <footer class="site-footer">
+    <ul class="site-footer-links list-inline">
+      <li class="site-footer-link">
+        <a href="/feed.xml">
+          RSS
+        </a>
+      </li>
+      
+      <li class="site-footer-link">
+        <a href="mailto:deasung.kim2622@gmail.com">
+          이메일
+        </a>
+      </li>
+      
+      
+      <li class="site-footer-link">
+        <a href="https://github.com/deasung">
+          깃헙
+        </a>
+      </li>
+      
+    </ul>
+  </footer>
+</div>
+
+<script src="/assets/js/main.js"></script>
+
+  </body>
+</html>

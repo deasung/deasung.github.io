@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AWS read replica 생성">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@jeonghwan0424" />
+  <meta name="twitter:creator" content="@jeonghwan0424" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://localhost:4000/aws/2018/07/08/aws-read-replica.html" />
+  <meta property="og:title" content="AWS read replica 생성" />
+  <meta property="og:description" content="AWS read replica 생성" />
+  <meta property="og:image" content="http://localhost:4000/assets/imgs/me.jpg" />
+  <meta property="og:site_name" content="김대성 블로그" />
+  <meta property="og:locale" content="ko_kr" />
+  <title>AWS read replica 생성</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/aws/2018/07/08/aws-read-replica.html">
+  <link rel="alternate" type="application/rss+xml" title="김대성 블로그" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/assets/imgs/favicon.ico" />
+</head>
+
+  <body>
+    <div class='row'>
+      <header class="site-header">
+  <div class="wrapper">
+    <h1 class="site-title site-title-sm">
+      <a class="" href="/">김대성 블로그</a>
+    </h1>
+  </div>
+</header>
+
+      <div class="page-content">
+        <article id="post" class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <div class="wrapper">
+      <h1 class="post-title" itemprop="name headline">AWS read replica 생성</h1>
+      <div class="post-meta">
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2018년 07월 08일
+</span>
+
+</div>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <div class="post-content" itemprop="articleBody">
+      <h2 id="aws-read-replica-생성">AWS read replica 생성</h2>
+
+<h1 id="aws-read-replica">AWS read replica</h1>
+<p>이렇게 한 이유는 디비 이중화를 하기위해서 이렇게 했다
+read replica 옵션은 AWS RDS Aurora만 되는 걸로 알고 있지만 자세한건 공식 문서로
+https://aws.amazon.com/ko/rds/details/read-replicas/</p>
+
+<h3 id="1디비-클릭한후-인스턴스-작업을-클릭후에-리전-간-읽기-전용-복제본-만들기-클릭">1.디비 클릭한후 인스턴스 작업을 클릭후에 리전 간 읽기 전용 복제본 만들기 클릭</h3>
+
+<p><img src="/assets/imgs/2018/07/09/aws-read-replica/aws-read-replica-01.png" alt="AWS_read_replica_1" /></p>
+
+<p><img src="/assets/imgs/2018/07/09/aws-read-replica/aws-read-replica-02.png" alt="AWS_read_replica_2" /></p>
+
+<p><img src="/assets/imgs/2018/07/09/aws-read-replica/aws-read-replica-03.png" alt="AWS_read_replica_3" /></p>
+
+<h3 id="2복제본-생성버튼-클릭">2.복제본 생성버튼 클릭</h3>
+
+<p><img src="/assets/imgs/2018/07/09/aws-read-replica/aws-read-replica-04.png" alt="AWS_read_replica_4" /></p>
+
+<p>마무리를~</p>
+
+<p>여기에서 더붙이면 Route53에 디비 퍼블릭엑세스 주소를 연결해놓으면 나름 2차도메인으로 써서
+더욱 관리하기가 쉽다</p>
+
+<p>추후에 개발했을때 문제는
+쓰기 디비에서 insert,update,delete후에 바로 읽기디비에서는 잘갱신이 안되는듯한 바로 먼가
+설정이 있는데 찾으면 다시 포스팅을 하겠다~</p>
+
+    </div>
+    <div class="post-meta">
+
+<span>
+      <a class="tag-link" data-tag-name="aws"
+        href="/tags.html#aws">#aws</a>
+    </span>
+</div>
+    <div><div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.0&appId=116889428386183&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like" data-href="http://localhost:4000/aws/2018/07/08/aws-read-replica.html" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></div>
+    <div><div id="disqus_thread"></div>
+<script>
+  /**
+   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+   */
+  /*
+   var disqus_config = function () {
+   this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+   this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+   };
+   */
+  (function() {  // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+
+    s.src = '//dskim-1.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+  </div>
+</article>
+
+      </div>
+    </div>
+    <div class="wrapper">
+  <footer class="site-footer">
+    <ul class="site-footer-links list-inline">
+      <li class="site-footer-link">
+        <a href="/feed.xml">
+          RSS
+        </a>
+      </li>
+      
+      <li class="site-footer-link">
+        <a href="mailto:deasung.kim2622@gmail.com">
+          이메일
+        </a>
+      </li>
+      
+      
+      <li class="site-footer-link">
+        <a href="https://github.com/deasung">
+          깃헙
+        </a>
+      </li>
+      
+    </ul>
+  </footer>
+</div>
+
+<script src="/assets/js/main.js"></script>
+
+  </body>
+</html>

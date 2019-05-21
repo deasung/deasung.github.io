@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="AWS IAM 역할 활용하기">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@jeonghwan0424" />
+  <meta name="twitter:creator" content="@jeonghwan0424" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://localhost:4000/aws/2017/05/02/aws-iam-role-use.html" />
+  <meta property="og:title" content="AWS IAM 역할 활용하기" />
+  <meta property="og:description" content="AWS IAM 역할 활용하기" />
+  <meta property="og:image" content="http://localhost:4000/assets/imgs/me.jpg" />
+  <meta property="og:site_name" content="김대성 블로그" />
+  <meta property="og:locale" content="ko_kr" />
+  <title>AWS IAM 역할 활용하기</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/aws/2017/05/02/aws-iam-role-use.html">
+  <link rel="alternate" type="application/rss+xml" title="김대성 블로그" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/assets/imgs/favicon.ico" />
+</head>
+
+  <body>
+    <div class='row'>
+      <header class="site-header">
+  <div class="wrapper">
+    <h1 class="site-title site-title-sm">
+      <a class="" href="/">김대성 블로그</a>
+    </h1>
+  </div>
+</header>
+
+      <div class="page-content">
+        <article id="post" class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header class="post-header">
+    <div class="wrapper">
+      <h1 class="post-title" itemprop="name headline">AWS IAM 역할 활용하기</h1>
+      <div class="post-meta">
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 05월 02일
+</span>
+
+</div>
+    </div>
+  </header>
+
+  <div class="wrapper">
+    <div class="post-content" itemprop="articleBody">
+      <h2 id="aws-iam-역할-활용하기">AWS IAM 역할 활용하기</h2>
+
+<p>EC2 인스턴스,다른 AWS 계정,Facebook, Google, Amzon.com AWS 리소스에 대한 접근 권한을 설정할수 있음</p>
+
+<p>EC2 인스턴스에서 API로 AWS 리소스에 접근하려면 항상 액세스 키와 시크릿 키를 설정해야만 했음 나중에 Auto Scaling 기능으로 EC2인스턴스를 늘려갈때 엑세스 키와 시크릿 키를 일일히 설정하려면 상당히 귀찮음</p>
+
+<p>이런 부분을 자동화하지 않아도 IAM 역할을 사용하면 EC2 인스턴스 생성 즉시 API로 AWS리소스 접근 가능</p>
+
+<ul>
+  <li>
+    <p>IAM Role 생성하기 
+<img src="/assets/imgs/2017/05/02/iam-role-01-20170502.png" alt="" /></p>
+  </li>
+  <li>
+    <p>IAM Role 선택 
+<img src="/assets/imgs/2017/05/02/iam-role-02-20170502.png" alt="" /></p>
+  </li>
+</ul>
+
+<p>EC2,S3선택하였음</p>
+
+<ul>
+  <li>
+    <p>IAM Role 이름작성 
+<img src="/assets/imgs/2017/05/02/iam-role-03-20170502.png" alt="" /></p>
+  </li>
+  <li>
+    <p>IAM Role 확인 
+<img src="/assets/imgs/2017/05/02/iam-role-04-20170502.png" alt="" /></p>
+  </li>
+</ul>
+
+    </div>
+    <div class="post-meta">
+
+<span>
+      
+      
+      <a class="tag-link" data-tag-name="aws"
+        href="/tags.html#aws">#aws</a>
+    <a class="tag-link" data-tag-name="iam"
+        href="/tags.html#iam">#iam</a>
+    <a class="tag-link" data-tag-name="role"
+        href="/tags.html#role">#role</a>
+    </span>
+</div>
+    <div><div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/ko_KR/sdk.js#xfbml=1&version=v3.0&appId=116889428386183&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="fb-like" data-href="http://localhost:4000/aws/2017/05/02/aws-iam-role-use.html" data-layout="standard" data-action="like" data-size="small" data-show-faces="true" data-share="true"></div></div>
+    <div><div id="disqus_thread"></div>
+<script>
+  /**
+   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
+   */
+  /*
+   var disqus_config = function () {
+   this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+   this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+   };
+   */
+  (function() {  // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+
+    s.src = '//dskim-1.disqus.com/embed.js';
+
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+</div>
+  </div>
+</article>
+
+      </div>
+    </div>
+    <div class="wrapper">
+  <footer class="site-footer">
+    <ul class="site-footer-links list-inline">
+      <li class="site-footer-link">
+        <a href="/feed.xml">
+          RSS
+        </a>
+      </li>
+      
+      <li class="site-footer-link">
+        <a href="mailto:deasung.kim2622@gmail.com">
+          이메일
+        </a>
+      </li>
+      
+      
+      <li class="site-footer-link">
+        <a href="https://github.com/deasung">
+          깃헙
+        </a>
+      </li>
+      
+    </ul>
+  </footer>
+</div>
+
+<script src="/assets/js/main.js"></script>
+
+  </body>
+</html>

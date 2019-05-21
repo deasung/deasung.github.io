@@ -1,319 +1,1136 @@
 <!DOCTYPE html>
-<html lang="en">
-
+<html>
   <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Deasung Kim</title>
-    
-<!-- Post info -->
-
-  <meta property="og:site_name" content="DsKim">
-
-    <meta property="fb:app_id"          content="1607605225977118" />
-    <meta property="og:type"            content="article" /> 
-    <meta property="og:url"             content="http://localhost:4000/" />
-    
-    <meta property="og:image" content="http://localhost:4000/img/share-img.jpg">
-
-    <meta name="twitter:card" content="summary_large_image"> 
-    
-    <!-- title -->
-    <meta property="og:title" content="Backend Developers Deasung Kim at GLOWDAYZ">
-    
-    <meta name="twitter:title" content="Backend Developers Deasung Kim at GLOWDAYZ">
-    
-    <!-- description -->
-    <meta property="og:description" content="Deasung Kim, who is a Backend Developers based in Seoul, South Korea. | '김대성' 백엔드 개발자입니다. 글로우데이즈에서 일합니다."/>
-    
-    <meta name="twitter:description" content="Deasung Kim, who is a Backend Developers based in Seoul, South Korea. | '김대성' 백엔드 개발자입니다. 글로우데이즈에서 일합니다.">
-    
-  <!-- CSS -->
-  <link rel="stylesheet" href="/styles.css">
-  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" rel="stylesheet">
-  <link rel="shortcut icon" href="http://www.jihyeleee.com/img/favicon.ico">
-    
-  <!-- GA -->
-   <script async="" src="https://www.google-analytics.com/analytics.js"></script>
-    
-   <!--<script>-->
-        <!--(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){-->
-                    <!--(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),-->
-                <!--m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)-->
-        <!--})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');-->
-
-        <!--ga('create', 'UA-86397112-1', 'auto');-->
-        <!--ga('send', 'pageview');-->
-
-    <!--</script>-->
-  <!--<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>-->
-  <!--<script>-->
-    <!--(adsbygoogle = window.adsbygoogle || []).push({-->
-      <!--google_ad_client: "ca-pub-2080815546000293",-->
-      <!--enable_page_level_ads: true-->
-    <!--});-->
-  <!--</script>-->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="개발하면서 삽질했던것들 메모용">
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:site" content="@jeonghwan0424" />
+  <meta name="twitter:creator" content="@jeonghwan0424" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="http://localhost:4000/" />
+  <meta property="og:title" content="김대성 블로그" />
+  <meta property="og:description" content="개발하면서 삽질했던것들 메모용" />
+  <meta property="og:image" content="http://localhost:4000/assets/imgs/me.jpg" />
+  <meta property="og:site_name" content="김대성 블로그" />
+  <meta property="og:locale" content="ko_kr" />
+  <title>김대성 블로그</title>
+  <link rel="stylesheet" href="/assets/css/main.css">
+  <link rel="canonical" href="http://localhost:4000/">
+  <link rel="alternate" type="application/rss+xml" title="김대성 블로그" href="http://localhost:4000/feed.xml">
+  <link rel="shortcut icon" href="/assets/imgs/favicon.ico" />
 </head>
 
-
   <body>
-      
-      <nav class="nav">
-        <div class="nav-container">
-            <ul>
-                <li class="transition">
-                    <a href="/"  class="active">Work</a>
-                </li>
-                <li class="transition">
-                    <a href="/blog"  >Blog</a>
-                </li>
-                <li class="transition">
-                    <a href="/about"  >About</a>
-                </li>
-            </ul>
-        </div>
-      </nav>
-    
-    
-    
-      
-    <main>
-      <div class="intro-animation">
-<section class="explanation">
-    <h1 class="intro">
-    I'm Deasung Kim,
+    <div class='row'>
+      <header class="site-header">
+  <div class="wrapper">
+    <h1 class="site-title">
+      <a href="/">김대성 블로그</a>
     </h1>
-    <h1 class="intro">a Backend Developers at 
-        <div class="intro-link">
-            <a class="transition" href="http://www.glowdayz.com/" target="_blank">
-                GLOWDAYZ
-            </a>
-            <div class="underline-mask transition"></div>
-            <div class="underline"></div>
-        </div>.
-    </h1>
-    <h2 class="intro">'김대성' 백엔드 개발자입니다. 글로우데이즈에서 일합니다.</h2>
-</section>
+  </div>
+</header>
+
+      <div class="page-content">
+        <div class="wrapper">
+  <div class="home-wrapper">
+    <nav class="home-sidebar">
+      <h3 class="title">글 분류</h3>
+      <ul>
+        <li><a class="active" href="#">전체보기</a></li>
+        <li><a href="/category/dev.html">개발()</a></li>
+        <li><a href="/category/series.html">연재물()</a></li>
+        <li><a href="/category/think.html">생각()</a></li>
+      </ul>
+    </nav>
+
+    <div class="home-main">
+      <ul id="post-list" class="post-list">
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/aws/2018/07/08/aws-read-replica.html">
+        AWS read replica 생성
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2018년 07월 08일
+</span>
+
+
+      
+
+<span>
+      <a class="tag-link" data-tag-name="aws"
+        href="/tags.html#aws">#aws</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/2018/05/28/aws-email-module-java.html">
+        Aws Email Module Java
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2018년 05월 28일
+</span>
+
+
+      
+
+<span></span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/seminar/2018/05/26/MeltingCon-2018.html">
+        멜팅콘 컨퍼런스 후기
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2018년 05월 26일
+</span>
+
+
+      
+
+<span>
+      <a class="tag-link" data-tag-name="seminar"
+        href="/tags.html#seminar">#seminar</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/aws/2018/04/10/awscodestar-setting.html">
+        AWS CodeStar 구축
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2018년 04월 10일
+</span>
+
+
+      
+
+<span>
+      <a class="tag-link" data-tag-name="aws"
+        href="/tags.html#aws">#aws</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/aws/2018/03/30/aws-ec2-timezone.html">
+        EC2 TimeZone 변경
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2018년 03월 30일
+</span>
+
+
+      
+
+<span>
+      
+      <a class="tag-link" data-tag-name="aws"
+        href="/tags.html#aws">#aws</a>
+    <a class="tag-link" data-tag-name="ec2"
+        href="/tags.html#ec2">#ec2</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/jenkins/2018/03/25/jenkins-gitlab.html">
+        Jenkins 설치 & Gitlab 연동
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2018년 03월 25일
+</span>
+
+
+      
+
+<span>
+      
+      <a class="tag-link" data-tag-name="jenkins"
+        href="/tags.html#jenkins">#jenkins</a>
+    <a class="tag-link" data-tag-name="gitlab"
+        href="/tags.html#gitlab">#gitlab</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/aws/2018/03/22/ec2-swap.html">
+        EC2 인스턴스 Swap 파티션 추가하는 방법
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2018년 03월 22일
+</span>
+
+
+      
+
+<span>
+      
+      <a class="tag-link" data-tag-name="aws"
+        href="/tags.html#aws">#aws</a>
+    <a class="tag-link" data-tag-name="linux"
+        href="/tags.html#linux">#linux</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/ai/2017/11/26/Artificial-neural-network.html">
+        신경망 첫걸음 공부중
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 11월 26일
+</span>
+
+
+      
+
+<span>
+      
+      <a class="tag-link" data-tag-name="ai"
+        href="/tags.html#ai">#ai</a>
+    <a class="tag-link" data-tag-name="인공신경망"
+        href="/tags.html#인공신경망">#인공신경망</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/mysql/2017/08/30/mysql-dump.html">
+        MYSQL DUMP 뜨고 삽입
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 08월 30일
+</span>
+
+
+      
+
+<span>
+      
+      <a class="tag-link" data-tag-name="mysql"
+        href="/tags.html#mysql">#mysql</a>
+    <a class="tag-link" data-tag-name="mysql-dump"
+        href="/tags.html#mysql-dump">#mysql-dump</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/2017/07/28/kotlin-03.html">
+        Kotlin 03
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 07월 28일
+</span>
+
+
+      
+
+<span></span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/web-crawler/2017/07/23/web-crawler-04.html">
+        크롤러 공부 3일차
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 07월 23일
+</span>
+
+
+      
+
+<span>
+      
+      
+      <a class="tag-link" data-tag-name="web-crawler"
+        href="/tags.html#web-crawler">#web-crawler</a>
+    <a class="tag-link" data-tag-name="nodejs"
+        href="/tags.html#nodejs">#nodejs</a>
+    <a class="tag-link" data-tag-name="javascript"
+        href="/tags.html#javascript">#javascript</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/web-crawler/2017/07/22/web-crawler-03.html">
+        크롤러 공부 3일차
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 07월 22일
+</span>
+
+
+      
+
+<span>
+      
+      
+      <a class="tag-link" data-tag-name="web-crawler"
+        href="/tags.html#web-crawler">#web-crawler</a>
+    <a class="tag-link" data-tag-name="nodejs"
+        href="/tags.html#nodejs">#nodejs</a>
+    <a class="tag-link" data-tag-name="javascript"
+        href="/tags.html#javascript">#javascript</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/kotlin/2017/07/22/kotlin-02.html">
+        kotlin 공부 2일차
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 07월 22일
+</span>
+
+
+      
+
+<span>
+      
+      
+      <a class="tag-link" data-tag-name="kotlin"
+        href="/tags.html#kotlin">#kotlin</a>
+    <a class="tag-link" data-tag-name="java"
+        href="/tags.html#java">#java</a>
+    <a class="tag-link" data-tag-name="IT꾸자갤"
+        href="/tags.html#IT꾸자갤">#IT꾸자갤</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/kotlin/2017/07/16/kotlin-01.html">
+        kotlin 공부 1일차
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 07월 16일
+</span>
+
+
+      
+
+<span>
+      
+      <a class="tag-link" data-tag-name="kotlin"
+        href="/tags.html#kotlin">#kotlin</a>
+    <a class="tag-link" data-tag-name="java"
+        href="/tags.html#java">#java</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/web-crawler/2017/07/15/web-crawler-02.html">
+        크롤러 공부 2일차
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 07월 15일
+</span>
+
+
+      
+
+<span>
+      
+      
+      <a class="tag-link" data-tag-name="web-crawler"
+        href="/tags.html#web-crawler">#web-crawler</a>
+    <a class="tag-link" data-tag-name="nodejs"
+        href="/tags.html#nodejs">#nodejs</a>
+    <a class="tag-link" data-tag-name="javascript"
+        href="/tags.html#javascript">#javascript</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/web-crawler/2017/07/14/web-crawler-01.html">
+        크롤러 공부 1일차
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 07월 14일
+</span>
+
+
+      
+
+<span>
+      
+      
+      <a class="tag-link" data-tag-name="web-crawler"
+        href="/tags.html#web-crawler">#web-crawler</a>
+    <a class="tag-link" data-tag-name="nodejs"
+        href="/tags.html#nodejs">#nodejs</a>
+    <a class="tag-link" data-tag-name="javascript"
+        href="/tags.html#javascript">#javascript</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/seminar/2017/07/02/seminar-gdg2017.html">
+        Google I/O 2017
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 07월 02일
+</span>
+
+
+      
+
+<span>
+      
+      <a class="tag-link" data-tag-name="seminar"
+        href="/tags.html#seminar">#seminar</a>
+    <a class="tag-link" data-tag-name="gdg"
+        href="/tags.html#gdg">#gdg</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/aws/2017/06/25/aws-cloudfront-s3-connection.html">
+        AWS CloudFront 와 S3연동
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 06월 25일
+</span>
+
+
+      
+
+<span>
+      
+      
+      <a class="tag-link" data-tag-name="aws"
+        href="/tags.html#aws">#aws</a>
+    <a class="tag-link" data-tag-name="cloudfront"
+        href="/tags.html#cloudfront">#cloudfront</a>
+    <a class="tag-link" data-tag-name="s3"
+        href="/tags.html#s3">#s3</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/aws/2017/06/25/aws-cloudfront-intro.html">
+        Amazon CloudFront 콘텐츠 전송 네트워크(CDN)
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 06월 25일
+</span>
+
+
+      
+
+<span>
+      
+      <a class="tag-link" data-tag-name="aws"
+        href="/tags.html#aws">#aws</a>
+    <a class="tag-link" data-tag-name="cloudfront"
+        href="/tags.html#cloudfront">#cloudfront</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/aws/2017/06/08/aws.lambda-hello-world.html">
+        AWS Lambda로 Hello world 출력해보기
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 06월 08일
+</span>
+
+
+      
+
+<span>
+      
+      <a class="tag-link" data-tag-name="aws"
+        href="/tags.html#aws">#aws</a>
+    <a class="tag-link" data-tag-name="lambda"
+        href="/tags.html#lambda">#lambda</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/aws/2017/05/26/aws-s3-intro.html">
+        AWS S3이란?
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 05월 26일
+</span>
+
+
+      
+
+<span>
+      
+      <a class="tag-link" data-tag-name="aws"
+        href="/tags.html#aws">#aws</a>
+    <a class="tag-link" data-tag-name="s3"
+        href="/tags.html#s3">#s3</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/aws/2017/05/25/spring-security-authentication.html">
+        SpringSecurity Authentication(인증) 용어만 간단히 정리
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 05월 25일
+</span>
+
+
+      
+
+<span>
+      
+      <a class="tag-link" data-tag-name="aws"
+        href="/tags.html#aws">#aws</a>
+    <a class="tag-link" data-tag-name="route53"
+        href="/tags.html#route53">#route53</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/aws/2017/05/25/aws-route53-intro.html">
+        AWS Route53 서비스 소개
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 05월 25일
+</span>
+
+
+      
+
+<span>
+      
+      <a class="tag-link" data-tag-name="aws"
+        href="/tags.html#aws">#aws</a>
+    <a class="tag-link" data-tag-name="route53"
+        href="/tags.html#route53">#route53</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/aws/2017/05/24/aws-route53-nginx-proxy.html">
+        AWS Route53 nginx proxy 연동
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 05월 24일
+</span>
+
+
+      
+
+<span>
+      
+      
+      
+      <a class="tag-link" data-tag-name="aws"
+        href="/tags.html#aws">#aws</a>
+    <a class="tag-link" data-tag-name="route53"
+        href="/tags.html#route53">#route53</a>
+    <a class="tag-link" data-tag-name="nginx"
+        href="/tags.html#nginx">#nginx</a>
+    <a class="tag-link" data-tag-name="proxy"
+        href="/tags.html#proxy">#proxy</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/aws/2017/05/17/aws-s3-static-webservice-hosting-setting.html">
+        AWS S3 버킷 Permissions 정책 추가
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 05월 17일
+</span>
+
+
+      
+
+<span>
+      
+      
+      <a class="tag-link" data-tag-name="aws"
+        href="/tags.html#aws">#aws</a>
+    <a class="tag-link" data-tag-name="s3"
+        href="/tags.html#s3">#s3</a>
+    <a class="tag-link" data-tag-name="permissions"
+        href="/tags.html#permissions">#permissions</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/java/2017/05/15/java-jackson.html">
+        Java Json library jackson 사용법
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 05월 15일
+</span>
+
+
+      
+
+<span>
+      
+      
+      <a class="tag-link" data-tag-name="java"
+        href="/tags.html#java">#java</a>
+    <a class="tag-link" data-tag-name="json"
+        href="/tags.html#json">#json</a>
+    <a class="tag-link" data-tag-name="jackson"
+        href="/tags.html#jackson">#jackson</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/html/2017/05/02/html-open-graph-tag.html">
+        HTML OPEN GRAPH 태그
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 05월 02일
+</span>
+
+
+      
+
+<span>
+      
+      <a class="tag-link" data-tag-name="html"
+        href="/tags.html#html">#html</a>
+    <a class="tag-link" data-tag-name="open graph tag"
+        href="/tags.html#open graph tag">#open graph tag</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/aws/2017/05/02/aws-iam-user-create.html">
+        AWS IAM 사용자 생성하기
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 05월 02일
+</span>
+
+
+      
+
+<span>
+      
+      <a class="tag-link" data-tag-name="aws"
+        href="/tags.html#aws">#aws</a>
+    <a class="tag-link" data-tag-name="iam"
+        href="/tags.html#iam">#iam</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/aws/2017/05/02/aws-iam-role-use.html">
+        AWS IAM 역할 활용하기
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 05월 02일
+</span>
+
+
+      
+
+<span>
+      
+      
+      <a class="tag-link" data-tag-name="aws"
+        href="/tags.html#aws">#aws</a>
+    <a class="tag-link" data-tag-name="iam"
+        href="/tags.html#iam">#iam</a>
+    <a class="tag-link" data-tag-name="role"
+        href="/tags.html#role">#role</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+          <li><div class="post-list-item">
+  <div class="post-text">
+    <h2 class="post-title">
+      <a class="post-link" href="/aws/2017/05/02/aws-iam-role-ec2-instance-create.html">
+        Amazon IAM 역할을 사용하는 EC2 인스턴스 생성하기
+      </a>
+    </h2>
+
+    <p class="post-summary"></p>
+
+    <p class="post-meta">
+      
+
+
+  <span class="date">
+    <i class="fa fa-clock-o" aria-hidden="true"></i> 2017년 05월 02일
+</span>
+
+
+      
+
+<span>
+      
+      
+      <a class="tag-link" data-tag-name="aws"
+        href="/tags.html#aws">#aws</a>
+    <a class="tag-link" data-tag-name="iam"
+        href="/tags.html#iam">#iam</a>
+    <a class="tag-link" data-tag-name="ec2"
+        href="/tags.html#ec2">#ec2</a>
+    </span>
+
+    </p>
+  </div>
+</div>
+</li>
+        
+      </ul>
+      <div>
+        
+<div class="pagination">
+  
+
+  
+
+  
+    <a href="/page2">다음 &raquo;</a>
+  
 </div>
 
-<div class="loading-animation">
-<section class="resume">
-    <div class="resume-info">
-<!--
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve">
-        <path d="M49.5,16.5h-12V12c0-2.5-1.9-4.5-4.5-4.5H21c-2.6,0-4.5,2-4.5,4.5v4.5h-12C2,16.5,0,18.4,0,21v21c0,2.6,2,4.5,4.5,4.5h45
-            c2.6,0,4.5-1.9,4.5-4.5V21C54,18.4,52.1,16.5,49.5,16.5z M21,13.5c0-0.9,0.6-1.5,1.5-1.5h9c0.9,0,1.5,0.6,1.5,1.5v3H21V13.5z
-             M37.5,21v21h-21V21H37.5z M4.5,40.5v-18C4.5,21.6,5.1,21,6,21h6v21H6C5.1,42,4.5,41.4,4.5,40.5z M49.5,40.5c0,0.9-0.6,1.5-1.5,1.5
-            h-6V21h6c0.9,0,1.5,0.6,1.5,1.5V40.5z"/>
-        </svg>
--->
-        <p class="second-label">
-            <span class="label-emoji">
-                &#x1F64B;
-            </span>    
-            &nbsp; I've worked for
-        </p>
+      </div>
     </div>
-    <ul>
-
-        <li class="workplace transition">
-    
-    <p class="workplace-name">
-        GLOWDAYZ
-    </p>
-    <div class="work-info">
-        <p>
-            Backend Developers
-        </p>
-        <p class="work-sub-info">
-            2018.09.10 ~
-        </p>
-    </div>
-    
-</li>
-
-<li class="workplace transition">
-    
-    <p class="workplace-name">
-        집닥
-    </p>
-    <div class="work-info">
-        <p>
-            Backend Developers
-        </p>
-        <p class="work-sub-info">
-            2016.12 - 2018.02
-        </p>
-    </div>
-    
-</li>
-
-<li class="workplace transition">
-    
-    <p class="workplace-name">
-        펫츠비
-    </p>
-    <div class="work-info">
-        <p>
-            Backend Developers
-        </p>
-        <p class="work-sub-info">
-            2015. - 2016
-        </p>
-    </div>
-    
-</li>
-
-    </ul>
-    
-    <a href="/project" class="transition"> 
-        <div class="view-all-projects transition">
-            View Selected Projects
-            <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><defs><style>.cls-1{fill:none;}</style></defs><path d="M7.2,17.9l6.1-6.1L7.2,5.6,9,3.8l8,8-8,8Z" /><path class="cls-1" d="M.1-.2h24v24H.1Z" /></svg>
-        </div>
-    </a>
-
-</section>
-
-
-<section class="skill">
-    <div class="resume-info">
-<!--
-        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 54 54" style="enable-background:new 0 0 54 54;" xml:space="preserve">
-    <g>
-        <path d="M21.2,2H8.7C7.5,2,6.3,3.1,6.3,4.4v45.2c0,1.2,1.1,2.4,2.4,2.4h12.5c1.2,0,2.4-1.1,2.4-2.4V4.4C23.6,3.1,22.5,2,21.2,2z
-             M18.9,47.2h-7.8V41h4.8v-3.1h-4.8v-3.1h3.1v-3.1h-3.1v-3.1h4.7v-3.1h-4.8v-3.1h3.1v-3.1h-3.1V16h4.7v-3.1h-4.8V6.6h7.8V47.2z"/>
-        <path d="M47.8,17.6l0.5-0.2L42.1,4.9c-0.2-0.8-1.1-1.2-2-1.2s-1.8,0.5-2,1.2l-6.2,12.5l0.5,0.2h-0.8v28.9c0,3,2.5,5.5,5.5,5.5h6.2
-            c3,0,5.5-2.5,5.5-5.5V17.6H47.8z M43.8,41h-7.8V22.3h7.8V41z M40,11.2l3.2,6.4h-6.4L40,11.2z M43.1,47.2h-6.2
-            c-0.5,0-0.7-0.2-0.7-0.7v-0.8h7.8v0.8C43.8,47,43.6,47.2,43.1,47.2z"/>
-    </g>
-        </svg>
--->
-        <p class="second-label">
-            <span class="label-emoji">
-                &#x1F4AA;
-            </span>
-            &nbsp; Available My Skill &amp; Role
-        </p>
-    </div>    
-    <ul>
-        
-            <li class="skill_name">
-                Java
-            </li>
-        
-            <li class="skill_name">
-                SpringBoot
-            </li>
-        
-            <li class="skill_name">
-                AWS
-            </li>
-        
-            <li class="skill_name">
-                MySQL
-            </li>
-        
-            <li class="skill_name">
-                DevOps(약간)
-            </li>
-        
-            <li class="skill_name">
-                JavaScript
-            </li>
-        
-            <li class="skill_name">
-                CSS(약간)
-            </li>
-        
-    </ul>
-</section>
+  </div>
 </div>
 
-        
-        <!---->
 
-      </main>
+      </div>
+    </div>
+    <div class="wrapper">
+  <footer class="site-footer">
+    <ul class="site-footer-links list-inline">
+      <li class="site-footer-link">
+        <a href="/feed.xml">
+          RSS
+        </a>
+      </li>
       
-      <footer>
-    <address class="footer_wrap">
-        <div class="information">
-            <div class="myname">
-                Kim deasung
-            </div>
-            <a href="mailto:deasung.kim2622@gmail.com" class="email">
-                deasung.kim2622@gmail.com
-            </a>
-            <div class="accounts">
-                <!--<a href="http://dribbble.com/iamleejihye" target="_blank" class="transition">-->
-                    <!--<svg viewBox="0 0 48.6 48.6">-->
-                    <!--<path d="M24.3,0C10.9,0,0,10.9,0,24.3s10.9,24.3,24.3,24.3s24.3-10.9,24.3-24.3C48.7,10.9,37.8,0,24.3,0z M24.3,4.2-->
-                     <!--c4.6,0,8.9,1.6,12.3,4.2c-2.4,3.2-5.8,5.6-10.1,7.5c-2.1-3.8-4.4-7.5-7.1-11C21,4.5,22.6,4.2,24.3,4.2z M15.3,6.4-->
-                     <!--c2.7,3.5,5.1,7.2,7.2,10.9c-4.9,1.5-10.8,2.2-17.6,2.2C6.2,13.8,10.1,9,15.3,6.4z M4.2,24.3c0-0.2,0-0.3,0-0.5-->
-                     <!--c7.8,0,14.5-0.9,20.2-2.7c0.5,1,0.9,1.9,1.4,2.9C19,26.2,13.3,30.6,8.9,37.2C6,33.7,4.2,29.2,4.2,24.3z M24.3,44.5-->
-                    <!--c-4.7,0-8.9-1.6-12.3-4.3c4-6.3,9.1-10.3,15.4-12.2c1.9,4.9,3.3,10,4.1,15.1C29.3,44,26.9,44.5,24.3,44.5z M35.5,41.1-->
-                    <!--c-0.9-4.8-2.2-9.4-3.9-14c3.8-0.5,8-0.4,12.6,0.4C43.3,33.1,40.1,38,35.5,41.1z M30,23.1c-0.5-1.1-1-2.3-1.6-3.4-->
-                    <!--c4.7-2,8.5-4.8,11.3-8.3c2.7,3.2,4.5,7.3,4.7,11.8C39.2,22.4,34.4,22.3,30,23.1z"></path>-->
-                    <!--</svg>-->
-                <!--</a>-->
-                <a href="http://github.com/iamleejihye" target="_blank" class="transition">
-                    <svg viewBox="0 0 32.6 31.8">
-                    <path fill-rule="evenodd" clip-rule="evenodd" d="M16.3,0C7.3,0,0,7.3,0,16.3c0,7.2,4.7,13.3,11.1,15.5
-                    c0.8,0.1,1.1-0.4,1.1-0.8c0-0.4,0-1.4,0-2.8c-4.5,1-5.5-2.2-5.5-2.2c-0.7-1.9-1.8-2.4-1.8-2.4c-1.5-1,0.1-1,0.1-1
-                    c1.6,0.1,2.5,1.7,2.5,1.7c1.5,2.5,3.8,1.8,4.7,1.4c0.1-1.1,0.6-1.8,1-2.2c-3.6-0.4-7.4-1.8-7.4-8.1c0-1.8,0.6-3.2,1.7-4.4
-                    C7.4,10.7,6.8,9,7.7,6.8c0,0,1.4-0.4,4.5,1.7c1.3-0.4,2.7-0.5,4.1-0.5c1.4,0,2.8,0.2,4.1,0.5c3.1-2.1,4.5-1.7,4.5-1.7
-                    c0.9,2.2,0.3,3.9,0.2,4.3c1,1.1,1.7,2.6,1.7,4.4c0,6.3-3.8,7.6-7.4,8c0.6,0.5,1.1,1.5,1.1,3c0,2.2,0,3.9,0,4.5
-                    c0,0.4,0.3,0.9,1.1,0.8c6.5-2.2,11.1-8.3,11.1-15.5C32.6,7.3,25.3,0,16.3,0z"></path>
-                    </svg>
-                </a>
-                <a href="http://www.linkedin.com/in/jihyeleee/" target="_blank" class="transition">
-                    <svg viewBox="0 0 38.3 38.3">
-                        <g>
-                        <rect x="0.8" y="12.8" width="7.9" height="25.5"></rect>
-                        <ellipse cx="4.7" cy="4.7" rx="4.7" ry="4.7"></ellipse>
-                        <path d="M21.3,24.9c0-3.6,1.7-5.7,4.8-5.7c2.9,0,4.3,2.1,4.3,5.7c0,3.7,0,13.4,0,13.4h7.9c0,0,0-9.3,0-16.2
-                        c0-6.8-3.9-10.1-9.3-10.1s-7.7,4.2-7.7,4.2v-3.4h-7.6v25.5h7.6C21.3,38.3,21.3,28.8,21.3,24.9z"></path>
-                            </g>
-                    </svg>
-                </a>
-                <a href="http://instagram.com/writeveryday" target="_blank" class="transition">
-                    <svg viewBox="0 0 40.2 40.3">
-                    <g>
-                    <path d="M20.2,3.6c5.4,0,6,0,8.2,0.1c2,0.1,3,0.4,3.7,0.7C33,4.8,33.7,5.3,34.4,6s1.1,1.4,1.5,2.3
-                    c0.3,0.7,0.6,1.8,0.7,3.7c0.1,2.1,0.1,2.8,0.1,8.2s0,6-0.1,8.2c-0.1,2-0.4,3-0.7,3.7c-0.4,0.9-0.8,1.6-1.5,2.3s-1.4,1.1-2.3,1.5
-                    c-0.7,0.3-1.8,0.6-3.7,0.7c-2.1,0.1-2.8,0.1-8.2,0.1s-6,0-8.2-0.1c-2-0.1-3-0.4-3.7-0.7c-0.9-0.4-1.6-0.8-2.3-1.5S4.9,33,4.5,32.1
-                    c-0.3-0.7-0.6-1.8-0.7-3.7c-0.1-2.1-0.1-2.8-0.1-8.2s0-6,0.1-8.2c0.1-2,0.4-3,0.7-3.7C4.8,7.3,5.3,6.7,6,6s1.4-1.1,2.3-1.5
-                    C9,4.2,10.1,3.8,12,3.8C14.2,3.7,14.8,3.6,20.2,3.6 M20.2,0c-5.5,0-6.2,0-8.3,0.1C9.7,0.2,8.2,0.6,7,1.1C5.6,1.6,4.5,2.3,3.4,3.4
-                    S1.6,5.6,1.1,7c-0.5,1.3-0.8,2.8-0.9,4.9C0,14,0,14.7,0,20.2s0,6.2,0.1,8.3s0.4,3.6,0.9,4.9c0.5,1.3,1.2,2.5,2.3,3.6
-                    s2.2,1.8,3.6,2.3c1.3,0.5,2.8,0.8,4.9,0.9c2.2,0.1,2.8,0.1,8.3,0.1s6.2,0,8.3-0.1s3.6-0.4,4.9-0.9c1.3-0.5,2.5-1.2,3.6-2.3
-                    s1.8-2.2,2.3-3.6c0.5-1.3,0.8-2.8,0.9-4.9c0.1-2.2,0.1-2.8,0.1-8.3s0-6.2-0.1-8.3S39.7,8.3,39.2,7S38,4.5,36.9,3.4
-                    s-2.2-1.8-3.6-2.3c-1.3-0.5-2.8-0.8-4.9-0.9C26.3,0,25.7,0,20.2,0L20.2,0L20.2,0z"></path>
-                    <path d="M20.2,9.8c-5.7,0-10.4,4.6-10.4,10.4s4.6,10.4,10.4,10.4S30.6,26,30.6,20.2S25.9,9.8,20.2,9.8L20.2,9.8z
-                    M20.2,26.9c-3.7,0-6.7-3-6.7-6.7s3-6.7,6.7-6.7s6.7,3,6.7,6.7C26.9,23.9,23.9,26.9,20.2,26.9L20.2,26.9z"></path>
-                    <path d="M33.4,9.4c0,1.3-1.1,2.4-2.4,2.4s-2.4-1.1-2.4-2.4s1-2.4,2.3-2.4C32.2,7,33.4,8.1,33.4,9.4L33.4,9.4z"></path>
-                    </g>
-                </svg>
-                </a>
-                <a href="http://twitter.com/playpingpong" target="_blank" class="transition">
-                    <svg viewBox="0 0 40.7 33.1">
-                <path d="M0,29.3c3.7,2.4,8.1,3.8,12.8,3.8c15.5,0,24.3-13.1,23.7-24.8c1.6-1.2,3-2.6,4.2-4.3
-                c-1.5,0.7-3.1,1.1-4.8,1.3c1.7-1,3-2.7,3.7-4.6c-1.6,1-3.4,1.7-5.3,2C32.7,1,30.6,0,28.2,0c-5.4,0-9.4,5-8.1,10.3
-                C13.1,9.9,7,6.6,2.8,1.5c-2.2,3.8-1.1,8.7,2.6,11.1c-1.4,0-2.7-0.4-3.8-1c-0.1,3.9,2.7,7.5,6.7,8.3c-1.2,0.3-2.5,0.4-3.8,0.1
-                c1.1,3.3,4.1,5.7,7.8,5.8C8.9,28.6,4.4,29.8,0,29.3z"></path>
-                </svg>
-                </a>
-            </div>
-        </div>
-        <div class="copyright">
-            <span>
-                &copy; Deasung Kim. <time datetime="2018-12-14 17:28:41 +0900">2018</time>
-            </span>
-        </div>    
-    </address>
-</footer>
-   
+      <li class="site-footer-link">
+        <a href="mailto:deasung.kim2622@gmail.com">
+          이메일
+        </a>
+      </li>
+      
+      
+      <li class="site-footer-link">
+        <a href="https://github.com/deasung">
+          깃헙
+        </a>
+      </li>
+      
+    </ul>
+  </footer>
+</div>
+
+<script src="/assets/js/main.js"></script>
+
   </body>
 </html>

@@ -1,32 +1,36 @@
-# Permalinks
-permalink:      /:year-:month-:day/:title
+# Welcome to Jekyll!
+#
+# This config file is meant for settings that affect your whole blog, values
+# which you are expected to set up once and rarely need to edit after that.
+# For technical reasons, this file is *NOT* reloaded automatically when you use
+# 'jekyll serve'. If you change this file, please restart the server process.
 
-# Setup
-title:          DsKim
-baseurl:        ""
-url:            "http://dskim.github.io/"
+# Site settings
+name: deasung.github.io
+title: 김대성 블로그
+description: 개발하면서 삽질했던것들 메모용
+url: http://deasung.github.io/
+profile_url: /assets/imgs/me.jpg
+email: deasung.kim2622@gmail.com
+twitter_username: comecome2622
+github_username:  deasung
+facebook_username: kim.daesung.509
+linkedin_username: 대성-김-794594114
 
-# Assets
+# Handling Reading
+exclude: ['node_modules', 'vendor'] # Remove comment at local eevelopment mode
+
+# markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+
+# Plugins
+plugins:
+  - jekyll-paginate
+
+# Pagination
+paginate: 30
+
 sass:
-  sass_dir:     _sass
-  style:        :compressed
-
-# Build settings
-markdown:       kramdown
-
-# About
-author:
-  name:         Deasung Kim
-  url:          http://dskim.github.io/
-  email:        deasung.kim2622@gmail.com
-  github:       deasung
-  twitter:      comecome2622
-
-# Custom vars
-version:        3.4.1
-github:
-  repo:         https://github.com/deasung/dskim.github.io
-
-# Disqus settings
-disqus:
-  shortname: blog-tutor
+  style: compressed # possible values: nested expanded compact compressed

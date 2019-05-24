@@ -2,7 +2,7 @@
 
 title: Java Json library jackson 사용법
 layout: post 
-category: java 
+category: dev 
 tags: 
   - java
   - json

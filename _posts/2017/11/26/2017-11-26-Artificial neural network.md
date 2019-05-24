@@ -2,7 +2,7 @@
 
 title: 신경망 첫걸음 공부중
 layout: post 
-category: ai
+category: dev
 tags: 
   - ai
   - 인공신경망

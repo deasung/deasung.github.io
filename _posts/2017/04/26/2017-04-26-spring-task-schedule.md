@@ -2,7 +2,7 @@
 
 title: Spring 태스크(Task) 네임스페이스
 layout: post 
-category: spring 
+category: dev 
 tags: 
   - spring
   - task

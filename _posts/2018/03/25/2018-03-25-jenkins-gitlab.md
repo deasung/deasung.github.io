@@ -2,7 +2,7 @@
 
 title: Jenkins 설치 & Gitlab 연동
 layout: post 
-category: jenkins 
+category: devops 
 tags: 
   - jenkins
   - gitlab

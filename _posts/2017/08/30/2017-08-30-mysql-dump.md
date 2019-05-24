@@ -2,7 +2,7 @@
 
 title: MYSQL DUMP 뜨고 삽입
 layout: post 
-category: mysql
+category: devops
 tags: 
   - mysql
   - mysql-dump

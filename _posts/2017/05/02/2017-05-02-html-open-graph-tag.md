@@ -2,7 +2,7 @@
 
 title: HTML OPEN GRAPH 태그
 layout: post 
-category: html 
+category: aws 
 tags: 
   - html
   - open graph tag

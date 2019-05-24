@@ -2,7 +2,7 @@
 
 title: SpringSecurity Authentication(인증) 용어만 간단히 정리
 layout: post 
-category: aws 
+category: dev 
 tags: 
   - aws
   - route53

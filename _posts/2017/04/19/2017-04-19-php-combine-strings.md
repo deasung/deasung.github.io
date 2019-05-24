@@ -2,7 +2,7 @@
 
 title: PHP 문자열 합치기
 layout: post 
-category: php 
+category: dev 
 tags: 
   - php
 ---

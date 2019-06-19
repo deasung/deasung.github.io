@@ -5,8 +5,8 @@
     <description>개발하면서 삽질했던것들 메모용</description>
     <link>http://localhost:4000/</link>
     <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Tue, 18 Jun 2019 07:52:07 +0900</pubDate>
-    <lastBuildDate>Tue, 18 Jun 2019 07:52:07 +0900</lastBuildDate>
+    <pubDate>Thu, 20 Jun 2019 01:32:30 +0900</pubDate>
+    <lastBuildDate>Thu, 20 Jun 2019 01:32:30 +0900</lastBuildDate>
     <generator>Jekyll v3.8.5</generator>
     
       <item>
@@ -312,6 +312,78 @@
         
         
         <category>devops</category>
+        
+      </item>
+    
+      <item>
+        <title>SpringBoot 다국어 설정</title>
+        <description>&lt;h2 id=&quot;springboot-다국어-설정&quot;&gt;SpringBoot 다국어 설정&lt;/h2&gt;
+
+&lt;p&gt;SpringBoot 다국어 설정&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-01.png&quot; alt=&quot;1&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;다국어면 국가별로 properties 파일에다가 
+동일한코드값의 키로 셋팅해줘야 한다.&lt;/p&gt;
+
+&lt;p&gt;예시) messages.properties -&amp;gt; 기본 디폴트 프로퍼티 설정 파일&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-02.png&quot; alt=&quot;2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;일본어 properties 설정파일&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-03.png&quot; alt=&quot;3&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;한글 properties 설정파일&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-04.png&quot; alt=&quot;4&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;springboot yml 설정에서 다국어를 위한 설정을 추가해줘야 한다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-05.png&quot; alt=&quot;5&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/MessageSource.html&quot;&gt;국제화 메시지를 하기위한 interface &lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-06.png&quot; alt=&quot;6&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;1.MessageSource를 이용해서 한 방법&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-07.png&quot; alt=&quot;7&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;2.직접 Util 서비스를 구현해서 이용하는법&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-08.png&quot; alt=&quot;8&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;3.메시지 클래스 작성&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-09.png&quot; alt=&quot;9&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-10.png&quot; alt=&quot;10&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;호출 했을시에&lt;/p&gt;
+
+&lt;p&gt;일본어 예시&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-11.png&quot; alt=&quot;11&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;영어 예시&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-12.png&quot; alt=&quot;12&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;한글 예시&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-13.png&quot; alt=&quot;13&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 27 Aug 2018 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000/spring/2018/08/27/spring-message-en-jp-kr.html</link>
+        <guid isPermaLink="true">http://localhost:4000/spring/2018/08/27/spring-message-en-jp-kr.html</guid>
+        
+        <category>spring</category>
+        
+        <category>java</category>
+        
+        
+        <category>spring</category>
         
       </item>
     
@@ -677,49 +749,6 @@ gradle init --type pom
         <guid isPermaLink="true">http://localhost:4000/aws/2018/04/10/awscodestar-setting.html</guid>
         
         <category>aws</category>
-        
-        
-        <category>aws</category>
-        
-      </item>
-    
-      <item>
-        <title>EC2 TimeZone 변경</title>
-        <description>&lt;h2 id=&quot;1timezone-&quot;&gt;1.TimeZone ?&lt;/h2&gt;
-
-&lt;p&gt;리눅스를 새로 설치하고 나면 (AWS EC2 AMI도 Linux와 동일) 시간대(Timezone)을 맞추지 않으면, 리눅스의 date가 미국 태평양 시간인 PST로 표시됩니다. 즉 캘리포니아 현지 시간으로 표시됩니다. 이럴경우 한국 표준시인 KST로 변경해주어야 합니다.&lt;/p&gt;
-
-&lt;h2 id=&quot;2-ec2-터미널에서-timezone-변경&quot;&gt;2. EC2 터미널에서 TimeZone 변경&lt;/h2&gt;
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[ec2-user@ip-172-31-7-180 ~]$ date
-Fri Aug  8 06:41:49 UTC 2014
-
-[ec2-user@ip-172-31-7-180 ~]$ sudo date
-Fri Aug  8 06:42:01 UTC 2014
-
-[ec2-user@ip-172-31-7-180 ~]$ sudo cat /etc/localtime
-TZif2UTCTZif2UTC
-UTC0
-
-[ec2-user@ip-172-31-7-180 ~]$ sudo rm /etc/localtime
-[ec2-user@ip-172-31-7-180 ~]$ sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
-
-[ec2-user@ip-172-31-7-180 ~]$ date
-Fri Aug  8 15:48:27 KST 2014
-
-[ec2-user@ip-172-31-7-180 ~]$ sudo date
-Fri Aug  8 15:48:40 KST 2014
-
-
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
-
-</description>
-        <pubDate>Fri, 30 Mar 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000/aws/2018/03/30/aws-ec2-timezone.html</link>
-        <guid isPermaLink="true">http://localhost:4000/aws/2018/03/30/aws-ec2-timezone.html</guid>
-        
-        <category>aws</category>
-        
-        <category>ec2</category>
         
         
         <category>aws</category>

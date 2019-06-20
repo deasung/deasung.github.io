@@ -1,6 +1,6 @@
 ---
 
-title: ELB Classic Load Blaancer에서 리스너 nginx proxy 같은 기능
+title: ELB Classic Load Blancer에서 리스너 nginx proxy 같은 기능
 layout: post 
 category: aws 
 tags: 

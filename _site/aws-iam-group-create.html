@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>Amazon IAM 그룹 생성하기</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Amazon IAM 그룹 생성하기 | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Amazon IAM 그룹 생성하기" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="IAM 사용자들을 모아놓은것 IAM 그룹에 접근제어 및 권한설정 및 IAM 그룹에 설정된 내용은 IAM 그룹 안에 포함된 모든 사용자들에게 적용됨" />
+<meta property="og:description" content="IAM 사용자들을 모아놓은것 IAM 그룹에 접근제어 및 권한설정 및 IAM 그룹에 설정된 내용은 IAM 그룹 안에 포함된 모든 사용자들에게 적용됨" />
+<link rel="canonical" href="http://localhost:4000/aws-iam-group-create" />
+<meta property="og:url" content="http://localhost:4000/aws-iam-group-create" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-05-02T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"Amazon IAM 그룹 생성하기","dateModified":"2017-05-02T00:00:00+09:00","datePublished":"2017-05-02T00:00:00+09:00","url":"http://localhost:4000/aws-iam-group-create","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/aws-iam-group-create"},"author":{"@type":"Person","name":"dskim"},"description":"IAM 사용자들을 모아놓은것 IAM 그룹에 접근제어 및 권한설정 및 IAM 그룹에 설정된 내용은 IAM 그룹 안에 포함된 모든 사용자들에게 적용됨","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>Amazon IAM 그룹 생성하기</h2>
+  <time datetime="2017-05-02T00:00:00+09:00" class="by-line">02 May 2017</time>
+  <p>IAM 사용자들을 모아놓은것 IAM 그룹에 접근제어 및 권한설정 및 IAM 그룹에 설정된 내용은 IAM 그룹 안에 포함된 모든 사용자들에게 적용됨</p>
+
+<ul>
+  <li>
+    <p>그룹 생성 화면 
+<img src="/assets/imgs/2017/05/02/iam-group-create-01-20170502.png" alt="" /></p>
+  </li>
+  <li>
+    <p>그룹 이름 설정 
+<img src="/assets/imgs/2017/05/02/iam-group-create-02-20170502.png" alt="" /></p>
+  </li>
+  <li>
+    <p>그룹 권한 설정 
+<img src="/assets/imgs/2017/05/02/iam-group-create-03-20170502.png" alt="" /></p>
+  </li>
+</ul>
+
+<p><code class="language-plaintext highlighter-rouge">예시로 EC2에 대한 모든권한접근할수있는걸로 선택</code></p>
+
+<ul>
+  <li>
+    <p>그룹 접근 권한 정책 확인 
+<img src="/assets/imgs/2017/05/02/iam-group-create-04-20170502.png" alt="" /></p>
+  </li>
+  <li>
+    <p>그룹 생성 완료 
+<img src="/assets/imgs/2017/05/02/iam-group-create-05-20170502.png" alt="" />
+이 IAM 그룹안에 속한 사용자 EC2 인스턴스만 제어가능</p>
+  </li>
+</ul>
+
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

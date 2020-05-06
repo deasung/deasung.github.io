@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>nginx , php7 fpm설정된 서버에서 mysql 연동안될때</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>nginx , php7 fpm설정된 서버에서 mysql 연동안될때 | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="nginx , php7 fpm설정된 서버에서 mysql 연동안될때" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="본인의 aws 서버환경은 nginx + php7 fpm 방식으로 간단한 테스팅할려고 셋팅하였습니다" />
+<meta property="og:description" content="본인의 aws 서버환경은 nginx + php7 fpm 방식으로 간단한 테스팅할려고 셋팅하였습니다" />
+<link rel="canonical" href="http://localhost:4000/devops-nginx-php7-fpm-mysql-setting" />
+<meta property="og:url" content="http://localhost:4000/devops-nginx-php7-fpm-mysql-setting" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-04-19T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"nginx , php7 fpm설정된 서버에서 mysql 연동안될때","dateModified":"2017-04-19T00:00:00+09:00","datePublished":"2017-04-19T00:00:00+09:00","url":"http://localhost:4000/devops-nginx-php7-fpm-mysql-setting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/devops-nginx-php7-fpm-mysql-setting"},"author":{"@type":"Person","name":"dskim"},"description":"본인의 aws 서버환경은 nginx + php7 fpm 방식으로 간단한 테스팅할려고 셋팅하였습니다","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>nginx , php7 fpm설정된 서버에서 mysql 연동안될때</h2>
+  <time datetime="2017-04-19T00:00:00+09:00" class="by-line">19 Apr 2017</time>
+  <p>본인의 aws 서버환경은 nginx + php7 fpm 방식으로 간단한 테스팅할려고 셋팅하였습니다</p>
+
+<p>자바로 rds연동하다가 삘받아서 php연동해서 테스트할려고했는데 안되서</p>
+
+<p>우선 ec2 ubuntu서버에 pdo 설치되어있는지 확인후에 안되어잇어서 sudo apt-get install php7.0-mysql 설치후에</p>
+
+<h2 id="pdophp-data-object는">PDO(PHP Data Object)는</h2>
+
+<blockquote>
+  <ul>
+    <li>5.1.0 이상의 PHP에서 표준으로 사용하는 데이터베이스 접속방법입니다. PHP에서는 MySQL뿐만 아니라 다른 여러 데이터베이스에도 접속할 수 있습니다. MySQL 이외의 데이터베이스에 접속할 때, mysql_connect()와 mysql_select_db() 등의 함수를 이용하려면 사용하는 데이터베이스에 맞게 프로그램을 달리 작성해야 합니다. 그러나 PDO를 이용하면 같은 명령으로 여러 종류의 데이터베이스를 조작할 수 있습니다.</li>
+  </ul>
+</blockquote>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>try {
+
+    $dbh = new PDO('호스트주소;dbname=데이터베이스명', $mysql_username, $mysql_password);
+
+    foreach ( $dbh-&gt;query('SELECT * from JOBHISTORY') as $row ) {
+
+        print_r ( $row );
+
+    }
+
+    $dbh = null;
+
+} catch ( PDOException $e ) {
+
+    print "Error!: " . $e-&gt;getMessage() . "
+";
+
+    die();
+
+}
+</code></pre></div></div>
+
+<p>결론은 우선은 해결했습니다만…먼가찜찜하네요</p>
+
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>dskim-blog</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Page 8 of 8 for dskim-blog | 개발 블로그</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="dskim-blog" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="개발 블로그" />
+<meta property="og:description" content="개발 블로그" />
+<link rel="canonical" href="http://localhost:4000/page/8/" />
+<meta property="og:url" content="http://localhost:4000/page/8/" />
+<meta property="og:site_name" content="dskim-blog" />
+<link rel="prev" href="http://localhost:4000/page/7/" />
+<script type="application/ld+json">
+{"headline":"dskim-blog","url":"http://localhost:4000/page/8/","author":{"@type":"Person","name":"dskim"},"description":"개발 블로그","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <ul>
+    
+      <li>
+          <h2><a href="/elastic-ip">고정 IP를 제공하는 Elastic IP</a></h2>
+          <time datetime="2015-12-17T00:00:00+09:00">17 Dec 2015</time>
+          <p>Elastic IP는 고정된 공인 IP를 제공함. EC2 인스턴스를 생성하면 기본적으로 공인 IP가 부여됨. 하지만 이 IP주소는 EC2 인스턴스가 실행되고 있는 동안에만 유효함 -&gt; EC2 인스턴스가 중단되면 IP주소는 반납됨 따라서 이 공인 IP는 바뀔수가 있슴 즉 유동IP Elastic IP 주소는 한번 할당받으면 절대 바뀌지 않는 IP주소 사용하지 않을경우 반납할수 있음. Associate...</p>
+      </li>
+    
+      <li>
+          <h2><a href="/vue-v-on">안드로이드 서명키 만들기</a></h2>
+          <time datetime="2015-03-31T00:00:00+09:00">31 Mar 2015</time>
+          <p>window7의 경우 : keytool -list -v –keystore C:\Documents and Settings[사용자 계정이름].android\debug.keystore (키값의 예 : 45:B5:E4:6F:36:AD:0A:98:94:B4:02:66:2B:12:17:F2:56:26:A0:E0 ) debug.keystore의 유효기간은 3개월 정도이다. 따라서 이 파일을 쓰는 경우에는 재갱신 해줘야 하는 경우가 생길 수 있다. 유효기간이 지난것을 사용하면 키 값은 생성되더라도 그 키는 사용할 수 없다. 재갱신은 이 파일을 지운 뒤 아무 어플리케이션이나...</p>
+      </li>
+    
+      <li>
+          <h2><a href="/linux-firewall-port">리눅스(Linux) 포트(port)  열기, 방화벽(firewall)  설정/해제 등 안내 리눅스(Linux)</a></h2>
+          <time datetime="2015-02-17T00:00:00+09:00">17 Feb 2015</time>
+          <p>리눅스 port를 열기 위해서는 iptables를 통해서, 포트를 열고 막고를 할 수 있습니다. 아래의 예제 부분만 따라 하시면 해당 port에 대해 모두 열 수 있습니다. Inbound (외부에서 서버로 들어오는) , Outbound( 서버에서 외부로 나가는 ) 모두 port를 열기 위해서는 아래의 iptables로 INPUT, OUPUT 을 해주면 모두 열립니다. 권한은 root에서 해주시기 바랍니다....</p>
+      </li>
+    
+      <li>
+          <h2><a href="/linux-os">리눅스에서 OS버전 확인하기</a></h2>
+          <time datetime="2015-02-02T00:00:00+09:00">02 Feb 2015</time>
+          <p>일반적인 커널에 대한 정보
+uname -a
+
+
+OS버전에 대한 정보
+1. cat /etc/issue
+2. cat /etc/redhat-release
+
+</p>
+      </li>
+    
+      <li>
+          <h2><a href="/mysql-password-reset">분실한 mysql root password 재설정하기</a></h2>
+          <time datetime="2014-11-16T00:00:00+09:00">16 Nov 2014</time>
+          <p>Mysql을 처음 설치할 때 database root 계정으로 사용할 password를 설정한다. 하지만 시간이 오래 지나서 그때 설정한 password를 기억할 수 없다면 다음의 방법으로 재설정할 수 있다. (Ubuntu 12.04 기준) Step 1. 실행중인 mysql service를 중지 시킨다. # service mysql stop Step 2. Password를 검사하지 않도록 mysql 환경설정 파일을 수정한다. /etc/mysql/my.conf file에...</p>
+      </li>
+    
+      <li>
+          <h2><a href="/mysql-external-connection">MySQL(Maria DB) root 계정 외부접속 허용</a></h2>
+          <time datetime="2014-10-24T00:00:00+09:00">24 Oct 2014</time>
+          <p>MySQL(Maria DB) 로 접속 한다. use mysql 명령어를 입력한다. grant all privileges on . to ‘root’@’%’ identified by ‘비밀번호’; 입력한다. flush privileges; 입력한다. my.cnf 파일 내용중에서 bind-address =127.0.0.1 을 주석(#)처리 하고 저장한다. bind-address = 127.0.0.1 =&gt; #bind-address = 127.0.0.1 위치 -&gt; ubuntu -&gt; /etc/mysql/my.cnf MySQL을 재시작 한다 sudo service mysql...</p>
+      </li>
+    
+</ul>
+
+      </section>
+    </div>
+  </div>
+
+  
+  <div class="pagination">
+    
+    <a href="/page/7/" class="page-item">&laquo;</a>
+      
+    <a href="/" class="page-item">1</a>
+      
+    <a href="/page/2/" class="page-item">2</a>
+      
+    <a href="/page/3/" class="page-item">3</a>
+      
+    <a href="/page/4/" class="page-item">4</a>
+      
+    <a href="/page/5/" class="page-item">5</a>
+      
+    <a href="/page/6/" class="page-item">6</a>
+      
+    <a href="/page/7/" class="page-item">7</a>
+      
+    <span class="page-item">8</span>
+      
+    <span class="page-item">&raquo;</span>
+    
+  </div>
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>Jenkins 설치 & Gitlab 연동</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Jenkins 설치 &amp; Gitlab 연동 | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Jenkins 설치 &amp; Gitlab 연동" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Jenins 설치" />
+<meta property="og:description" content="Jenins 설치" />
+<link rel="canonical" href="http://localhost:4000/jenkins-gitlab" />
+<meta property="og:url" content="http://localhost:4000/jenkins-gitlab" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-03-25T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"Jenkins 설치 &amp; Gitlab 연동","dateModified":"2018-03-25T00:00:00+09:00","datePublished":"2018-03-25T00:00:00+09:00","url":"http://localhost:4000/jenkins-gitlab","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/jenkins-gitlab"},"author":{"@type":"Person","name":"dskim"},"description":"Jenins 설치","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>Jenkins 설치 & Gitlab 연동</h2>
+  <time datetime="2018-03-25T00:00:00+09:00" class="by-line">25 Mar 2018</time>
+  <h1 id="jenins-설치">Jenins 설치</h1>
+
+<h3 id="자바-설치">자바 설치</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-add-repository ppa:webupd8team/java
+
+sudo apt-get update
+
+sudo apt-get install oracle-java8-installer
+</code></pre></div></div>
+
+<h3 id="gradle-설치">gradle 설치</h3>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo apt-get install gradle
+$ gradle -version
+</code></pre></div></div>
+
+<h3 id="jenkins-설치">Jenkins 설치</h3>
+
+<p>패키지 주소를 apt-key에 더한후 젠킨스 다운</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add -
+OK
+
+$ echo deb http://pkg.jenkins.io/debian-stable binary/ | sudo tee /etc/apt/sources.list.d/jenkins.list
+
+
+$ sudo apt-get update
+$ sudo apt-get install jenkins
+
+</code></pre></div></div>
+
+<h3 id="jenkins-시작하기">Jenkins 시작하기</h3>
+
+<ul>
+  <li>sudo systemctl start jenkins 젠킨스 시작</li>
+  <li>sudo systemctl status jenkins 젠킨스가 제대로 시작되고 있는지 로그 볼수 있는?</li>
+</ul>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ sudo systemctl start jenkins
+$ sudo systemctl status jenkins
+● jenkins.service - LSB: Start Jenkins at boot time
+  Loaded: loaded (/etc/init.d/jenkins; bad; vendor preset: enabled)
+  Active:active (exited) since Thu 2017-04-20 16:51:13 UTC; 2min 7s ago
+    Docs: man:systemd-sysv-generator(8)
+    …
+
+</code></pre></div></div>
+
+<p>Jenkins를 설치할 때 /var/lib/jenkins/secrets/initialAdminPassword 파일의 내용을 빈칸에 입력해야한다.</p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/01.png" alt="Jenkins 설치1" /></p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/06.png" alt="Jenkins 설치2" /></p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/02.png" alt="Jenkins 설치3" /></p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/03.png" alt="Jenkins 설치4" /></p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/04.png" alt="Jenkins 설치5" /></p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/05.png" alt="Jenkins 설치6" /></p>
+
+<h1 id="gitlab연동">GITLAB연동</h1>
+
+<p>gitlab에 접속해서 로그인을 한후 셋팅을 클릭하면</p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/15.png" alt="GITLAB 연동1" /></p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/07.png" alt="GITLAB 연동2" />
+ACCESS TOKEN을 발급을 받아야한다.</p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/08.png" alt="GITLAB 연동3" />
+젠킨스화면에서 Credentials 만들어야 한다</p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/09.png" alt="GITLAB 연동4" />
+현재는 등록되어 있는게 없으므로 만들어야 한다</p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/10.png" alt="GITLAB 연동5" />
+Gitlab 관련 정보를 등록한다 ID/설명은 괜찮지만 토큰값은 실제로 
+Gitlab에서 발급받은 토큰값을 입력한다</p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/11.png" alt="GITLAB 연동6" />
+등록되면 이렇게 보임~!</p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/12.png" alt="GITLAB 연동7" />
+젠킨스 새작업을 만들고</p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/13.png" alt="GITLAB 연동8" />
+젠킨스 프로젝트를 Github project의 프로젝트 URL과 설명을 달고</p>
+
+<p><img src="/assets/imgs/2018/03/25/jenkins-gitlab/14.png" alt="GITLAB 연동9" /></p>
+
+<p>하단에 전역으로 설정되어 있는거를 연동하면 이렇게 일단은 연동될것이다</p>
+
+<p>부족하지만 일단은 나도 여러 블로그의 내용을 보고 따라한거를 정리한거라</p>
+
+<p>역시 구글링은 필수다..</p>
+
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

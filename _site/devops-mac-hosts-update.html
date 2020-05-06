@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>MAC hosts 수정방법</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>MAC hosts 수정방법 | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="MAC hosts 수정방법" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="sudo nano /private/etc/hosts" />
+<meta property="og:description" content="sudo nano /private/etc/hosts" />
+<link rel="canonical" href="http://localhost:4000/devops-mac-hosts-update" />
+<meta property="og:url" content="http://localhost:4000/devops-mac-hosts-update" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-04-19T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"MAC hosts 수정방법","dateModified":"2017-04-19T00:00:00+09:00","datePublished":"2017-04-19T00:00:00+09:00","url":"http://localhost:4000/devops-mac-hosts-update","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/devops-mac-hosts-update"},"author":{"@type":"Person","name":"dskim"},"description":"sudo nano /private/etc/hosts","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>MAC hosts 수정방법</h2>
+  <time datetime="2017-04-19T00:00:00+09:00" class="by-line">19 Apr 2017</time>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo nano /private/etc/hosts
+</code></pre></div></div>
+<p><img src="/assets/imgs/2017/04/19/20170625-mac-hosts-update.png" alt="" /></p>
+
+<p>127.0.0.1 http://test.co.kr 이런식으로 추가한후 nano로 열었으니 command + O , command + X키로 나온후에</p>
+
+<p>sudo dscacheutil -flushcache로 hosts를 다시 재갱신 시켜준다</p>
+
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>dskim-blog</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Page 7 of 8 for dskim-blog | 개발 블로그</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="dskim-blog" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="개발 블로그" />
+<meta property="og:description" content="개발 블로그" />
+<link rel="canonical" href="http://localhost:4000/page/7/" />
+<meta property="og:url" content="http://localhost:4000/page/7/" />
+<meta property="og:site_name" content="dskim-blog" />
+<link rel="prev" href="http://localhost:4000/page/6/" />
+<link rel="next" href="http://localhost:4000/page/8/" />
+<script type="application/ld+json">
+{"headline":"dskim-blog","url":"http://localhost:4000/page/7/","author":{"@type":"Person","name":"dskim"},"description":"개발 블로그","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <ul>
+    
+      <li>
+          <h2><a href="/devops-ubuntu16.04-java-home-setting">Ubuntu 16.04 $JAVA_HOME 설정</a></h2>
+          <time datetime="2017-04-18T00:00:00+09:00">18 Apr 2017</time>
+          <p>자바가 설치되었다는 과정하에
+
+sudo vi /etc/profile
+
+export JAVA_HOME="/usr/lib/jvm/java-8-oracle"
+
+source /etc/profile
+
+$JAVA_HOME
+
+-&gt; bash: /usr/lib/jvm/java-8-oracle 디렉토리입니다 나오면 성공
+</p>
+      </li>
+    
+      <li>
+          <h2><a href="/devops-centos-5.11.jenkis-setting">Centos 5.11 Jenkis 설치</a></h2>
+          <time datetime="2017-04-18T00:00:00+09:00">18 Apr 2017</time>
+          <p>설치명령어
+
+$ wget -q -O - http://pkg.jenkins-ci.org/debian/jenkins-ci.org.key | sudo apt-key add -
+$ sudo sh -c 'echo deb http://pkg.jenkins-ci.org/debian binary/ &gt; /etc/apt/sources.list.d/jenkins.list'
+$ sudo apt-get update &amp;&amp; sudo apt-get install jenkins
+
+
+설치하고 나면 비밀번호 재설정해야함cd /var/lib/jenkins/secrets/ vi initialAdminPassword
+
+
+</p>
+      </li>
+    
+      <li>
+          <h2><a href="/devops-ubuntu16.04-openssh-server">Ubuntu 16.04 openssh-server</a></h2>
+          <time datetime="2017-04-17T00:00:00+09:00">17 Apr 2017</time>
+          <p>sudo apt-get install openssh-server
+sudo nano /etc/ssh/sshd_config
+
+
+PermitRootLogin -&gt; yes로 수정
+
+//systemctl 서비스 관리를 주로하기 위해 명령어?
+systemctl restart sshd
+
+
+sudo passwd root -&gt; 패스워드설정해야함
+
+ifconfig로 우분투 아이피확인후 putty로 접속하면됨
+
+
+</p>
+      </li>
+    
+      <li>
+          <h2><a href="/devops-ubuntu16.04-mysql-server-5.7-install">Ubuntu 16.04 MySQL 설치</a></h2>
+          <time datetime="2017-04-17T00:00:00+09:00">17 Apr 2017</time>
+          <p>sudo apt install mysql-server-5.7 mysql -u root -p 1) Character Set 변경 (기본적으로 MySQL 캐릭터셋 latin1) status 언어확인가능 sudo nano /etc/mysql/my.cnf [mysqld] collation-server = utf8_general_ci character-set-server = utf8 skip-character-set-client-handshake sudo service mysql restart status -&gt; utf8로 바뀐지 확인 2) 원격 접속을 위한 유저 설정 mysql 접속 후 use mysql INSERT...</p>
+      </li>
+    
+      <li>
+          <h2><a href="/seminar-gdg">4월 GDG 정기모임</a></h2>
+          <time datetime="2017-04-16T00:00:00+09:00">16 Apr 2017</time>
+          <p>2017.04.15 토요일 4월 정기모임 장소는 부천 만화박물관2층 이사진은 Go로 RESTFUL API설계하신분 강연내용 이사진은 ES6로 현재 잘쓰고 있는지 물어보시면서 차이점을 친절하게 알려주신분 1.세션 웹개발자가 데스크톱 애플리케이션 만들기 세션발표자 github주소 Electron Electron으로 만든 프로그램이 슬랙도 있고 , Atom 에디터도 있다고함 비쥬얼스튜디오코드 로 디버깅할려면 electron 개발자 디버깅옵션을 주석처리하고 해야된다고함 JQuery include하고 하면 에러가뜬다고함...</p>
+      </li>
+    
+      <li>
+          <h2><a href="/java-nohup">java 서버 프로그램 nohup 백그라운드 실행 및 종료</a></h2>
+          <time datetime="2016-03-14T00:00:00+09:00">14 Mar 2016</time>
+          <p>1.cat &gt; 파일명 2.자바로 만든 서버 파일이 server.jar일때 이 jar를 실행하는 방법은 다음과 같다. java -jar server.jar 그러나 이렇게 하면 백그라운드 실행이 안되므로 다음과 같이 start/stop.sh를 만들었다. [start.sh] nohup java -jar server.jar &gt;/dev/null 2&gt;&amp;1 &amp; [stop.sh] pid=`ps -ef | grep server.jar | grep -v 'grep' | awk '{print $2}'` kill...</p>
+      </li>
+    
+      <li>
+          <h2><a href="/xcode-cocoapods">xcode cocoapods 사용법</a></h2>
+          <time datetime="2016-02-24T00:00:00+09:00">24 Feb 2016</time>
+          <p>Cocoapods 는 OS X 혹은 iOS 앱을 개발할때 사용되는 라이브러리 관리를 도와주는 Android 의 Maven 같은 도구 CocoaPods 를 사용하기 위해서는 Ruby gem 이 필요함. 맥에는 Ruby가 내장되어있지만 rbenv를 설치하여 ruby 버전과 gem을 관리함 1.설치 sudo gem install cocoapods 2.설치한 후 해당 프로젝트 가서 pod init 3.Podfile을 열어서(편집기가 가능할걸로) 사용할...</p>
+      </li>
+    
+      <li>
+          <h2><a href="/ios-app-transport-security">App Transport Security</a></h2>
+          <time datetime="2016-02-24T00:00:00+09:00">24 Feb 2016</time>
+          <p>애플이 iOS9부터는 http를 https로 해야지만 네트워크 연결할 수 있도록 하였습니다. 하지만 예외는 항상 존재하는 법. 특정 도메인에 대해서 http를 허용하거나 아예 http를 허용하도록 해주었습니다. Apple 문서 https://developer.apple.com/library/prerelease/ios/technotes/App-Transport-Security-Technote/index.html 1.특정 도메인 HTTP 허용 다음은 페이스북에서 다음과 같이 info.plist에 추가하라고 한 설정입니다. &lt;key&gt;NSAppTransportSecurity&lt;/key&gt; &lt;dict&gt; &lt;key&gt;NSExceptionDomains&lt;/key&gt; &lt;dict&gt; &lt;key&gt;&lt;/key&gt; &lt;dict&gt; &lt;key&gt;&lt;/key&gt; &lt;true/&gt; &lt;key&gt;&lt;/key&gt; &lt;false/&gt; &lt;/dict&gt;...</p>
+      </li>
+    
+      <li>
+          <h2><a href="/hugo-github-blog-setting">Hugo & Github 블로그 연동</a></h2>
+          <time datetime="2016-02-03T00:00:00+09:00">03 Feb 2016</time>
+          <p>휴고를 이용해서 사이트 디렉토리 생성한다. hugo new site dskim 디렉토리로 이동 cd dskim/ ls git init설정해준다. git init git remote 저장소를 추가한다 git remote add origin https://github.com/deasung/deasung.github.io.git gitignore에 public 디렉토리 안들어가도록 추가해준다 echo 'public' &gt;&gt; .gitignore gitignore 및 config.toml &lt;-알아서 추가가되어있을 것이다 git add -A git status상태 본다 git status...</p>
+      </li>
+    
+      <li>
+          <h2><a href="/ios">아이폰 디바이스 개발환경셋팅</a></h2>
+          <time datetime="2016-01-27T00:00:00+09:00">27 Jan 2016</time>
+          <p>##1. 맥 개발 인증서 받기 사용자 이메일 주소, 일반 이름을 입력하고, 나는 맥에 저장할 것이므로 [디스크에 저장됨]과 [본인이 키 쌍 정보 지정]을 선택 후 [계속]버튼을 클릭합니다. 어디로 다운로드 받을 것인지 위치를 지정해주는 창이 나오는데 위치 지정 후 [저장] 버튼 클릭을 하게 되면 그 위치에 방금 요청한 인증서(CertificateSinging…)가 다운로드가 되어 저장이...</p>
+      </li>
+    
+</ul>
+
+      </section>
+    </div>
+  </div>
+
+  
+  <div class="pagination">
+    
+    <a href="/page/6/" class="page-item">&laquo;</a>
+      
+    <a href="/" class="page-item">1</a>
+      
+    <a href="/page/2/" class="page-item">2</a>
+      
+    <a href="/page/3/" class="page-item">3</a>
+      
+    <a href="/page/4/" class="page-item">4</a>
+      
+    <a href="/page/5/" class="page-item">5</a>
+      
+    <a href="/page/6/" class="page-item">6</a>
+      
+    <span class="page-item">7</span>
+      
+    <a href="/page/8/" class="page-item">8</a>
+      
+    <a href="/page/8/" class="page-item">&raquo;</a>
+    
+  </div>
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

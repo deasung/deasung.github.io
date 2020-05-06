@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>App Transport Security</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>App Transport Security | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="App Transport Security" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="애플이 iOS9부터는 http를 https로 해야지만 네트워크 연결할 수 있도록 하였습니다. 하지만 예외는 항상 존재하는 법. 특정 도메인에 대해서 http를 허용하거나 아예 http를 허용하도록 해주었습니다." />
+<meta property="og:description" content="애플이 iOS9부터는 http를 https로 해야지만 네트워크 연결할 수 있도록 하였습니다. 하지만 예외는 항상 존재하는 법. 특정 도메인에 대해서 http를 허용하거나 아예 http를 허용하도록 해주었습니다." />
+<link rel="canonical" href="http://localhost:4000/ios-app-transport-security" />
+<meta property="og:url" content="http://localhost:4000/ios-app-transport-security" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-02-24T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"App Transport Security","dateModified":"2016-02-24T00:00:00+09:00","datePublished":"2016-02-24T00:00:00+09:00","url":"http://localhost:4000/ios-app-transport-security","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/ios-app-transport-security"},"author":{"@type":"Person","name":"dskim"},"description":"애플이 iOS9부터는 http를 https로 해야지만 네트워크 연결할 수 있도록 하였습니다. 하지만 예외는 항상 존재하는 법. 특정 도메인에 대해서 http를 허용하거나 아예 http를 허용하도록 해주었습니다.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>App Transport Security</h2>
+  <time datetime="2016-02-24T00:00:00+09:00" class="by-line">24 Feb 2016</time>
+  <p>애플이 iOS9부터는 http를 https로 해야지만 네트워크 연결할 수 있도록 하였습니다.
+하지만 예외는 항상 존재하는 법. 특정 도메인에 대해서 http를 허용하거나 아예 http를 허용하도록 해주었습니다.</p>
+
+<p>Apple 문서
+https://developer.apple.com/library/prerelease/ios/technotes/App-Transport-Security-Technote/index.html</p>
+
+<p>1.특정 도메인 HTTP 허용
+다음은 페이스북에서 다음과 같이 info.plist에 추가하라고 한 설정입니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;key&gt;NSAppTransportSecurity&lt;/key&gt;
+&lt;dict&gt;
+    &lt;key&gt;NSExceptionDomains&lt;/key&gt;
+    &lt;dict&gt;
+        &lt;key&gt;&lt;/key&gt;
+        &lt;dict&gt;
+            &lt;key&gt;&lt;/key&gt;
+            &lt;true/&gt;                
+            &lt;key&gt;&lt;/key&gt;
+            &lt;false/&gt;
+        &lt;/dict&gt;
+        &lt;key&gt;&lt;/key&gt;
+        &lt;dict&gt;
+            &lt;key&gt;&lt;/key&gt;
+            &lt;true/&gt;
+            &lt;key&gt;&lt;/key&gt;
+            &lt;false/&gt;
+        &lt;/dict&gt;
+        &lt;key&gt;&lt;/key&gt;
+        &lt;dict&gt;
+            &lt;key&gt;&lt;/key&gt;
+            &lt;true/&gt;
+            &lt;key&gt;&lt;/key&gt;
+            &lt;false/&gt;
+        &lt;/dict&gt;
+    &lt;/dict&gt;
+&lt;/dict&gt;
+</code></pre></div></div>
+
+<p>HTTP 허용</p>
+
+<p>다음은 http를 허용하는 설정입니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;key&gt;&lt;/key&gt;
+&lt;dict&gt;
+  &lt;key&gt;&lt;/key&gt;
+      &lt;true/&gt;
+&lt;/dict&gt;
+</code></pre></div></div>
+
+<p>2.localhost 허용</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;key&gt;NSAppTransportSecurity&lt;/key&gt;
+&lt;dict&gt;
+   &lt;key&gt;NSExceptionDomains&lt;/key&gt;
+   &lt;dict&gt;
+       &lt;key&gt;localhost&lt;/key&gt;
+       &lt;dict&gt;
+        &lt;key&gt;&lt;/key&gt;
+           &lt;false/&gt;          
+           &lt;key&gt;&lt;/key&gt;
+           &lt;true/&gt;
+           &lt;key&gt;&lt;/key&gt;
+           &lt;true/&gt;
+           &lt;key&gt;&lt;/key&gt;
+           &lt;string&gt;1.0&lt;/string&gt;
+           &lt;key&gt;&lt;/key&gt;
+           &lt;false/&gt;
+       &lt;/dict&gt;
+   &lt;/dict&gt;
+&lt;/dict&gt;
+</code></pre></div></div>
+
+<p>3.Info.plist 에 추가해야함</p>
+
+<p><img src="/assets/imgs/2016/02/24/2016-02-24-ios-app-transport-security.png" alt="1" /></p>
+
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

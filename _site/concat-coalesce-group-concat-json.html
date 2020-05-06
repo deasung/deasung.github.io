@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>CONCAT,COALESCE,GROUP_CONCAT을 이용해서 json처럼 뽑아버리기</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>CONCAT,COALESCE,GROUP_CONCAT을 이용해서 json처럼 뽑아버리기 | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="CONCAT,COALESCE,GROUP_CONCAT을 이용해서 json처럼 뽑아버리기" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="``` SELECT" />
+<meta property="og:description" content="``` SELECT" />
+<link rel="canonical" href="http://localhost:4000/concat-coalesce-group-concat-json" />
+<meta property="og:url" content="http://localhost:4000/concat-coalesce-group-concat-json" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-05-31T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"CONCAT,COALESCE,GROUP_CONCAT을 이용해서 json처럼 뽑아버리기","dateModified":"2018-05-31T00:00:00+09:00","datePublished":"2018-05-31T00:00:00+09:00","url":"http://localhost:4000/concat-coalesce-group-concat-json","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/concat-coalesce-group-concat-json"},"author":{"@type":"Person","name":"dskim"},"description":"``` SELECT","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>CONCAT,COALESCE,GROUP_CONCAT을 이용해서 json처럼 뽑아버리기</h2>
+  <time datetime="2018-05-31T00:00:00+09:00" class="by-line">31 May 2018</time>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SELECT
+
+  OL.ORDER_MENU_ID AS ORDER_MENU_ID
+  ,OL.ORDER_ID AS ORDER_ID
+  ,OL.MENU_GROUP_ID AS MENU_GROUP_ID
+  ,OL.MENU_ID AS MENU_ID
+  ,OL.MENU_NM AS MENU_NM
+  ,OL.SELLING_PRICE AS SELLING_PRICE
+  ,SUM(OL.TOTAL_SELLING_PRICE) AS TOTAL_SELLING_PRICE
+  ,OL.DESCRIPTION AS DESCRIPTION
+  ,PL.ORDER_MENU_ID AS OP_ORDER_MENU_ID
+  ,PL.OPT_NAME AS OP_OPT_NAME
+  ,PL.MUST_YN AS OP_MUST_YN
+  ,PL.COUNT_YN AS OP_COUNT_YN
+  ,PL.COUNT AS OP_COUNT
+  ,PL.TYPE AS OP_TYPE
+  ,PL.OPTION_PRICE AS OP_OPTION_PRICE
+  ,CONCAT(
+      '[',
+      COALESCE(
+          GROUP_CONCAT(
+              CONCAT(
+                  '{',
+                  '\"order_menu_id\": \"', OL.ORDER_MENU_ID, '\", ',
+                  '\"menu_nm\": \"', OL.MENU_NM, '\"',
+                  '}')
+              ORDER BY menu_nm ASC
+              SEPARATOR ','),
+          ''),
+      ']') AS orderOptionList
+FROM
+  ORDER_MENU_LIST OL
+  LEFT JOIN ORDER_MENU_OPTION_LIST PL
+    ON OL.ORDER_MENU_ID = PL.ORDER_MENU_ID
+
+WHERE OL.ORDER_ID = 'ORD_FQV_20180531075106'
+GROUP BY MENU_ID
+ORDER BY MENU_ID DESC;
+</code></pre></div></div>
+
+<p><img src="/assets/imgs/2018/05/31/2018-05-31.png" alt="1" /></p>
+
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

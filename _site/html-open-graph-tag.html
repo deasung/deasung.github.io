@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>HTML OPEN GRAPH 태그</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>HTML OPEN GRAPH 태그 | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="HTML OPEN GRAPH 태그" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="링크의 미리보기 제목, 설명, 이미지를 결정하는 open graph 태그" />
+<meta property="og:description" content="링크의 미리보기 제목, 설명, 이미지를 결정하는 open graph 태그" />
+<link rel="canonical" href="http://localhost:4000/html-open-graph-tag" />
+<meta property="og:url" content="http://localhost:4000/html-open-graph-tag" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-05-02T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"HTML OPEN GRAPH 태그","dateModified":"2017-05-02T00:00:00+09:00","datePublished":"2017-05-02T00:00:00+09:00","url":"http://localhost:4000/html-open-graph-tag","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/html-open-graph-tag"},"author":{"@type":"Person","name":"dskim"},"description":"링크의 미리보기 제목, 설명, 이미지를 결정하는 open graph 태그","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>HTML OPEN GRAPH 태그</h2>
+  <time datetime="2017-05-02T00:00:00+09:00" class="by-line">02 May 2017</time>
+  <p><a href="http://blog.ab180.co/open-graph-as-a-website-preview/">링크의 미리보기 제목, 설명, 이미지를 결정하는 open graph 태그</a></p>
+
+<p>페이스북이나, 네이버 블로그, 카카오톡 등에서 어떤 링크에 대한 미리보기 제목, 설명, 이미지를 제공하고 있습니다. 링크를 붙여넣을 때 생기는 미리보기 제목, 설명, 이미지는 도대체 어디에서 오는 것일까?</p>
+
+<p>메타 데이터란 쉽게 말하면 해당 웹페이지를 구성하는 여러 구조화된 정보들 예컨대 제목, 설명, 이미지 등을 아예 명시적으로 웹페이지쪽에서 직접 정해서 표기해준 것을 말합</p>
+
+<p><img src="/assets/imgs/2017/05/02/open-grapth-tag-preview-201705021040.png" alt="" /></p>
+
+<p>결론적으로 우리가 미리보기를 통해 보는 제목, 설명, 이미지는 이렇게 HTML 문서의 head에 표기된 오픈그래프 프로토콜에 의해서 나타나고 있습니다. 그 구체적인 작동 원래는 아래와 같다.</p>
+
+<blockquote>
+  <ul>
+    <li>사용자가 링크를 입력창에 입력합니다.</li>
+    <li>페이스북, 네이버 블로그, 카카오톡은 입력창의 문자열이 “링크”라는 것을 파악합니다. (흔히 말하는 정규표현식으로 해당 문자열이 링크라는 것을 알아냄.)</li>
+    <li>링크라는 것이 파악되면 페이스북, 네이버 블로그, 카카오톡의 크롤러는 미리 그 웹사이트를 방문해서 HTML head의 오픈그래프(Open Graph) 메타 데이터를 긁어옴.</li>
+    <li>이중에서도 og:title, og:description, og:image가 각각 제목, 설명, 이미지의 정보를 나타냄.</li>
+    <li>그리고 그 정보를 바탕으로 미리보기 화면을 생성해주게 됨.</li>
+  </ul>
+</blockquote>
+
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

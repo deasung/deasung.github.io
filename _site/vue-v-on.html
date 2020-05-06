@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>Vue v-on 이벤트 핸들링</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Vue v-on 이벤트 핸들링 | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Vue v-on 이벤트 핸들링" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="v-on 이벤트 핸들링" />
+<meta property="og:description" content="v-on 이벤트 핸들링" />
+<link rel="canonical" href="http://localhost:4000/vue-v-on" />
+<meta property="og:url" content="http://localhost:4000/vue-v-on" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-09-20T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"Vue v-on 이벤트 핸들링","dateModified":"2018-09-20T00:00:00+09:00","datePublished":"2018-09-20T00:00:00+09:00","url":"http://localhost:4000/vue-v-on","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/vue-v-on"},"author":{"@type":"Person","name":"dskim"},"description":"v-on 이벤트 핸들링","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>Vue v-on 이벤트 핸들링</h2>
+  <time datetime="2018-09-20T00:00:00+09:00" class="by-line">20 Sep 2018</time>
+  <h1 id="v-on-이벤트-핸들링">v-on 이벤트 핸들링</h1>
+
+<p>v-on 디렉티브를 사용하여 이벤트를 처리하는 방법</p>
+
+<p>v-on 디렉티브를 이벤트를 처리 할 태그(들)에 설정</p>
+
+<p>v-on:이벤트이름=“메소드 이름”</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">&lt;!</span><span class="nx">DOCTYPE</span> <span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">html</span><span class="o">&gt;</span>
+<span class="o">&lt;</span><span class="nx">head</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">charset</span><span class="o">=</span><span class="dl">"</span><span class="s2">utf-8</span><span class="dl">"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">meta</span> <span class="nx">name</span><span class="o">=</span><span class="dl">"</span><span class="s2">viewport</span><span class="dl">"</span> <span class="nx">content</span><span class="o">=</span><span class="dl">"</span><span class="s2">width=device-width</span><span class="dl">"</span><span class="o">&gt;</span>
+  <span class="o">&lt;</span><span class="nx">title</span><span class="o">&gt;</span><span class="nx">JS</span> <span class="nx">Bin</span><span class="o">&lt;</span><span class="sr">/title</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/head</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="nx">body</span><span class="o">&gt;</span>
+  
+  <span class="o">&lt;</span><span class="nx">div</span> <span class="nx">id</span><span class="o">=</span><span class="dl">"</span><span class="s2">app</span><span class="dl">"</span><span class="o">&gt;</span>
+    <span class="o">&lt;</span><span class="nx">h1</span><span class="o">&gt;</span><span class="err">카운터</span><span class="p">:</span> <span class="o">&lt;</span><span class="sr">/h1</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">v</span><span class="o">-</span><span class="nx">on</span><span class="p">:</span><span class="nx">click</span><span class="o">=</span><span class="dl">"</span><span class="s2">increment</span><span class="dl">"</span><span class="o">&gt;</span><span class="err">증가</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>    <span class="o">&lt;</span><span class="nx">button</span> <span class="nx">v</span><span class="o">-</span><span class="nx">on</span><span class="p">:</span><span class="nx">click</span><span class="o">=</span><span class="dl">"</span><span class="s2">decrement</span><span class="dl">"</span><span class="o">&gt;</span><span class="err">감소</span><span class="o">&lt;</span><span class="sr">/button</span><span class="err">&gt;
+</span>  <span class="o">&lt;</span><span class="sr">/div</span><span class="err">&gt;
+</span>  
+  <span class="o">&lt;</span><span class="nx">script</span> <span class="nx">src</span><span class="o">=</span><span class="dl">"</span><span class="s2">https://unpkg.com/vue/dist/vue.js</span><span class="dl">"</span><span class="o">&gt;&lt;</span><span class="sr">/script</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/body</span><span class="err">&gt;
+</span><span class="o">&lt;</span><span class="sr">/html</span><span class="err">&gt;
+</span></code></pre></div></div>
+
+<p>V-on: @로 대체</p>
+
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

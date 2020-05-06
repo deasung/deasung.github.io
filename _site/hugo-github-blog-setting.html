@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>Hugo & Github 블로그 연동</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Hugo &amp; Github 블로그 연동 | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Hugo &amp; Github 블로그 연동" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="휴고를 이용해서 사이트 디렉토리 생성한다. hugo new site dskim" />
+<meta property="og:description" content="휴고를 이용해서 사이트 디렉토리 생성한다. hugo new site dskim" />
+<link rel="canonical" href="http://localhost:4000/hugo-github-blog-setting" />
+<meta property="og:url" content="http://localhost:4000/hugo-github-blog-setting" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2016-02-03T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"Hugo &amp; Github 블로그 연동","dateModified":"2016-02-03T00:00:00+09:00","datePublished":"2016-02-03T00:00:00+09:00","url":"http://localhost:4000/hugo-github-blog-setting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/hugo-github-blog-setting"},"author":{"@type":"Person","name":"dskim"},"description":"휴고를 이용해서 사이트 디렉토리 생성한다. hugo new site dskim","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>Hugo & Github 블로그 연동</h2>
+  <time datetime="2016-02-03T00:00:00+09:00" class="by-line">03 Feb 2016</time>
+  <p>휴고를 이용해서 사이트 디렉토리 생성한다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hugo new site dskim
+</code></pre></div></div>
+
+<p>디렉토리로 이동</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd dskim/
+ls
+</code></pre></div></div>
+
+<p>git init설정해준다.</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+</code></pre></div></div>
+
+<p>git remote 저장소를 추가한다</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git remote add origin https://github.com/deasung/deasung.github.io.git
+</code></pre></div></div>
+
+<p>gitignore에 public 디렉토리 안들어가도록 추가해준다</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo 'public' &gt;&gt; .gitignore
+</code></pre></div></div>
+
+<p>gitignore 및 config.toml  &lt;-알아서 추가가되어있을 것이다</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git add -A
+</code></pre></div></div>
+
+<p>git status상태 본다</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git status
+</code></pre></div></div>
+
+<p>변경내용을 되돌린다. branch source에 push해준다</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git checkout -b source
+git add -A
+git commit -m ‘Init commit'
+git remote add origin https://github.com/deasung/deasung.github.io.git
+git push origin source
+</code></pre></div></div>
+
+<p>hugo 테마를 담을 디렉토리 themes를 생성한다음 git clone으로 원하는 테마를 가져온다</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/Users/dskim/Desktop/dskim/themes
+mkdir themes
+cd themes/
+git clone https://github.com/zyro/hyde-x
+</code></pre></div></div>
+
+<p>테마를 가져온후에 git지워준다</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rm -rf .git
+</code></pre></div></div>
+
+<p>nano config.toml 파일에 theme 테마명을 추가해준다.
+<img src="/assets/imgs/2016/02/03/2016-02-03.png" alt="theme" /></p>
+
+<p>테마를 실행하면 경로에 public폴더가 자동생성됨</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>hugo -t hyde-x
+
+cd public/
+</code></pre></div></div>
+
+<p>public 디렉토리안에 git 저장소를 추가한다음 master로 푸쉬해준다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git init
+git push origin master
+git remote add origin https://github.com/deasung/deasung.github.io.git
+git add -A
+ls
+git status
+git commit -m 'test'
+git push origin master
+</code></pre></div></div>
+
+<p>그다음부터는 반복적으로 
+환경설정 및 post추가시에는 post를 추가한다음 source브랜치에 commit push</p>
+
+<p>테마를 돌린후에는 public 디렉토리를 master에 커밋한다음 푸쉬를 하면된다</p>
+
+<p>참고 사이트</p>
+
+<p><a href="https://gohugo.io/">https://gohugo.io/</a></p>
+
+<p><a href="https://gist.github.com/cobyism/4730490">https://gist.github.com/cobyism/4730490</a></p>
+
+
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

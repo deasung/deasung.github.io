@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>dskim-blog</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Page 2 of 8 for dskim-blog | 개발 블로그</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="dskim-blog" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="개발 블로그" />
+<meta property="og:description" content="개발 블로그" />
+<link rel="canonical" href="http://localhost:4000/page/2/" />
+<meta property="og:url" content="http://localhost:4000/page/2/" />
+<meta property="og:site_name" content="dskim-blog" />
+<link rel="prev" href="http://localhost:4000/" />
+<link rel="next" href="http://localhost:4000/page/3/" />
+<script type="application/ld+json">
+{"headline":"dskim-blog","url":"http://localhost:4000/page/2/","author":{"@type":"Person","name":"dskim"},"description":"개발 블로그","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <ul>
+    
+      <li>
+          <h2><a href="/nginx-to-0-0-0-80-failed">NGINX bind() to 0.0.0.80 failed 일때</a></h2>
+          <time datetime="2018-07-02T00:00:00+09:00">02 Jul 2018</time>
+          <p>nginx restart 할려고 했구만 이렇게 되서 -ㅅ-..
+
+
+
+sudo fuser -k 80/tcp
+
+
+sudo service nginx restart
+
+
+
+
+
+netstat -nlp 로 포트를 확인하면
+
+
+
+제대로 돌고 있는거 확인
+</p>
+      </li>
+    
+      <li>
+          <h2><a href="/aws-nginx-elb-health-check">NGINX에 ELB 체크 하는 방법</a></h2>
+          <time datetime="2018-07-02T00:00:00+09:00">02 Jul 2018</time>
+          <p>vi /etc/nginx/nginx.conf 로가서 추가를 해줍니다.
+
+location /elb-status {
+        access_log off;
+        return 200 'A-OK!';
+        add_header Content-Type text/plain;
+    }
+
+
+
+
+sudo service nginx start
+
+
+
+AWS ELB 상태검사
+
+AWS EC2 -&gt; 로드 밸런서 -&gt; 해당 로드밸런서 클릭후 하단탭에 상태검사 클릭
+
+
+
+</p>
+      </li>
+    
+      <li>
+          <h2><a href="/concat-coalesce-group-concat-json">CONCAT,COALESCE,GROUP_CONCAT을 이용해서 json처럼 뽑아버리기</a></h2>
+          <time datetime="2018-05-31T00:00:00+09:00">31 May 2018</time>
+          <p>SELECT OL.ORDER_MENU_ID AS ORDER_MENU_ID ,OL.ORDER_ID AS ORDER_ID ,OL.MENU_GROUP_ID AS MENU_GROUP_ID ,OL.MENU_ID AS MENU_ID ,OL.MENU_NM AS MENU_NM ,OL.SELLING_PRICE AS SELLING_PRICE ,SUM(OL.TOTAL_SELLING_PRICE) AS TOTAL_SELLING_PRICE ,OL.DESCRIPTION AS DESCRIPTION ,PL.ORDER_MENU_ID AS OP_ORDER_MENU_ID ,PL.OPT_NAME AS OP_OPT_NAME ,PL.MUST_YN AS OP_MUST_YN ,PL.COUNT_YN AS OP_COUNT_YN ,PL.COUNT AS OP_COUNT ,PL.TYPE AS OP_TYPE ,PL.OPTION_PRICE AS OP_OPTION_PRICE ,CONCAT( '[', COALESCE( GROUP_CONCAT(...</p>
+      </li>
+    
+      <li>
+          <h2><a href="/springboot-aws-email-module">SpringBoot AWS Email 모듈 만들기</a></h2>
+          <time datetime="2018-05-28T00:00:00+09:00">28 May 2018</time>
+          <p>AWS SES(Simple Email Service) 이메일 송수신용 예전에 만들었지만 에버노트 정리도 할꼄 포스팅을 한다 import com.amazonaws.AmazonClientException; import com.amazonaws.auth.profile.ProfileCredentialsProvider; import com.amazonaws.services.simpleemail.AmazonSimpleEmailService; import com.amazonaws.services.simpleemail.AmazonSimpleEmailServiceClientBuilder; import com.test.config.property.AwsSesProperty; import com.test.model.AwsSesEmailSender; import lombok.extern.slf4j.Slf4j; import org.springframework.beans.factory.annotation.Autowired; import org.springframework.stereotype.Service; @Slf4j @Service public class AwsEmailSenderService { @Autowired private AwsSesProperty awsSesProperty; public void send(AwsSesEmailSender senderDto){ try { log.info("Attempting to send...</p>
+      </li>
+    
+      <li>
+          <h2><a href="/MeltingCon-2018">멜팅콘 컨퍼런스 후기</a></h2>
+          <time datetime="2018-05-26T00:00:00+09:00">26 May 2018</time>
+          <p>1.(Keynote) 노량진 스타일로 알려주는 Build 컨퍼런스 2018 핵심 요약 1.Microsoft Build Opportunity &amp; Responsibiliy 코딩은 책임 &amp; 기회 윤리의식을 가지자 Azure AI 이미지인식 커스텀비전 API 내가가지고 있는 데이터가지고 학습을 시킨다 생각보다 쉽게 쓸수 있는 API들이 많음 키넥트 코타나 &amp; 알렉사 대화형 디바이스 MS도 모바일 First 추구 Github - App Center...</p>
+      </li>
+    
+      <li>
+          <h2><a href="/sms-sql">SMS 인증모듈 관련 SQL</a></h2>
+          <time datetime="2018-04-24T00:00:00+09:00">24 Apr 2018</time>
+          <p>SELECT DATE_ADD(convert_tz(now(),@@session.time_zone,'+09:00'),INTERVAL 3 MINUTE) FROM ADMIN_USER;
+
+select convert_tz(now(),@@session.time_zone,'+09:00');
+
+select UNIX_TIMESTAMP(convert_tz(now(),@@session.time_zone,'+09:00'));
+
+
+select @@time_zone;
+
+</p>
+      </li>
+    
+      <li>
+          <h2><a href="/awscodestar-setting">AWS CodeStar 구축</a></h2>
+          <time datetime="2018-04-10T00:00:00+09:00">10 Apr 2018</time>
+          <p>1.CodeStar 프로젝트이름을 적는다 s3버킷도 비슷한 이름으로 생성되니 중복되어있는게 없는지 생각하고 만든다 2.프로젝트 세부정보 codestar는 이렇게 된다라는것을 보여주는듯 3.EC2 키페어 셋팅을 해줘야함 4.코드 편집용 툴 선택하는듯 난 건너뛰기를 함 5.CodeCommit 연동용 하기전에 AWS IAM 사용자 git https권한을 줘야한다 6.AWSCLI 설치 (MAC기준) awscli를 설치를 해줘야한다. $ pip install awscli --upgrade --user $...</p>
+      </li>
+    
+      <li>
+          <h2><a href="/aws-ec2-timezone">EC2 TimeZone 변경</a></h2>
+          <time datetime="2018-03-30T00:00:00+09:00">30 Mar 2018</time>
+          <p>1.TimeZone ? 리눅스를 새로 설치하고 나면 (AWS EC2 AMI도 Linux와 동일) 시간대(Timezone)을 맞추지 않으면, 리눅스의 date가 미국 태평양 시간인 PST로 표시됩니다. 즉 캘리포니아 현지 시간으로 표시됩니다. 이럴경우 한국 표준시인 KST로 변경해주어야 합니다. 2. EC2 터미널에서 TimeZone 변경 [ec2-user@ip-172-31-7-180 ~]$ date Fri Aug 8 06:41:49 UTC 2014 [ec2-user@ip-172-31-7-180 ~]$ sudo date...</p>
+      </li>
+    
+      <li>
+          <h2><a href="/jenkins-gitlab">Jenkins 설치 & Gitlab 연동</a></h2>
+          <time datetime="2018-03-25T00:00:00+09:00">25 Mar 2018</time>
+          <p>Jenins 설치 자바 설치 sudo apt-add-repository ppa:webupd8team/java sudo apt-get update sudo apt-get install oracle-java8-installer gradle 설치 $ sudo apt-get install gradle $ gradle -version Jenkins 설치 패키지 주소를 apt-key에 더한후 젠킨스 다운 $ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add - OK $ echo deb http://pkg.jenkins.io/debian-stable binary/ |...</p>
+      </li>
+    
+      <li>
+          <h2><a href="/ec2-swap">EC2 인스턴스 Swap 파티션 추가하는 방법</a></h2>
+          <time datetime="2018-03-22T00:00:00+09:00">22 Mar 2018</time>
+          <p>EC2 인스턴스 Swap 파티션 추가하는 방법 메모리가 부족한 경우를 제외하고는 Swap 자체를 안쓰는 것을 추천 EC2 인스턴스를 만들면 Swap 파티션이 없음 자바 애플리케이션 서버 2개정도 테스트서버로 돌릴려면 t1.micro로 힘들고 버겹다 그래서 Swap 메모리가 필수 방법 $ sudo dd if=/dev/zero of=/swapfile bs=1M count=512 # 512MB 스왑용 파일 생성 $ sudo chown...</p>
+      </li>
+    
+</ul>
+
+      </section>
+    </div>
+  </div>
+
+  
+  <div class="pagination">
+    
+    <a href="/" class="page-item">&laquo;</a>
+      
+    <a href="/" class="page-item">1</a>
+      
+    <span class="page-item">2</span>
+      
+    <a href="/page/3/" class="page-item">3</a>
+      
+    <a href="/page/4/" class="page-item">4</a>
+      
+    <a href="/page/5/" class="page-item">5</a>
+      
+    <a href="/page/6/" class="page-item">6</a>
+      
+    <a href="/page/7/" class="page-item">7</a>
+      
+    <a href="/page/8/" class="page-item">8</a>
+      
+    <a href="/page/3/" class="page-item">&raquo;</a>
+    
+  </div>
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

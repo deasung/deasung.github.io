@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>SpringBoot AWS Email 모듈 만들기</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>SpringBoot AWS Email 모듈 만들기 | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="SpringBoot AWS Email 모듈 만들기" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="AWS SES(Simple Email Service) 이메일 송수신용" />
+<meta property="og:description" content="AWS SES(Simple Email Service) 이메일 송수신용" />
+<link rel="canonical" href="http://localhost:4000/springboot-aws-email-module" />
+<meta property="og:url" content="http://localhost:4000/springboot-aws-email-module" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-05-28T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"SpringBoot AWS Email 모듈 만들기","dateModified":"2018-05-28T00:00:00+09:00","datePublished":"2018-05-28T00:00:00+09:00","url":"http://localhost:4000/springboot-aws-email-module","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/springboot-aws-email-module"},"author":{"@type":"Person","name":"dskim"},"description":"AWS SES(Simple Email Service) 이메일 송수신용","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>SpringBoot AWS Email 모듈 만들기</h2>
+  <time datetime="2018-05-28T00:00:00+09:00" class="by-line">28 May 2018</time>
+  <p>AWS SES(Simple Email Service) 이메일 송수신용</p>
+
+<p>예전에 만들었지만 에버노트 정리도 할꼄 포스팅을 한다</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">com.amazonaws.AmazonClientException</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.amazonaws.auth.profile.ProfileCredentialsProvider</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.amazonaws.services.simpleemail.AmazonSimpleEmailService</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.amazonaws.services.simpleemail.AmazonSimpleEmailServiceClientBuilder</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.test.config.property.AwsSesProperty</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">com.test.model.AwsSesEmailSender</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">lombok.extern.slf4j.Slf4j</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.beans.factory.annotation.Autowired</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.stereotype.Service</span><span class="o">;</span>
+
+<span class="nd">@Slf4j</span>
+<span class="nd">@Service</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">AwsEmailSenderService</span> <span class="o">{</span>
+
+    <span class="nd">@Autowired</span>
+    <span class="kd">private</span> <span class="nc">AwsSesProperty</span> <span class="n">awsSesProperty</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">send</span><span class="o">(</span><span class="nc">AwsSesEmailSender</span> <span class="n">senderDto</span><span class="o">){</span>
+        <span class="k">try</span> <span class="o">{</span>
+            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"Attempting to send an email through Amazon SES by using the AWS SDK for Java..."</span><span class="o">);</span>
+
+<span class="c1">//            ProfileCredentialsProvider credentialsProvider = new ProfileCredentialsProvider();</span>
+<span class="c1">//</span>
+<span class="c1">//</span>
+<span class="c1">//            try {</span>
+<span class="c1">//                credentialsProvider.getCredentials();</span>
+<span class="c1">//            } catch (Exception e) {</span>
+<span class="c1">//                throw new AmazonClientException(</span>
+<span class="c1">//                        "Cannot load the credentials from the credential profiles file. " +</span>
+<span class="c1">//                                "Please make sure that your credentials file is at the correct " +</span>
+<span class="c1">//                                "location (~/.aws/credentials), and is in valid format.",</span>
+<span class="c1">//                        e);</span>
+<span class="c1">//            }</span>
+
+<span class="c1">//            AmazonSimpleEmailService client = AmazonSimpleEmailServiceClientBuilder.standard()</span>
+<span class="c1">//                    .withCredentials(credentialsProvider)</span>
+<span class="c1">//                    .withRegion("us-west-2")</span>
+<span class="c1">//                    .build();</span>
+
+            <span class="nc">AmazonSimpleEmailService</span> <span class="n">client</span> <span class="o">=</span> <span class="n">awsSesProperty</span><span class="o">.</span><span class="na">amazonSimpleEmailService</span><span class="o">();</span>
+
+
+            <span class="c1">// Send the email.</span>
+            <span class="n">client</span><span class="o">.</span><span class="na">sendEmail</span><span class="o">(</span><span class="n">senderDto</span><span class="o">.</span><span class="na">toSendRequestDto</span><span class="o">());</span>
+            <span class="n">log</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s">"Email sent! "</span> <span class="o">+</span> <span class="n">senderDto</span><span class="o">.</span><span class="na">toString</span><span class="o">()</span> <span class="o">);</span>
+
+        <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="nc">Exception</span> <span class="n">ex</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">log</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">"The email was not sent."</span><span class="o">);</span>
+            <span class="n">log</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s">"Error message: "</span> <span class="o">+</span> <span class="n">ex</span><span class="o">.</span><span class="na">getMessage</span><span class="o">());</span>
+            <span class="k">throw</span> <span class="k">new</span> <span class="nf">AmazonClientException</span><span class="o">(</span>
+                    <span class="n">ex</span><span class="o">.</span><span class="na">getMessage</span><span class="o">(),</span>
+                    <span class="n">ex</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>Gradle에 이렇게 추가를 해준다</p>
+
+<div class="language-gradle highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//2018.05.28 aws ses 라이브러리 추가</span>
+<span class="n">compile</span><span class="o">(</span><span class="err">'</span><span class="n">com</span><span class="o">.</span><span class="na">amazonaws</span><span class="o">:</span><span class="n">aws</span><span class="o">-</span><span class="n">java</span><span class="o">-</span><span class="n">sdk</span><span class="o">-</span><span class="nl">ses:</span><span class="mf">1.11</span><span class="o">.</span><span class="mi">227</span><span class="err">’</span><span class="o">)</span>
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>package com.test.config.property;
+
+import com.amazonaws.ClientConfiguration;
+import com.amazonaws.auth.AWSCredentials;
+import com.amazonaws.auth.BasicAWSCredentials;
+import com.amazonaws.regions.Region;
+import com.amazonaws.regions.Regions;
+import com.amazonaws.services.simpleemail.AmazonSimpleEmailService;
+import com.amazonaws.services.simpleemail.AmazonSimpleEmailServiceClient;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.context.properties.ConfigurationProperties;
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+
+/**
+ * AWS 이메일 서비스용 빈
+ */
+@Configuration
+public class AwsSesProperty {
+
+    @Value("${cloud.aws.credentials.accessKey}")
+    private String accessKey;
+
+    @Value("${cloud.aws.credentials.secretKey}")
+    private String secretKey;
+
+    @Bean
+    public AmazonSimpleEmailService amazonSimpleEmailService() {
+        AWSCredentials credentials = new BasicAWSCredentials(accessKey, secretKey);
+        ClientConfiguration configuration = new ClientConfiguration();
+        configuration.setConnectionTimeout(3000);
+        AmazonSimpleEmailService client = new AmazonSimpleEmailServiceClient(credentials);
+        client.setRegion(Region.getRegion(Regions.US_WEST_2));
+        return client;
+    }
+
+}
+</code></pre></div></div>
+
+<p>실제 컨트롤단에서는</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Context context = new Context();
+context.setVariable("user",user);
+String html = templateEngine.process("email/email-template", context);
+
+List&lt;String&gt; to = new ArrayList&lt;&gt;();
+to.add(user.getEmail());
+
+AwsSesEmailSender awsSesEmailSender = new AwsSesEmailSender(EAMIL_SENDER,to,EMAIL_PASSWORD_REQUEST_SUBJECT,html);
+
+new Thread() {
+    public void run() {
+        awsEmailSenderService.send(awsSesEmailSender);
+    }
+
+}.start();
+
+</code></pre></div></div>
+
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

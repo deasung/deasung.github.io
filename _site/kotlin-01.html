@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>kotlin 공부 1일차</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>kotlin 공부 1일차 | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="kotlin 공부 1일차" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="kotlin" />
+<meta property="og:description" content="kotlin" />
+<link rel="canonical" href="http://localhost:4000/kotlin-01" />
+<meta property="og:url" content="http://localhost:4000/kotlin-01" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-07-16T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"kotlin 공부 1일차","dateModified":"2017-07-16T00:00:00+09:00","datePublished":"2017-07-16T00:00:00+09:00","url":"http://localhost:4000/kotlin-01","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/kotlin-01"},"author":{"@type":"Person","name":"dskim"},"description":"kotlin","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>kotlin 공부 1일차</h2>
+  <time datetime="2017-07-16T00:00:00+09:00" class="by-line">16 Jul 2017</time>
+  <p>kotlin</p>
+
+<p><a href="https://try.kotlinlang.org/#/Examples/Hello,%20world!/Simplest%20version/Simplest%20version.kt">kotlin lang 연습</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>fun main(args: Array&lt;String&gt;) {
+    println("Hello, world!")
+    println("test")
+}
+
+</code></pre></div></div>
+
+<p><a href="https://kotlinlang.org/docs/reference/control-flow.html">코틀린 When -&gt; Java Switch 문법</a></p>
+<ul>
+  <li>비슷하다고함</li>
+</ul>
+
+<p><a href="http://kotlinlang.org/docs/reference/classes.html#classes">코틀린 클래스</a></p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/**
+ * Here we have a class with a primary constructor and a member function.
+ * Note that there's no `new` keyword used to create an object.
+ * See http://kotlinlang.org/docs/reference/classes.html#classes
+ */
+
+class Greeter(val name: String) {
+    fun greet() {
+        println("Hello, ${name}");
+    }
+}
+
+fun main(args: Array&lt;String&gt;) {
+    Greeter(args[0]).greet()
+}
+</code></pre></div></div>
+
+<p>val은 읽기 전용
+var은 읽기 쓰기가 가능한 형태</p>
+
+<p>생성자에 val로 정의하였다면 읽기만 가능하고, var로 정의하였다면 읽기 쓰기가 가능한 형태입니다. Java에서는 final입니다. 다음과 같은 형태로 생성자 정의가 가능</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>class Person(val name, var age: Int) {
+  // ...
+}
+</code></pre></div></div>
+
+<p>kotlin open
+kotlin에서 사용하게 되는 open 키워드.</p>
+
+<p>java에서는 상속의 재 정의를 방지하기 위해 final을 사용합니다.
+kotlin에서는 반대로 상속의 재 정의를 허용하기 위해서 open을 사용</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>open은 변수에서도 사용이 가능.
+
+open class Foo {
+  open val x: Int get { ... }
+}
+
+class Bar(override val x: Int) : Foo() {
+
+}
+위의 코드를 예제로 작성하면 다음과 같고 실행하면 12라는 결과를 얻을 수 있습니다.
+
+fun main(args: Array&lt;String&gt;) {
+    print(C(12).x)
+}
+
+open class A {
+    open val x: Int = 0
+}
+
+class C(override val x: Int) : A() {
+}
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//별도의 생성자 정의 없이 위와 같이 바로 초기화가 가능한 형태로 사용
+class ClassName(name: String) {
+  val upperName = name.toUpperCase()
+}
+</code></pre></div></div>
+
+<p>2017-07-16 여기서부터 봐야함
+https://try.kotlinlang.org/#/Examples/Basic%20syntax%20walk-through/Use%20ranges%20and%20in/Use%20ranges%20and%20in.kt</p>
+
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

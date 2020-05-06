@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>Ubuntu 16.04 MySQL 설치</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Ubuntu 16.04 MySQL 설치 | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Ubuntu 16.04 MySQL 설치" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="``` sudo apt install mysql-server-5.7" />
+<meta property="og:description" content="``` sudo apt install mysql-server-5.7" />
+<link rel="canonical" href="http://localhost:4000/devops-ubuntu16.04-mysql-server-5.7-install" />
+<meta property="og:url" content="http://localhost:4000/devops-ubuntu16.04-mysql-server-5.7-install" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-04-17T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"Ubuntu 16.04 MySQL 설치","dateModified":"2017-04-17T00:00:00+09:00","datePublished":"2017-04-17T00:00:00+09:00","url":"http://localhost:4000/devops-ubuntu16.04-mysql-server-5.7-install","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/devops-ubuntu16.04-mysql-server-5.7-install"},"author":{"@type":"Person","name":"dskim"},"description":"``` sudo apt install mysql-server-5.7","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>Ubuntu 16.04 MySQL 설치</h2>
+  <time datetime="2017-04-17T00:00:00+09:00" class="by-line">17 Apr 2017</time>
+  <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install mysql-server-5.7
+
+mysql -u root -p
+
+1) Character Set 변경 (기본적으로 MySQL 캐릭터셋 latin1)
+
+status 언어확인가능
+
+sudo nano /etc/mysql/my.cnf
+
+[mysqld]
+collation-server = utf8_general_ci
+character-set-server = utf8
+skip-character-set-client-handshake
+
+sudo service mysql restart
+
+status  -&gt; utf8로 바뀐지 확인
+</code></pre></div></div>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2) 원격 접속을 위한 유저 설정
+
+mysql 접속 후
+
+
+
+use mysql
+
+INSERT INTO user(host, user, authentication_string, ssl_cipher, x509_issuer, x509_subject)
+
+values ('%', '계정명', password('비밀번호'), '', '', '');
+
+
+하면 계정이 생성될거고 그 유저에게 권한을 주는 일은
+
+
+// 모든 권한
+
+grant all privileges on *.* to 계정명@'%' identified by '비밀번호';
+
+// 특정 DB 모든 권한
+
+grant all privileges on DB명.* to 계정명@'%' identified by '비밀번호';
+
+
+// 특정 권한
+
+grant select, update, insert on *.* to 계정명@'%' identified by '비밀번호';
+
+flush privileges; &lt;- 해야적용됨
+
+</code></pre></div></div>
+
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

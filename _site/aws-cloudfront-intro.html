@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>Amazon CloudFront 콘텐츠 전송 네트워크(CDN)</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Amazon CloudFront 콘텐츠 전송 네트워크(CDN) | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Amazon CloudFront 콘텐츠 전송 네트워크(CDN)" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="출처:https://aws.amazon.com/ko/cloudfront/" />
+<meta property="og:description" content="출처:https://aws.amazon.com/ko/cloudfront/" />
+<link rel="canonical" href="http://localhost:4000/aws-cloudfront-intro" />
+<meta property="og:url" content="http://localhost:4000/aws-cloudfront-intro" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-06-25T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"Amazon CloudFront 콘텐츠 전송 네트워크(CDN)","dateModified":"2017-06-25T00:00:00+09:00","datePublished":"2017-06-25T00:00:00+09:00","url":"http://localhost:4000/aws-cloudfront-intro","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/aws-cloudfront-intro"},"author":{"@type":"Person","name":"dskim"},"description":"출처:https://aws.amazon.com/ko/cloudfront/","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>Amazon CloudFront 콘텐츠 전송 네트워크(CDN)</h2>
+  <time datetime="2017-06-25T00:00:00+09:00" class="by-line">25 Jun 2017</time>
+  <p>출처:<a href="https://aws.amazon.com/ko/cloudfront/">https://aws.amazon.com/ko/cloudfront/</a></p>
+
+<p>Amazon CloudFront는 CDN 캐싱을 통해 웹 사이트, API, 동영상 콘텐츠 또는 기타 웹 자산의 전송을 가속화하는 글로벌 콘텐츠 전송 네트워크(CDN) 서비스입니다. 다른 Amazon Web Services 제품과 통합하여 사용하면 개발자와 기업이 최소 사용 약정 없이도 콘텐츠를 최종 사용자에게 전송하는 속도를 손쉽게 가속화할 수 있습니다.</p>
+
+<h3 id="장점">장점</h3>
+
+<p>S3에 존재하는 원본 정적 컨텐츠를 전 세계에 존재하는 50여개의 CloudFront 엣지 로케이션 서버에 캐싱 하므로서 전 세계의 사용자가 동일한 주소로 이미지를 요청하더라도 그 사용자에게 물리적으로 가장 가까운 엣지 로케이션 서버에서 파일을 제공하므로서 컨텐츠 빠르고 안정적으로 서빙 할 수 있도록 해줍니다.</p>
+
+<p><img src="/assets/imgs/2017/06/25/aws-cloudfront-1-20170525.png" alt="cloudFront" /></p>
+
+<p>AWS 콘솔에 가서 Services 클릭하면 하단에 저메뉴가 있습니다. aws-cloudfront-1-20170525</p>
+
+<p>일단 우리는 돈에 민감한 개발자..라서 요금표를 보겠습니다.</p>
+
+<p>주로 저처럼 HTTP요청을 주로할것같아서 일단 온디맨드방식의 요금표 입니다</p>
+
+<h3 id="요금표">요금표</h3>
+
+<p><img src="/assets/imgs/2017/06/25/aws-cloudfront-2-20170525.png" alt="cloudFront-요금표" /></p>
+
+<p>대한민국 기준 HTTP 요청 0.0090 USD 10000개당 요청금액</p>
+
+<p>오늘 2017-05-25일 기준의 환율로 10000건당 10원이라는 소리입니다</p>
+
+<p><img src="/assets/imgs/2017/06/25/aws-cloudfront-3-20170525.png" alt="cloudFront-요금표" /></p>
+
+<p>이정도면.. 누가 악의적으로 HTTP요청하지 않은 이상 마이크로 서비스는 괜찮을것같습니다.</p>
+
+<p>HTTP,HTTPS 요청은 가격이 틀립니다.(HTTPS 요청이 비싼)</p>
+
+<p>기타</p>
+
+<p>만약 파일이 자주 바뀐다면 CloudFront에 어울리지 않습니다.</p>
+
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

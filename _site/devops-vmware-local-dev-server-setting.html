@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>VMWARE 이용해서 로컬 개발서버구축</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>VMWARE 이용해서 로컬 개발서버구축 | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="VMWARE 이용해서 로컬 개발서버구축" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="우분투,JAVA,TOMCAT8,Mysql 설치 &amp; 설정" />
+<meta property="og:description" content="우분투,JAVA,TOMCAT8,Mysql 설치 &amp; 설정" />
+<link rel="canonical" href="http://localhost:4000/devops-vmware-local-dev-server-setting" />
+<meta property="og:url" content="http://localhost:4000/devops-vmware-local-dev-server-setting" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-04-19T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"VMWARE 이용해서 로컬 개발서버구축","dateModified":"2017-04-19T00:00:00+09:00","datePublished":"2017-04-19T00:00:00+09:00","url":"http://localhost:4000/devops-vmware-local-dev-server-setting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/devops-vmware-local-dev-server-setting"},"author":{"@type":"Person","name":"dskim"},"description":"우분투,JAVA,TOMCAT8,Mysql 설치 &amp; 설정","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>VMWARE 이용해서 로컬 개발서버구축</h2>
+  <time datetime="2017-04-19T00:00:00+09:00" class="by-line">19 Apr 2017</time>
+  <h2 id="우분투javatomcat8mysql-설치--설정">우분투,JAVA,TOMCAT8,Mysql 설치 &amp; 설정</h2>
+
+<p>우분투(14.04 LTS) 설치</p>
+
+<ul>
+  <li><a href="http://www.ubuntu.com/">http://www.ubuntu.com/</a></li>
+  <li><a href="http://www.ubuntu.com/download/desktop">http://www.ubuntu.com/download/desktop</a></li>
+</ul>
+
+<p>위에 사이트에가서 이미지를 받으면 됩니다.</p>
+
+<p>JAVA8(OpenJDK8) 설치 터미널명령어</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>터미널명령어
+sudo add-apt-repository ppa:openjdk-r/ppa
+
+sudo apt-get update
+
+sudo apt-get install openjdk-8-jdk
+
+sudo update-alternatives --config java
+
+sudo update-alternatives --config javac
+
+java -version
+</code></pre></div></div>
+
+<h2 id="tomcat8-설치">TOMCAT8 설치</h2>
+
+<p>apt-get install방식으로 설치 tomcat8 설치하려면</p>
+
+<p>/etc/apt/source.list</p>
+
+<p>해당하는 패키지 추가해준다. 하단에 맨마지막에 추가함</p>
+
+<p>deb http://us.archive.ubuntu.com/ubuntu vivid main universe</p>
+
+<p>apt-get update</p>
+
+<p>apt로 설치시에 tomcat webapps경로</p>
+
+<p>/var/lib/tomcat8/webapps</p>
+
+<h2 id="mysql-install-설치">Mysql Install 설치</h2>
+
+<ul>
+  <li>Mysql 한글설정</li>
+</ul>
+
+<p><img src="/assets/imgs/2017/04/19/201704190112.png" alt="" /></p>
+
+<p>잘변경되었는지 확인status show variables like ‘c%’;</p>
+
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

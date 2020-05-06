@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>AWS IAM 사용자 생성하기</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>AWS IAM 사용자 생성하기 | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="AWS IAM 사용자 생성하기" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="사용자목록" />
+<meta property="og:description" content="사용자목록" />
+<link rel="canonical" href="http://localhost:4000/aws-iam-user-create" />
+<meta property="og:url" content="http://localhost:4000/aws-iam-user-create" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-05-02T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"AWS IAM 사용자 생성하기","dateModified":"2017-05-02T00:00:00+09:00","datePublished":"2017-05-02T00:00:00+09:00","url":"http://localhost:4000/aws-iam-user-create","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/aws-iam-user-create"},"author":{"@type":"Person","name":"dskim"},"description":"사용자목록","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>AWS IAM 사용자 생성하기</h2>
+  <time datetime="2017-05-02T00:00:00+09:00" class="by-line">02 May 2017</time>
+  <ul>
+  <li>
+    <p>사용자목록 
+<img src="/assets/imgs/2017/05/02/iam-user-create-01-20170502.png" alt="" /></p>
+  </li>
+  <li>
+    <p>사용자추가 
+<img src="/assets/imgs/2017/05/02/iam-user-create-02-20170502.png" alt="" /></p>
+  </li>
+  <li>
+    <p>사용자 권한설정 
+<img src="/assets/imgs/2017/05/02/iam-user-create-03-20170502.png" alt="" /></p>
+  </li>
+  <li>
+    <p>사용자 생성 
+<img src="/assets/imgs/2017/05/02/iam-user-create-04-20170502.png" alt="" /></p>
+  </li>
+  <li>
+    <p>사용자 확인 (키값,시크릿키값) 
+<img src="/assets/imgs/2017/05/02/iam-user-create-05-20170502.png" alt="" /></p>
+  </li>
+  <li>
+    <p>S3 권한추가
+<img src="/assets/imgs/2017/05/02/iam-user-s3-01-20170502.png" alt="" /></p>
+  </li>
+  <li>
+    <p>정책 선택 
+<img src="/assets/imgs/2017/05/02/iam-user-s3-02-20170502.png" alt="" /></p>
+  </li>
+</ul>
+
+<p>아마존 S3 버킷정책 ARN확인해야함 <a href="http://docs.aws.amazon.com/ko_kr/AmazonS3/latest/dev/example-bucket-policies.html">버킷정책</a> 확인 해야함</p>
+
+<p>일단 예시로 다접근가능하게 버킷에관해서</p>
+
+<ul>
+  <li>
+    <p>정책확인 
+<img src="/assets/imgs/2017/05/02/iam-user-s3-03-20170502.png" alt="" /></p>
+  </li>
+  <li>
+    <p>정책추가된내역 
+<img src="/assets/imgs/2017/05/02/iam-user-s3-04-20170502.png" alt="" /></p>
+  </li>
+</ul>
+
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

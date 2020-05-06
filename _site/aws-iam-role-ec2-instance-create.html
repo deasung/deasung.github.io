@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>Amazon IAM 역할을 사용하는 EC2 인스턴스 생성하기</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Amazon IAM 역할을 사용하는 EC2 인스턴스 생성하기 | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Amazon IAM 역할을 사용하는 EC2 인스턴스 생성하기" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="EC2 인스턴스 전용 IAM 역할은 EC2 인스턴스를 생성할 때 설정해줘야함" />
+<meta property="og:description" content="EC2 인스턴스 전용 IAM 역할은 EC2 인스턴스를 생성할 때 설정해줘야함" />
+<link rel="canonical" href="http://localhost:4000/aws-iam-role-ec2-instance-create" />
+<meta property="og:url" content="http://localhost:4000/aws-iam-role-ec2-instance-create" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-05-02T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"Amazon IAM 역할을 사용하는 EC2 인스턴스 생성하기","dateModified":"2017-05-02T00:00:00+09:00","datePublished":"2017-05-02T00:00:00+09:00","url":"http://localhost:4000/aws-iam-role-ec2-instance-create","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/aws-iam-role-ec2-instance-create"},"author":{"@type":"Person","name":"dskim"},"description":"EC2 인스턴스 전용 IAM 역할은 EC2 인스턴스를 생성할 때 설정해줘야함","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>Amazon IAM 역할을 사용하는 EC2 인스턴스 생성하기</h2>
+  <time datetime="2017-05-02T00:00:00+09:00" class="by-line">02 May 2017</time>
+  <p>EC2 인스턴스 전용 IAM 역할은 EC2 인스턴스를 생성할 때 설정해줘야함</p>
+
+<blockquote>
+  <ul>
+    <li>인스턴스 생성한다 
+<img src="/assets/imgs/2017/05/02/iam-role-ec2-create-01-20170502.png" alt="" /></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>Amazon AMI로 생성 
+<img src="/assets/imgs/2017/05/02/iam-role-ec2-create-02-20170502.png" alt="" /></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>IAM Role에 ExampleEC2Role 선택 
+<img src="/assets/imgs/2017/05/02/iam-role-ec2-create-03-20170502.png" alt="" /></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>인스턴스 생성확인 
+<img src="/assets/imgs/2017/05/02/iam-role-ec2-create-04-20170502.png" alt="" /></li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>SSH 접속확인
+```
+ec2-user -&gt; Aws AMI로 인스턴스생성시에 접속유저명칭</li>
+  </ul>
+</blockquote>
+
+<p>ssh -i ~/.ssh/pem파일명 ec2-user@Public-ip</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![](/assets/imgs/2017/05/02/iam-role-ec2-create-05-20170502.png)
+
+&gt; - aws s3 ls s3의 파일목록을 버는 명령어
+</code></pre></div></div>
+<p>aws s3 ls s3://버킷명</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>![](/assets/imgs/2017/05/02/iam-role-ec2-create-06-20170502.png)
+
+&gt; - 버킷명은 나오는데 버킷안에 파일목록이안나온다
+
+</code></pre></div></div>
+<p>버킷명 리전알아내는 명령어
+aws s3api get-bucket-location –bucket 버킷명</p>
+
+<ul>
+  <li>S3 리전확인
+```</li>
+</ul>
+
+<blockquote>
+  <ul>
+    <li>S3 파일목록 확인
+      <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>aws s3 ls 버킷명 --region 리전명
+</code></pre></div>      </div>
+    </li>
+  </ul>
+</blockquote>
+
+<h2 id="정리">정리</h2>
+
+<p>이테스트의 목적은 해당인스턴스의 IAM의 역할에 따른 접근가능한거 수정</p>
+
+<p>EC2 인스턴스를 생성할때 IAM역할을 사용하도록 설정했기 때문에 액세스 키와 시크릿 키를 따로 설정하지 않아도 aws s3 명령이 잘 동작함</p>
+
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

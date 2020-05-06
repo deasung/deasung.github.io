@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>처음배우는 스프링부트2 책을 읽고 요점정리</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>처음배우는 스프링부트2 책을 읽고 요점정리 | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="처음배우는 스프링부트2 책을 읽고 요점정리" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="스프링부트 프로젝트 의존성" />
+<meta property="og:description" content="스프링부트 프로젝트 의존성" />
+<link rel="canonical" href="http://localhost:4000/springboot2-summary" />
+<meta property="og:url" content="http://localhost:4000/springboot2-summary" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2019-06-10T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"처음배우는 스프링부트2 책을 읽고 요점정리","dateModified":"2019-06-10T00:00:00+09:00","datePublished":"2019-06-10T00:00:00+09:00","url":"http://localhost:4000/springboot2-summary","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/springboot2-summary"},"author":{"@type":"Person","name":"dskim"},"description":"스프링부트 프로젝트 의존성","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>처음배우는 스프링부트2 책을 읽고 요점정리</h2>
+  <time datetime="2019-06-10T00:00:00+09:00" class="by-line">10 Jun 2019</time>
+  <p>스프링부트 프로젝트 의존성</p>
+
+<p>https://github.com/spring-projects/spring-boot</p>
+
+<p>application-{profile}.yml {profile}에 원하는 프로파일값으로 YAML 파일을 추가하면</p>
+
+<p>애플리케이션 실행시 지정한 프로파일값을 바탕으로 실행</p>
+
+<p>서버에서 실행시</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ java -jar ... -D spring.profiles.active=dev
+</code></pre></div></div>
+
+<h2 id="yaml-파일-매핑">YAML 파일 매핑</h2>
+
+<ul>
+  <li>
+    <p>유연한 바인딩: 프로퍼티값을 객체에 바인딩할 경우 필드를 낙타 표기법(Camel Case)으로 선언 프로퍼티의 키는 다양한 형식(낙타 표기법,케밥 표기법(Kebab Case),언더바 표기법(Underscore) 선언 바인딩</p>
+  </li>
+  <li>메타데이터 지원: 프로터피 키에 대한 정보를 메타데이터 파일(Json) 로 제공</li>
+  <li>SpEL(Spring Expression Language,스프링 표현 언어) 평가: SpEL은 런타임에 객체 참조에 대해 질의하고 조작하는 기능을 지원하는 언어, 특히 메서드 호출 및 기본 문자열 템플릿기능을 제공. @Value만 사용 가능</li>
+</ul>
+
+<h1 id="스프링-부트-테스트">스프링 부트 테스트</h1>
+
+<h2 id="datajpatest">@DataJpaTest</h2>
+
+<p>JPA 관련 테스트 설정만 로드</p>
+
+<p>기본적으로 인메모리 임베디드 데이터베이스를 사용</p>
+
+<p>데이터 소스주입</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">org.junit.runner.RunWith</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.test.context.junit4.SpringRunner</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.springframework.test.context.ActiveProfiles</span><span class="o">;</span>
+    
+<span class="nd">@RunWith</span><span class="o">(</span><span class="nc">SpringRunner</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="nd">@DataJpaTest</span>
+<span class="nd">@ActiveProfiles</span><span class="o">(</span><span class="s">"..."</span><span class="o">)</span>
+<span class="nd">@AutoConfigureTestDatabase</span><span class="o">(</span><span class="n">replace</span> <span class="o">=</span> <span class="nc">AutoConfigureTestDatabase</span><span class="o">.</span><span class="na">Replace</span><span class="o">.</span><span class="na">NONE</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">JpaTest</span> <span class="o">{</span>
+<span class="o">...</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>@AutoConfigureTestDatabase 어노테이션의 기본 설정값인 Replace.Any를 사용하면 기본적으로 내장된 데이터소스를 사용함 , Replace.NONE으로 설정하면 @ActiveProfiles에 설정한 프로파일 환경값에 따라 데이터소스가 적용됨</li>
+  <li>JPA 테스트가 끝날때마다 자동으로 테스트에 사용한 데이터를 롤백</li>
+</ul>
+
+<h1 id="restclienttest">@RestClientTest</h1>
+
+<p>REST 관련 테스트를 도와주는 어노테이션</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@RunWith</span><span class="o">(</span><span class="nc">SpringRunner</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="nd">@RestClientTest</span><span class="o">(</span><span class="nc">BookRestService</span><span class="o">.</span><span class="na">class</span><span class="o">)</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">BookRestTest</span> <span class="o">{</span>
+    
+  <span class="nd">@Rule</span>
+  <span class="kd">public</span> <span class="nc">ExpectedException</span> <span class="n">thrown</span> <span class="o">=</span> <span class="nc">ExpectedException</span><span class="o">.</span><span class="na">none</span><span class="o">();</span>
+    
+  <span class="nd">@Autowired</span>
+  <span class="kd">private</span> <span class="nc">BookRestService</span> <span class="n">bookRestService</span><span class="o">;</span>
+    
+  <span class="nd">@Autowired</span>
+  <span class="kd">private</span> <span class="nc">MockRestServiceServer</span> <span class="n">server</span><span class="o">;</span>
+    
+  <span class="nd">@Test</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="n">rest_</span><span class="err">테스트</span><span class="o">()</span> <span class="o">{</span>
+    	
+    <span class="k">this</span><span class="o">.</span><span class="na">server</span><span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="n">requestTo</span><span class="o">(</span><span class="s">"/rest/test"</span><span class="o">))</span>
+      <span class="o">.</span><span class="na">andRespond</span><span class="o">(</span><span class="n">withSuccess</span><span class="o">(</span><span class="k">new</span> <span class="nc">ClassPathResource</span><span class="o">(</span><span class="s">"/test.json"</span><span class="o">,</span>
+    	<span class="n">getClass</span><span class="o">()),</span> <span class="nc">MediaType</span><span class="o">.</span><span class="na">APPLICATION_JSON</span><span class="o">));</span>
+    
+    <span class="nc">Book</span> <span class="n">book</span> <span class="o">=</span> <span class="k">this</span><span class="o">.</span><span class="na">bookRestService</span><span class="o">.</span><span class="na">getRestBook</span><span class="o">();</span>
+    <span class="n">assertThat</span><span class="o">(</span><span class="n">book</span><span class="o">.</span><span class="na">getTitle</span><span class="o">()).</span><span class="na">isEqualTo</span><span class="o">(</span><span class="s">"테스트"</span><span class="o">);</span>
+  <span class="o">}</span>
+    
+  <span class="nd">@Test</span>
+  <span class="kd">public</span> <span class="kt">void</span> <span class="n">rest_error_</span><span class="err">테스트</span><span class="o">()</span> <span class="o">{</span>
+    		
+    <span class="k">this</span><span class="o">.</span><span class="na">server</span><span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="n">requestTo</span><span class="o">(</span><span class="s">"/rest/test"</span><span class="o">))</span>
+      <span class="o">.</span><span class="na">andRespond</span><span class="o">(</span><span class="n">withServerError</span><span class="o">());</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">thrown</span><span class="o">.</span><span class="na">expect</span><span class="o">(</span><span class="nc">HttpServerErrorException</span><span class="o">.</span><span class="na">class</span><span class="o">);</span>
+    <span class="k">this</span><span class="o">.</span><span class="na">bookRestService</span><span class="o">.</span><span class="na">getRestBook</span><span class="o">();</span>
+  <span class="o">}</span>
+    
+<span class="o">}</span>
+
+</code></pre></div></div>
+
+<ul>
+  <li>@RestClientTest 는 테스트 대상이 되는 빈을 주입받음</li>
+  <li>@Rule로 지정한 필드값은 @Before나 @After 어노테이션에 상관없이 하나의 테스트 메서드가 끝날때 마다 정의한 값으로 초기화 시켜줌</li>
+</ul>
+
+<h2 id="jsontest">@JsonTest</h2>
+
+<p>@JsonTest 어노테이션은 JSON의 직렬화(serialization)와 역직렬화(deserialization)을 수행하는 라이브러리인 Gson과 Jackson API의 테스트를 제공함</p>
+
+<h2 id="4장-스프링-부트-웹">4장 스프링 부트 웹</h2>
+
+<p>스프링이 관리하는 컴포넌트에서 퍼시스턴스 계층에 대해 더 명확하게 특수한 제네릭 스테레오타입을 말함</p>
+
+<p>퍼시스턴스 계층이란 물리적 저장공간을 뜻함.영속성을 가진 파일이나 DB에 로직을 구현하는 것을 뜻하기도함.</p>
+
+<p>JPA fetch eager와 lazy 두종류가 있음 eager는 도메인을 조회할때 즉시 관련된 객체도 같이 조회</p>
+
+<p>lazy는 객체가 실제로 사용될때 조회됨</p>
+
+<h2 id="commandlinerunner를-사용하여-db에-데이터-넣기">CommandLineRunner를 사용하여 DB에 데이터 넣기</h2>
+
+<p>CommandLineRunner는 애플리케이션 구동 후 특정 코드를 실행시키고 싶을 때 직접 구현하는 인터페이스</p>
+
+<p>애플리케이션 구동시 테스트 데이터를 함께 생성하여 데모 프로젝트를 실행/테스트하고 싶을때 편리함</p>
+
+<p>스프링 DI(Dependency Injection) 스프링의 주요 특성 중 하나로 주로 의존 관계 주입</p>
+
+<p>의존 관계를 주입하는게 아니라 단지 객체의 레퍼런스를 전달하여 참조시킨다는 의미로 의존 관계 설정이라고 함</p>
+
+<h2 id="5장-스프링-부트-시큐리티--oauth2">5장 스프링 부트 시큐리티 + OAuth2</h2>
+
+<p>스프링 부트 시큐리티에서 가장 중요한 개념은 ‘인증(authentication)’ 과 ‘권한부여(authorization)’</p>
+
+<p>@NestedConfigurationProperty</p>
+
+<p>@EnableWebSecurity 어노테이션은 웹에서 시큐리티 기능 사용하겠다는 어노테이션</p>
+
+<p>스프링부트는 @EnableWebSecurity 자동 설정이 적용됨</p>
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nd">@Configuration</span>
+<span class="nd">@EnableWebSecurity</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">SecurityConfig</span> <span class="kd">extends</span> <span class="nc">WebSecurityConfigurerAdapter</span> <span class="o">{</span>
+    
+  <span class="nd">@Override</span>
+  <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">configure</span><span class="o">(</span><span class="nc">HttpSecurity</span> <span class="n">http</span><span class="o">)</span> <span class="kd">throws</span> <span class="nc">Exception</span> <span class="o">{</span>
+    <span class="nc">CharacterEncodingFilter</span> <span class="n">filter</span> <span class="o">=</span> <span class="k">new</span> <span class="nc">CharacterEncodingFilter</span><span class="o">();</span>
+    	
+    <span class="n">http</span>
+      <span class="o">.</span><span class="na">authorizeRequests</span><span class="o">()</span>  <span class="c1">//인증 메커니즘 요청 HttpServletRequest 기반으로 설정</span>
+    	  <span class="o">.</span><span class="na">antMatchers</span><span class="o">(</span><span class="s">"/"</span><span class="o">,</span> <span class="s">"/login/**"</span><span class="o">,</span> <span class="s">"/css/**"</span><span class="o">,</span> <span class="s">"/images/**"</span><span class="o">,</span> <span class="s">"/js/**"</span><span class="o">,</span> <span class="c1">// 요청 패턴을 리스트 형식으로 설정 </span>
+    	    <span class="s">"/console/**"</span><span class="o">).</span><span class="na">permitAll</span><span class="o">()</span> <span class="c1">//설정한 리퀘스트 패턴 누구나 접근 허용 </span>
+    	  <span class="o">.</span><span class="na">anyRequest</span><span class="o">()</span> <span class="c1">// 설정한 요청 이외의 리퀘스트 요청을 표현 </span>
+    	  <span class="o">.</span><span class="na">authenticated</span><span class="o">()</span> <span class="c1">// 해당 요청은 인증된 사용자만 할수 있음 </span>
+    	<span class="o">.</span><span class="na">and</span><span class="o">()</span>
+    	  <span class="o">.</span><span class="na">headers</span><span class="o">()</span> <span class="c1">// 응답에 해당하는 header 설정 </span>
+    		<span class="o">.</span><span class="na">frameOptions</span><span class="o">().</span><span class="na">disable</span><span class="o">()</span> <span class="c1">// XFrameOptionsHeaderWriter 최적화 설정을 허용안함 </span>
+    	<span class="o">.</span><span class="na">and</span><span class="o">()</span>
+    	  <span class="o">.</span><span class="na">exceptionHandling</span><span class="o">()</span>
+    		<span class="o">.</span><span class="na">authenticationEntryPoint</span><span class="o">(</span><span class="k">new</span> <span class="nc">LoginUrlAuthenticationEntryPoint</span><span class="o">(</span>
+    		  <span class="s">"/login"</span><span class="o">))</span> <span class="c1">//인증의 진입 지점 인증되지 않은 사용자가 허용되지 않은 경로로 리퀘스트 요청하면 /login으로 이동 </span>
+    	<span class="o">.</span><span class="na">and</span><span class="o">()</span>
+    	  <span class="o">.</span><span class="na">formLogin</span><span class="o">()</span>
+    		<span class="o">.</span><span class="na">successForwardUrl</span><span class="o">(</span><span class="s">"/board/list"</span><span class="o">)</span> <span class="c1">// 로그인에 성공하면 설정된 경로로 포워딩 </span>
+    	<span class="o">.</span><span class="na">and</span><span class="o">()</span>
+    	  <span class="o">.</span><span class="na">logout</span><span class="o">()</span>
+    		<span class="o">.</span><span class="na">logoutUrl</span><span class="o">(</span><span class="s">"/logout"</span><span class="o">)</span> 
+    		<span class="o">.</span><span class="na">logoutSuccessUrl</span><span class="o">(</span><span class="s">"/"</span><span class="o">)</span>
+    		<span class="o">.</span><span class="na">deleteCookies</span><span class="o">(</span><span class="s">"JSESSIONID"</span><span class="o">)</span> <span class="c1">// 로그아웃시에 쿠키 값 삭제 </span>
+    		<span class="o">.</span><span class="na">invalidateHttpSession</span><span class="o">(</span><span class="kc">true</span><span class="o">)</span> <span class="c1">// 세션무효화 </span>
+    	<span class="o">.</span><span class="na">and</span><span class="o">()</span>
+    	  <span class="o">.</span><span class="na">addFilterBefore</span><span class="o">(</span><span class="n">filter</span><span class="o">,</span> <span class="nc">CsrfFilter</span><span class="o">.</span><span class="na">class</span><span class="o">)</span> <span class="c1">//첫번째 인자보다 먼저 시작될 필터를 등록 </span>
+    		  <span class="o">.</span><span class="na">csrf</span><span class="o">().</span><span class="na">disable</span><span class="o">();</span> 
+  <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<p>그레이들에서 의존성 관리 제어를 위한 플러그인</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apply plugin: 'io.spring.dependency-management'
+</code></pre></div></div>
+
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+</html>

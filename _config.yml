@@ -30,3 +30,5 @@ plugins:
 # Custom variables
 owner : "Dskim"
 year : "2020"
+
+google_analytics: UA-131141875-2

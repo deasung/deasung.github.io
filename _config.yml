@@ -1,9 +1,9 @@
-title: Dskim-Blog
-description: "개발하면서 삽질했던것들 메모용"
+title: dskim-blog
+description: "개발 블로그"
 author:
-  name: "Dskim"
+  name: "dskim"
   email: "deasung.kim2622@gmail.com"
-  url: "https://ashishchaudhary.in/hacker-blog"
+  url: "https://deasung.github.io"
 
 baseurl:
 
@@ -28,7 +28,7 @@ plugins:
   - jekyll-sitemap
 
 # Custom variables
-owner : "Dskim"
+owner : "dskim"
 year : "2020"
 
 google_analytics: UA-131141875-2

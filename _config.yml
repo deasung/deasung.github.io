@@ -1,36 +1,32 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely need to edit after that.
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'jekyll serve'. If you change this file, please restart the server process.
+title: Dskim-Blog
+description: "개발하면서 삽질했던것들 메모용"
+author:
+  name: "Dskim"
+  email: "deasung.kim2622@gmail.com"
+  url: "https://ashishchaudhary.in/hacker-blog"
 
-# Site settings
-name: deasung.github.io
-title: 김대성 블로그
-description: 개발하면서 삽질했던것들 메모용
-url: http://deasung.github.io/
-profile_url: /assets/imgs/me.jpg
-email: deasung.kim2622@gmail.com
-twitter_username: comecome2622
-github_username:  deasung
-facebook_username: kim.daesung.509
-linkedin_username: 대성-김-794594114
+baseurl:
 
-# Handling Reading
-exclude: ['node_modules', 'vendor'] # Remove comment at local eevelopment mode
+source: .
+destination: ./_site
+permalink: /:title
+paginate: 10
+paginate_path: /page/:num/
 
-# markdown: kramdown
-kramdown:
-  input: GFM
-  hard_wrap: false
+defaults:
+  -
+    scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
 
-# Plugins
+future: true
 plugins:
+  - jekyll-seo-tag
   - jekyll-paginate
+  - jekyll-sitemap
 
-# Pagination
-paginate: 30
-
-sass:
-  style: compressed # possible values: nested expanded compact compressed
+# Custom variables
+owner : "Dskim"
+year : "2020"

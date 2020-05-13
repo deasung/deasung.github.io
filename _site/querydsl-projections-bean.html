@@ -49,6 +49,13 @@
         <article>
   <h2>QueryDSL Projections.bean</h2>
   <time datetime="2019-01-15T00:00:00+09:00" class="by-line">15 Jan 2019</time>
+  <div style="text-align: left; margin-top: 10px;">
+    <a href="http://hits.dwyl.com/localhost:4000/querydsl-projections-bean"
+       target="_blank">
+      <img
+          src="http://hits.dwyl.com/localhost:4000/querydsl-projections-bean.svg" />
+    </a>
+  </div>
   <p>쿼리 결과를 엔티티가 아닌 특정한 자바객체(DTO, VO)로 받고 싶은 경우 Pjojections를 사용하면 되는데 .bean()을 사용하면 Setter로 값을 채우고 .field()라고 하면 필드(멤버변수)에 직접 접근하여 값을 채우며, .constructor() 라고 하면 생성자를 통해 값을 채운다.</p>
 
 <div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="o">.</span><span class="na">select</span><span class="o">(</span><span class="nc">Projections</span><span class="o">.</span><span class="na">bean</span><span class="o">(</span>

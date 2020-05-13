@@ -13,7 +13,6 @@ published: true
 
 4. flush privileges; 입력한다.
 
-
 5. my.cnf 파일 내용중에서 bind-address =127.0.0.1 을 주석(#)처리 하고 저장한다.
      bind-address = 127.0.0.1 => #bind-address = 127.0.0.1
    위치 -> ubuntu -> /etc/mysql/my.cnf
@@ -24,3 +23,9 @@ published: true
 ```
 sudo service mysql restart
 ```   
+
+
+2020.05.08 간만에 예전에 썼던 내용들을 보면서 좀더 추가 내용을 적기로 함
+
+요즘에는 클라우드 기반으로 많이써서 직접 mysql 엔진을 건드리지 않지만,
+직접 설치해서 운영시에는 저런 설정들이 필요할것이다.

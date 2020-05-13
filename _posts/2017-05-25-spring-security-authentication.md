@@ -2,6 +2,7 @@
 
 title: SpringSecurity Authentication(인증) 용어만 간단히 정리
 published: true
+comments : true
 ---
 
 

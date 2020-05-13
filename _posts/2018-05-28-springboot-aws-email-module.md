@@ -2,6 +2,7 @@
 
 title: SpringBoot AWS Email 모듈 만들기
 published: true
+comments : true
 ---
 
 

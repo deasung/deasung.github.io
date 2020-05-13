@@ -1,6 +1,7 @@
 ---
 title: Ubuntu 16.04 MySQL 설치
 published: true
+comments : true
 ---
 
 

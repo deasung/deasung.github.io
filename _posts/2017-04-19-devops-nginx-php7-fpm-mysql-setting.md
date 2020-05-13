@@ -1,6 +1,7 @@
 ---
 title: nginx , php7 fpm설정된 서버에서 mysql 연동안될때
 published: true
+comments : true
 ---
 
 

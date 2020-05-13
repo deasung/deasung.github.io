@@ -1,6 +1,7 @@
 ---
 title: PHP 문자열 합치기
 published: true
+comments : true
 ---
 
 

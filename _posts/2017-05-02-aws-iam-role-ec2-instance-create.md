@@ -2,6 +2,7 @@
 
 title: Amazon IAM 역할을 사용하는 EC2 인스턴스 생성하기
 published: true
+comments : true
 ---
 
 

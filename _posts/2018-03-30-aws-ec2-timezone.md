@@ -2,6 +2,7 @@
 
 title: EC2 TimeZone 변경
 published: true
+comments : true
 ---
 
 ## 1.TimeZone ?

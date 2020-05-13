@@ -2,6 +2,7 @@
 
 title: Java Json library jackson 사용법
 published: true
+comments : true
 ---
 
 

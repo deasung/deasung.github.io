@@ -1,6 +1,7 @@
 ---
 title: Spring 태스크(Task) 네임스페이스
 published: true
+comments : true
 ---
 
 

@@ -5,25 +5,25 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
   <meta name="generator" content="Jekyll">
 
-  <title>리눅스에서 OS버전 확인하기</title>
+  <title>리눅스에서 커널정보 | OS버전에 대한 정보 | 시간 및 사용자 사용률 통계 확인하기</title>
 
   <link rel="stylesheet" href="/css/main.css">
   
   <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>리눅스에서 OS버전 확인하기 | dskim-blog</title>
+<title>리눅스에서 커널정보 OS버전에 대한 정보 시간 및 사용자 사용률 통계 확인하기 | dskim-blog</title>
 <meta name="generator" content="Jekyll v3.8.5" />
-<meta property="og:title" content="리눅스에서 OS버전 확인하기" />
+<meta property="og:title" content="리눅스에서 커널정보 OS버전에 대한 정보 시간 및 사용자 사용률 통계 확인하기" />
 <meta name="author" content="dskim" />
 <meta property="og:locale" content="en_US" />
-<meta name="description" content="일반적인 커널에 대한 정보 uname -a" />
-<meta property="og:description" content="일반적인 커널에 대한 정보 uname -a" />
+<meta name="description" content="커널정보 확인하기" />
+<meta property="og:description" content="커널정보 확인하기" />
 <link rel="canonical" href="http://localhost:4000/linux-os" />
 <meta property="og:url" content="http://localhost:4000/linux-os" />
 <meta property="og:site_name" content="dskim-blog" />
 <meta property="og:type" content="article" />
 <meta property="article:published_time" content="2015-02-02T00:00:00+09:00" />
 <script type="application/ld+json">
-{"headline":"리눅스에서 OS버전 확인하기","dateModified":"2015-02-02T00:00:00+09:00","datePublished":"2015-02-02T00:00:00+09:00","url":"http://localhost:4000/linux-os","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/linux-os"},"author":{"@type":"Person","name":"dskim"},"description":"일반적인 커널에 대한 정보 uname -a","@type":"BlogPosting","@context":"https://schema.org"}</script>
+{"headline":"리눅스에서 커널정보 OS버전에 대한 정보 시간 및 사용자 사용률 통계 확인하기","dateModified":"2015-02-02T00:00:00+09:00","datePublished":"2015-02-02T00:00:00+09:00","url":"http://localhost:4000/linux-os","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/linux-os"},"author":{"@type":"Person","name":"dskim"},"description":"커널정보 확인하기","@type":"BlogPosting","@context":"https://schema.org"}</script>
 <!-- End Jekyll SEO tag -->
 
 </head>
@@ -47,7 +47,7 @@
     <div class="container">
       <section id="main_content">
         <article>
-  <h2>리눅스에서 OS버전 확인하기</h2>
+  <h2>리눅스에서 커널정보 | OS버전에 대한 정보 | 시간 및 사용자 사용률 통계 확인하기</h2>
   <time datetime="2015-02-02T00:00:00+09:00" class="by-line">02 Feb 2015</time>
   <div style="text-align: left; margin-top: 10px;">
     <a href="http://hits.dwyl.com/localhost:4000/linux-os"
@@ -56,15 +56,91 @@
           src="http://hits.dwyl.com/localhost:4000/linux-os.svg" />
     </a>
   </div>
-  <p>일반적인 커널에 대한 정보</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uname -a
+  <h1 id="커널정보-확인하기">커널정보 확인하기</h1>
+
+<h2 id="uname">uname</h2>
+<p>커널에 대한 정보를 얻어옵니다.</p>
+
+<p>예시)</p>
+<ul>
+  <li>uname -n (노드 이름)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ip-172-31-77-26
+</code></pre></div>    </div>
+  </li>
+  <li>uname -p (프로시져 타입)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x86_64
+</code></pre></div>    </div>
+  </li>
+  <li>uname -r (릴리즈 레벨)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>4.14.171-105.231.amzn1.x86_64
+</code></pre></div>    </div>
+  </li>
+  <li>uname -m (머신 하드웨어 이름)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x86_64
+</code></pre></div>    </div>
+  </li>
+  <li>uname -i (플랫폼)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>x86_64
+</code></pre></div>    </div>
+  </li>
+  <li>uname -v (커널 아이디)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#1 SMP Thu Feb 27 23:49:15 UTC 2020
+</code></pre></div>    </div>
+  </li>
+  <li>uname -s (OS의 이름)
+    <div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Linux
+</code></pre></div>    </div>
+  </li>
+  <li>uname -a
+```
+uname -a</li>
+</ul>
+
+<p>Linux ip-172-31-77-26 4.14.171-105.231.amzn1.x86_64 #1 SMP Thu Feb 27 23:49:15 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux</p>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+
+
+# OS버전에 대한 정보
+</code></pre></div></div>
+<ol>
+  <li>cat /etc/issue</li>
+  <li>cat /etc/redhat-release
+```</li>
+</ol>
+
+<h1 id="시간-및-사용자-사용률-통계-확인하기">시간 및 사용자 사용률 통계 확인하기</h1>
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>uptime
+
+02:15:47(현재시간) up 55 days, 20:55(시스템 가동시간),  1 user(사용자 수),  load average: 0.00, 0.00, 0.00 (평균시스템 부하)
+
 </code></pre></div></div>
 
-<p>OS버전에 대한 정보</p>
-<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1. cat /etc/issue
-2. cat /etc/redhat-release
-</code></pre></div></div>
 
+  
+  <div id="post-disqus" class="container" style="width: 100%;">
+    <div id="disqus_thread"></div>
+<script>
+
+  /**
+   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://dskim-1.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </div>
+  
 </article>
       </section>
     </div>

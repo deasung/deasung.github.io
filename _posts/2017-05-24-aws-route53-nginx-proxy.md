@@ -2,6 +2,7 @@
 
 title: AWS Route53 nginx proxy 연동
 published: true
+comments : true
 ---
 
 

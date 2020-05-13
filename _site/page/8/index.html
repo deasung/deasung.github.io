@@ -66,29 +66,21 @@
       </li>
     
       <li>
-          <h2><a href="/linux-os">리눅스에서 OS버전 확인하기</a></h2>
+          <h2><a href="/linux-os">리눅스에서 커널정보 | OS버전에 대한 정보 | 시간 및 사용자 사용률 통계 확인하기</a></h2>
           <time datetime="2015-02-02T00:00:00+09:00">02 Feb 2015</time>
-          <p>일반적인 커널에 대한 정보
-uname -a
-
-
-OS버전에 대한 정보
-1. cat /etc/issue
-2. cat /etc/redhat-release
-
-</p>
+          <p>커널정보 확인하기 uname 커널에 대한 정보를 얻어옵니다. 예시) uname -n (노드 이름) ip-172-31-77-26 uname -p (프로시져 타입) x86_64 uname -r (릴리즈 레벨) 4.14.171-105.231.amzn1.x86_64 uname -m (머신 하드웨어 이름) x86_64 uname -i (플랫폼) x86_64 uname -v (커널 아이디) #1 SMP Thu Feb 27 23:49:15 UTC 2020 uname -s (OS의 이름) Linux...</p>
       </li>
     
       <li>
-          <h2><a href="/mysql-password-reset">분실한 mysql root password 재설정하기</a></h2>
+          <h2><a href="/mysql-password-reset">분실한 mysql root password 재설정하기 (Ubuntu 12.04 기준)</a></h2>
           <time datetime="2014-11-16T00:00:00+09:00">16 Nov 2014</time>
-          <p>Mysql을 처음 설치할 때 database root 계정으로 사용할 password를 설정한다. 하지만 시간이 오래 지나서 그때 설정한 password를 기억할 수 없다면 다음의 방법으로 재설정할 수 있다. (Ubuntu 12.04 기준) Step 1. 실행중인 mysql service를 중지 시킨다. # service mysql stop Step 2. Password를 검사하지 않도록 mysql 환경설정 파일을 수정한다. /etc/mysql/my.conf file에...</p>
+          <p>Mysql을 처음 설치할 때 database root 계정으로 사용할 password를 설정한다. 하지만 시간이 오래 지나서 그때 설정한 password를 기억할 수 없다면 다음의 방법으로 재설정할 수 있다. (Ubuntu 12.04 기준) Step 1. 실행중인 mysql service를 중지 시킨다. # service mysql stop Step 2. Password를 검사하지 않도록 mysql 환경설정 파일을 수정한다. : /etc/mysql/my.conf...</p>
       </li>
     
       <li>
           <h2><a href="/mysql-external-connection">MySQL(Maria DB) root 계정 외부접속 허용</a></h2>
           <time datetime="2014-10-24T00:00:00+09:00">24 Oct 2014</time>
-          <p>MySQL(Maria DB) 로 접속 한다. use mysql 명령어를 입력한다. grant all privileges on . to ‘root’@’%’ identified by ‘비밀번호’; 입력한다. flush privileges; 입력한다. my.cnf 파일 내용중에서 bind-address =127.0.0.1 을 주석(#)처리 하고 저장한다. bind-address = 127.0.0.1 =&gt; #bind-address = 127.0.0.1 위치 -&gt; ubuntu -&gt; /etc/mysql/my.cnf MySQL을 재시작 한다 sudo service mysql...</p>
+          <p>MySQL(Maria DB) 로 접속 한다. use mysql 명령어를 입력한다. grant all privileges on . to ‘root’@’%’ identified by ‘비밀번호’; 입력한다. 모든 디비 및 테이블에 root 권한에 INSERT,UPDATE,DELETE 등 권한을 줌 flush privileges; 입력한다. (참고로 이 명령어는 디비에 부하를 많이준다고 합니다.) my.cnf 파일 내용중에서 bind-address =127.0.0.1 을 주석(#)처리 하고 저장한다. bind-address...</p>
       </li>
     
 </ul>

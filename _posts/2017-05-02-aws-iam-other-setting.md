@@ -2,6 +2,7 @@
 
 title: Amazon IAM 기타 설정 및 기능
 published: true
+comments : true
 ---
 
 

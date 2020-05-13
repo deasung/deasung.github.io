@@ -2,6 +2,7 @@
 
 title: HTML OPEN GRAPH 태그
 published: true
+comments : true
 ---
 
 [링크의 미리보기 제목, 설명, 이미지를 결정하는 open graph 태그](http://blog.ab180.co/open-graph-as-a-website-preview/)

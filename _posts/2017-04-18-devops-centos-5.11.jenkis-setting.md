@@ -1,6 +1,7 @@
 ---
 title: Centos 5.11 Jenkis 설치
 published: true
+comments : true
 ---
 
 

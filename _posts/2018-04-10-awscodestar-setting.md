@@ -2,6 +2,7 @@
 
 title: AWS CodeStar 구축
 published: true
+comments : true
 ---
 
 

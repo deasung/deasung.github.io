@@ -1,6 +1,7 @@
 ---
 title: Ubuntu 16.04 $JAVA_HOME 설정
 published: true
+comments : true
 ---
 
 

@@ -2,6 +2,7 @@
 
 title: 그레이들 래퍼
 published: true
+comments : true
 ---
 
 

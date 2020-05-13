@@ -2,6 +2,7 @@
 
 title: SpringBoot Session 유지 시간
 published: true
+comments : true
 ---
 
 

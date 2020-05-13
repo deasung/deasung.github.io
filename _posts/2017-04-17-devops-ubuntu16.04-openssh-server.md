@@ -1,6 +1,7 @@
 ---
 title: Ubuntu 16.04 openssh-server
 published: true
+comments : true
 ---
 
 

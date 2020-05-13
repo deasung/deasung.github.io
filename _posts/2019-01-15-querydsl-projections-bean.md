@@ -2,6 +2,7 @@
 
 title: QueryDSL Projections.bean
 published: true
+comments : true
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: Nexus sonatype 개발환경 설정 원격배포
 published: true
+comments : true
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: 처음배우는 스프링부트2 책을 읽고 요점정리
 published: true
+comments : true
 ---
 
 

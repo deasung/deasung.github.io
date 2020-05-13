@@ -2,6 +2,7 @@
 
 title: CONCAT,COALESCE,GROUP_CONCAT을 이용해서 json처럼 뽑아버리기
 published: true
+comments : true
 ---
 
 

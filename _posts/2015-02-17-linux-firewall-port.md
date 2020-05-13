@@ -1,6 +1,7 @@
 ---
 title: 리눅스(Linux) 포트(port)  열기, 방화벽(firewall)  설정/해제 등 안내 리눅스(Linux)
 published: true
+comments : true
 ---
 
 

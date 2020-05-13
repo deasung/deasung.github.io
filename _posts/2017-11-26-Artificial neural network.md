@@ -2,6 +2,7 @@
 
 title: 신경망 첫걸음 공부중
 published: true
+comments : true
 ---
 
 

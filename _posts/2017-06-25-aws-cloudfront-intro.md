@@ -2,6 +2,7 @@
 
 title: Amazon CloudFront 콘텐츠 전송 네트워크(CDN)
 published: true
+comments : true
 ---
 
 

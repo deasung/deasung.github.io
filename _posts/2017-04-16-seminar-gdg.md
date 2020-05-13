@@ -1,6 +1,7 @@
 ---
 title: 4월 GDG 정기모임
 published: true
+comments : true
 ---
 
 

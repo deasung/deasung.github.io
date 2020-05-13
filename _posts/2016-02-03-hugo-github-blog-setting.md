@@ -1,6 +1,7 @@
 ---
 title: Hugo & Github 블로그 연동
 published: true
+comments : true
 ---
 
 

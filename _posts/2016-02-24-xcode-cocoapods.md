@@ -1,6 +1,7 @@
 ---
 title: xcode cocoapods 사용법
 published: true
+comments : true
 ---
 
 

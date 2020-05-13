@@ -2,6 +2,7 @@
 
 title: AWS IAM 역할 활용하기
 published: true
+comments : true
 ---
 
 

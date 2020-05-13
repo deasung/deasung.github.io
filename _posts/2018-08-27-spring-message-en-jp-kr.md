@@ -2,6 +2,7 @@
 
 title: SpringBoot 다국어 설정
 published: true
+comments : true
 ---
 
 

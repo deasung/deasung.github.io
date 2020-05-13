@@ -2,6 +2,7 @@
 
 title: MYSQL DUMP 뜨고 삽입
 published: true
+comments : true
 ---
 
 

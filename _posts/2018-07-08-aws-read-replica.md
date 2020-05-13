@@ -2,6 +2,7 @@
 
 title: AWS read replica 생성
 published: true
+comments : true
 ---
 
 

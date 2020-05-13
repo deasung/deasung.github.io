@@ -1,6 +1,7 @@
 ---
 title: CentOS Maven 사설 레파지토리 구축
 published: true
+comments : true
 ---
 
 

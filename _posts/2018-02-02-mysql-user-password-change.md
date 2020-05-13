@@ -2,6 +2,7 @@
 
 title: Mysql 유저 패스워드 변경 
 published: true
+comments : true
 ---
 
 

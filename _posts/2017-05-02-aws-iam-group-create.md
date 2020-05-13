@@ -2,6 +2,7 @@
 
 title: Amazon IAM 그룹 생성하기
 published: true
+comments : true
 ---
 
 

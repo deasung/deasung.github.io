@@ -1,6 +1,7 @@
 ---
 title: java 서버 프로그램 nohup 백그라운드 실행 및 종료
 published: true
+comments : true
 ---
 
 1.cat > 파일명 

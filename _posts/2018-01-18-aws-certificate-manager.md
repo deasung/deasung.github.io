@@ -2,6 +2,7 @@
 
 title: AWS Certificate Manager 인증서 요청
 published: true
+comments : true
 ---
 
 

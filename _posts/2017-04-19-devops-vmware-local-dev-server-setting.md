@@ -1,6 +1,7 @@
 ---
 title: VMWARE 이용해서 로컬 개발서버구축
 published: true
+comments : true
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: Ubuntu 16.04 jdk 1.8설치
 published: true
+comments : true
 ---
 
 

@@ -2,6 +2,7 @@
 
 title: NGINX에 ELB 체크 하는 방법 
 published: true
+comments : true
 ---
 
 vi /etc/nginx/nginx.conf 로가서 추가를 해줍니다.

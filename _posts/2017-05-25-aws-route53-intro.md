@@ -2,6 +2,7 @@
 
 title: AWS Route53 서비스 소개
 published: true
+comments : true
 ---
 
 

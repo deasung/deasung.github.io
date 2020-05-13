@@ -1,6 +1,7 @@
 ---
 title: MAC hosts 수정방법
 published: true
+comments : true
 ---
 
 

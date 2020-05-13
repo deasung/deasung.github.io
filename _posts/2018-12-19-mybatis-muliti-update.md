@@ -2,6 +2,7 @@
 
 title: mybatis muliti update 하려면! 
 published: true
+comments : true
 ---
 
 mybatis muliti update 하려면~!

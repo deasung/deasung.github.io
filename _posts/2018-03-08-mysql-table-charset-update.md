@@ -2,6 +2,7 @@
 
 title: Mysql Table charset 변경 / AUTO_INCREMENT = 1로 초기화
 published: true
+comments : true
 ---
 
 

@@ -1,6 +1,7 @@
 ---
 title: 2017 AWS SUBMIT 1일차 후기
 published: true
+comments : true
 ---
 
 

@@ -2,6 +2,7 @@
 
 title: Crontab 크론탭 시작/중지/재시작
 published: true
+comments : true
 ---
 
 크론탭 시작

@@ -2,6 +2,7 @@
 
 title: Jenkins 설치 & Gitlab 연동
 published: true
+comments : true
 ---
 
 

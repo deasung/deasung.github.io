@@ -2,6 +2,7 @@
 
 title: ELB Classic Load Blancer에서 리스너 nginx proxy 같은 기능
 published: true
+comments : true
 ---
 
 

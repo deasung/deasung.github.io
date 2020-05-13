@@ -1,6 +1,7 @@
 ---
 title: 고정 IP를 제공하는 Elastic IP
 published: true
+comments : true
 ---
 
 

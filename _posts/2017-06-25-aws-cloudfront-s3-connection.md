@@ -2,6 +2,7 @@
 
 title: AWS CloudFront 와 S3연동
 published: true
+comments : true
 ---
 
 

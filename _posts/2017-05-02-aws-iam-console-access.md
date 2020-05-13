@@ -2,6 +2,7 @@
 
 title: Amazon IAM 사용자를 AWS 콘솔에 접속하기
 published: true
+comments : true
 ---
 
 

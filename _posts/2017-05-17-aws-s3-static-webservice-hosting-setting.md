@@ -2,6 +2,7 @@
 
 title: AWS S3 버킷 Permissions 정책 추가
 published: true
+comments : true
 ---
 
 

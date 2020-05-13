@@ -1,6 +1,7 @@
 ---
 title: Amazon EC2 - PORT 타임아웃이 나면?
 published: true
+comments : true
 ---
 
 

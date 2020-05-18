@@ -12,6 +12,70 @@
     </author>
     
       <item>
+        <title>AWS pipeline -&gt; bitbucket cloud 베타용 연동</title>
+        <description>&lt;p&gt;자세한건 공식문서를 읽는게 제일 좋습니다.
+AWS pipeline -&amp;gt; bitbucket cloud 베타용 연동용 &lt;a href=&quot;https://aws.amazon.com/ko/about-aws/whats-new/2019/12/aws-codepipeline-now-supports-atlassian-bitbucket-cloud/&quot;&gt;공식문서&lt;/a&gt;
+링크입니다.&lt;/p&gt;
+
+&lt;p&gt;최근에 회사 기존 젠킨스 CI랑 Bitbucket Clound Pipeline으로 되어 있는 부분을&lt;/p&gt;
+
+&lt;p&gt;조금씩 AWS CI로 옮기는중에 적는 내용입니다~&lt;/p&gt;
+
+&lt;h1 id=&quot;간단한-정리&quot;&gt;간단한 정리&lt;/h1&gt;
+
+&lt;h2 id=&quot;1정책을-만들어-줍니다&quot;&gt;1.정책을 만들어 줍니다.&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/18/1.png&quot; alt=&quot;1&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2정책을-json편집기로-입력해준다&quot;&gt;2.정책을 json편집기로 입력해준다.&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/18/2.png&quot; alt=&quot;2&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;json 파일 내용입니다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
+    &quot;Version&quot;: &quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;codestar-connections:CreateConnection&quot;,
+                &quot;codestar-connections:DeleteConnection&quot;,
+                &quot;codestar-connections:GetConnection&quot;,
+                &quot;codestar-connections:ListConnections&quot;,
+                &quot;codestar-connections:GetInstallationUrl&quot;,
+                &quot;codestar-connections:GetIndividualAccessToken&quot;,
+                &quot;codestar-connections:ListInstallationTargets&quot;,
+                &quot;codestar-connections:StartOAuthHandshake&quot;,
+                &quot;codestar-connections:UpdateConnectionInstallation&quot;,
+                &quot;codestar-connections:UseConnection&quot;,
+                &quot;codestar-connections:PassConnection&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;*&quot;
+            ]
+        }
+    ]
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;3파이프라인-항목으로-이동&quot;&gt;3.파이프라인 항목으로 이동&lt;/h2&gt;
+&lt;p&gt;Bitbucket 연결 버튼을 클릭해 줍니다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/18/3.png&quot; alt=&quot;3&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4bitbucket-cloud랑-연동&quot;&gt;4.Bitbucket Cloud랑 연동&lt;/h2&gt;
+&lt;p&gt;창이 나오는데 연동을 해주면 됩니다&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/18/4.png&quot; alt=&quot;4&quot; /&gt;&lt;/p&gt;
+</description>
+        <pubDate>Mon, 18 May 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000//aws-codepipeline-bitbucket-cloud-connect</link>
+        <link href="http://localhost:4000/aws-codepipeline-bitbucket-cloud-connect"/>
+        <guid isPermaLink="true">http://localhost:4000/aws-codepipeline-bitbucket-cloud-connect</guid>
+      </item>
+    
+      <item>
         <title>처음배우는 스프링부트2 책을 읽고 요점정리</title>
         <description>&lt;p&gt;스프링부트 프로젝트 의존성&lt;/p&gt;
 
@@ -438,40 +502,6 @@
         <link>http://localhost:4000//spring-message-en-jp-kr</link>
         <link href="http://localhost:4000/spring-message-en-jp-kr"/>
         <guid isPermaLink="true">http://localhost:4000/spring-message-en-jp-kr</guid>
-      </item>
-    
-      <item>
-        <title>AWS read replica 생성</title>
-        <description>&lt;h1 id=&quot;aws-read-replica&quot;&gt;AWS read replica&lt;/h1&gt;
-&lt;p&gt;이렇게 한 이유는 디비 이중화를 하기위해서 이렇게 했다
-read replica 옵션은 AWS RDS Aurora만 되는 걸로 알고 있지만 자세한건 공식 문서로
-https://aws.amazon.com/ko/rds/details/read-replicas/&lt;/p&gt;
-
-&lt;h3 id=&quot;1디비-클릭한후-인스턴스-작업을-클릭후에-리전-간-읽기-전용-복제본-만들기-클릭&quot;&gt;1.디비 클릭한후 인스턴스 작업을 클릭후에 리전 간 읽기 전용 복제본 만들기 클릭&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/07/09/aws-read-replica/aws-read-replica-01.png&quot; alt=&quot;AWS_read_replica_1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/07/09/aws-read-replica/aws-read-replica-02.png&quot; alt=&quot;AWS_read_replica_2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/07/09/aws-read-replica/aws-read-replica-03.png&quot; alt=&quot;AWS_read_replica_3&quot; /&gt;&lt;/p&gt;
-
-&lt;h3 id=&quot;2복제본-생성버튼-클릭&quot;&gt;2.복제본 생성버튼 클릭&lt;/h3&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/07/09/aws-read-replica/aws-read-replica-04.png&quot; alt=&quot;AWS_read_replica_4&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;마무리를~&lt;/p&gt;
-
-&lt;p&gt;여기에서 더붙이면 Route53에 디비 퍼블릭엑세스 주소를 연결해놓으면 나름 2차도메인으로 써서
-더욱 관리하기가 쉽다&lt;/p&gt;
-
-&lt;p&gt;추후에 개발했을때 문제는
-쓰기 디비에서 insert,update,delete후에 바로 읽기디비에서는 잘갱신이 안되는듯한 바로 먼가
-설정이 있는데 찾으면 다시 포스팅을 하겠다~&lt;/p&gt;
-</description>
-        <pubDate>Sun, 08 Jul 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000//aws-read-replica</link>
-        <link href="http://localhost:4000/aws-read-replica"/>
-        <guid isPermaLink="true">http://localhost:4000/aws-read-replica</guid>
       </item>
     
   </channel>

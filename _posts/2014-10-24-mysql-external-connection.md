@@ -1,6 +1,7 @@
 ---
 title: MySQL(Maria DB) root 계정 외부접속 허용
 tags: [mysql, maria, db]
+categories: [db]
 published: true
 comments : true
 ---

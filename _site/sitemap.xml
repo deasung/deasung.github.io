@@ -318,6 +318,12 @@
 <loc>http://localhost:4000/archive</loc>
 </url>
 <url>
+<loc>http://localhost:4000/category</loc>
+</url>
+<url>
+<loc>http://localhost:4000/category/db</loc>
+</url>
+<url>
 <loc>http://localhost:4000/</loc>
 </url>
 <url>

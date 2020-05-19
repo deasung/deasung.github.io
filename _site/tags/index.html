@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>Tags</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>Tags | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="Tags" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="개발 블로그" />
+<meta property="og:description" content="개발 블로그" />
+<link rel="canonical" href="http://localhost:4000/tags/" />
+<meta property="og:url" content="http://localhost:4000/tags/" />
+<meta property="og:site_name" content="dskim-blog" />
+<script type="application/ld+json">
+{"headline":"Tags","url":"http://localhost:4000/tags/","author":{"@type":"Person","name":"dskim"},"description":"개발 블로그","@type":"WebPage","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/category"><h2 class="header-link">Category</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/tags"><h2 class="header-link">Tags</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article class="tag">
+  <div>
+    <!--<header class="post-header">-->
+      <!--<h1 class="page-heading">Tag cloud</h1>-->
+    <!--</header>-->
+
+    <div>
+      <!--
+  태그 클라우드
+  https://github.com/jasondavies/d3-cloud
+-->
+<div id="vis"></div>
+<form id="form" style="display:none;">
+  <p style="position: absolute; right: 0; top: 0" id="status"></p>
+
+  <div style="text-align: center">
+    <div id="presets"></div>
+    <div id="custom-area">
+      <p><label for="text">Paste your text below!</label>
+      <p><textarea id="text">
+
+          
+            
+            
+
+            
+              mysql
+            
+              mysql
+            
+              mysql
+            
+              mysql
+            
+              mysql
+            
+              mysql
+            
+              mysql
+            
+              mysql
+            
+              mysql
+            
+              mysql
+            
+
+          
+            
+            
+
+            
+              maria
+            
+              maria
+            
+              maria
+            
+              maria
+            
+              maria
+            
+
+          
+            
+            
+
+            
+              db
+            
+              db
+            
+              db
+            
+              db
+            
+              db
+            
+
+          
+            
+            
+
+            
+              linux
+            
+              linux
+            
+              linux
+            
+              linux
+            
+              linux
+            
+
+          
+            
+            
+
+            
+              uname
+            
+              uname
+            
+              uname
+            
+              uname
+            
+              uname
+            
+
+          
+            
+            
+
+            
+              uptime
+            
+              uptime
+            
+              uptime
+            
+              uptime
+            
+              uptime
+            
+
+          
+            
+            
+
+            
+              aws
+            
+              aws
+            
+              aws
+            
+              aws
+            
+              aws
+            
+
+          
+            
+            
+
+            
+              jupyter
+            
+              jupyter
+            
+              jupyter
+            
+              jupyter
+            
+              jupyter
+            
+
+          
+        </textarea>
+        <button id="go" type="submit">Go!</button>
+    </div>
+  </div>
+
+  <hr>
+
+  <div style="float: right; text-align: right">
+    <p><label for="max">Number of words:</label> <input type="number" value="250" min="1" id="max">
+    <p><label for="per-line"><input type="checkbox" id="per-line"> One word per line</label>
+      <!--<p><label for="colours">Colours:</label> <a href="#" id="random-palette">get random palette</a>-->
+    <p><label>Download:</label>
+      <button id="download-svg">SVG</button><!-- |
+        <a id="download-png" href="#">PNG</a>-->
+  </div>
+
+  <div style="float: left">
+    <p><label>Spiral:</label>
+      <label for="archimedean"><input type="radio" name="spiral" id="archimedean" value="archimedean" checked="checked"> Archimedean</label>
+      <label for="rectangular"><input type="radio" name="spiral" id="rectangular" value="rectangular"> Rectangular</label>
+    <p><label for="scale">Scale:</label>
+      <label for="scale-log"><input type="radio" name="scale" id="scale-log" value="log" checked="checked"> log n</label>
+      <label for="scale-sqrt"><input type="radio" name="scale" id="scale-sqrt" value="sqrt"> √n</label>
+      <label for="scale-linear"><input type="radio" name="scale" id="scale-linear" value="linear"> n</label>
+    <p><label for="font">Font:</label> <input type="text" id="font" value="Impact">
+  </div>
+
+  <div id="angles">
+    <p><input type="number" id="angle-count" value="5" min="1"> <label for="angle-count">orientations</label>
+      <label for="angle-from">from</label> <input type="number" id="angle-from" value="-60" min="-90" max="90"> °
+      <label for="angle-to">to</label> <input type="number" id="angle-to" value="60" min="-90" max="90"> °
+  </div>
+
+  <hr style="clear: both">
+
+  <p style="float: right"><a href="about/">How the Word Cloud Generator Works</a>.
+  <p style="float: left">Copyright &copy; <a href="http://www.jasondavies.com/">Jason Davies</a> | <a href="../privacy/">Privacy Policy</a>. The generated word clouds may be used for any purpose.
+
+</form>
+
+<script src="https://www.jasondavies.com/d3.min.js"></script>
+<script src="https://www.jasondavies.com/wordcloud/cloud.min.js"></script>
+<script>
+  // tag-cloud 크기를 스크린 사이즈에 따라 보정 18.08.11
+  function resizeTagCloud(){
+    if(document.body.offsetWidth < 800){
+      document.getElementById("vis").style.zoom = 0.8 * (document.body.offsetWidth/800)
+    }
+  }
+  window.onload = window.onresize = resizeTagCloud;
+</script>
+    </div>
+
+    <div>
+      
+      <!-- tag_name 변수 지정: 태그명은 소문자화(slugize) 한다 -->
+      
+      <!-- tag_size 변수 지정-->
+      
+      <!-- font_size 변수 지정: 태그숫자/전체태그숫자 * 100 + 50 -->
+      
+
+      <div class="tagname">
+        <a href="/tags/archives#mysql" style="font-size:16px">mysql</a>
+      </div>
+      
+      <!-- tag_name 변수 지정: 태그명은 소문자화(slugize) 한다 -->
+      
+      <!-- tag_size 변수 지정-->
+      
+      <!-- font_size 변수 지정: 태그숫자/전체태그숫자 * 100 + 50 -->
+      
+
+      <div class="tagname">
+        <a href="/tags/archives#maria" style="font-size:15px">maria</a>
+      </div>
+      
+      <!-- tag_name 변수 지정: 태그명은 소문자화(slugize) 한다 -->
+      
+      <!-- tag_size 변수 지정-->
+      
+      <!-- font_size 변수 지정: 태그숫자/전체태그숫자 * 100 + 50 -->
+      
+
+      <div class="tagname">
+        <a href="/tags/archives#db" style="font-size:15px">db</a>
+      </div>
+      
+      <!-- tag_name 변수 지정: 태그명은 소문자화(slugize) 한다 -->
+      
+      <!-- tag_size 변수 지정-->
+      
+      <!-- font_size 변수 지정: 태그숫자/전체태그숫자 * 100 + 50 -->
+      
+
+      <div class="tagname">
+        <a href="/tags/archives#linux" style="font-size:15px">linux</a>
+      </div>
+      
+      <!-- tag_name 변수 지정: 태그명은 소문자화(slugize) 한다 -->
+      
+      <!-- tag_size 변수 지정-->
+      
+      <!-- font_size 변수 지정: 태그숫자/전체태그숫자 * 100 + 50 -->
+      
+
+      <div class="tagname">
+        <a href="/tags/archives#uname" style="font-size:15px">uname</a>
+      </div>
+      
+      <!-- tag_name 변수 지정: 태그명은 소문자화(slugize) 한다 -->
+      
+      <!-- tag_size 변수 지정-->
+      
+      <!-- font_size 변수 지정: 태그숫자/전체태그숫자 * 100 + 50 -->
+      
+
+      <div class="tagname">
+        <a href="/tags/archives#uptime" style="font-size:15px">uptime</a>
+      </div>
+      
+      <!-- tag_name 변수 지정: 태그명은 소문자화(slugize) 한다 -->
+      
+      <!-- tag_size 변수 지정-->
+      
+      <!-- font_size 변수 지정: 태그숫자/전체태그숫자 * 100 + 50 -->
+      
+
+      <div class="tagname">
+        <a href="/tags/archives#aws" style="font-size:15px">aws</a>
+      </div>
+      
+      <!-- tag_name 변수 지정: 태그명은 소문자화(slugize) 한다 -->
+      
+      <!-- tag_size 변수 지정-->
+      
+      <!-- font_size 변수 지정: 태그숫자/전체태그숫자 * 100 + 50 -->
+      
+
+      <div class="tagname">
+        <a href="/tags/archives#jupyter" style="font-size:15px">jupyter</a>
+      </div>
+      
+    </div>
+  </div>
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+<script data-ad-client="ca-pub-7887940109436498" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</html>

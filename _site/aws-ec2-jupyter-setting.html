@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>AWS EC2 -> Jupyter 셋팅</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>AWS EC2 -&gt; Jupyter 셋팅 | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="AWS EC2 -&gt; Jupyter 셋팅" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="1.설치 명령어" />
+<meta property="og:description" content="1.설치 명령어" />
+<link rel="canonical" href="http://localhost:4000/aws-ec2-jupyter-setting" />
+<meta property="og:url" content="http://localhost:4000/aws-ec2-jupyter-setting" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-19T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"AWS EC2 -&gt; Jupyter 셋팅","dateModified":"2020-05-19T00:00:00+09:00","datePublished":"2020-05-19T00:00:00+09:00","url":"http://localhost:4000/aws-ec2-jupyter-setting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/aws-ec2-jupyter-setting"},"author":{"@type":"Person","name":"dskim"},"description":"1.설치 명령어","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/category"><h2 class="header-link">Category</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/tags"><h2 class="header-link">Tags</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>AWS EC2 -> Jupyter 셋팅</h2>
+  <time datetime="2020-05-19T00:00:00+09:00" class="by-line">19 May 2020</time>
+  <div style="text-align: left; margin-top: 10px;">
+    <a href="http://hits.dwyl.com/localhost:4000/aws-ec2-jupyter-setting"
+       target="_blank">
+      <img
+          src="http://hits.dwyl.com/localhost:4000/aws-ec2-jupyter-setting.svg" />
+    </a>
+  </div>
+  <h1 id="1설치-명령어">1.설치 명령어</h1>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">sudo yum update
+python --version
+sudo yum install python3
+python --version
+python3 --version
+sudo yum install python3-pip
+pip3 --version
+history
+
+pip3 install jupyter
+
+</span></code></pre></div></div>
+
+<h1 id="2쥬피터-노트북-config-생성명령어">2.쥬피터 노트북 config 생성명령어</h1>
+
+<div class="language-console highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="go">
+jupyter notebook --generate-config
+
+</span></code></pre></div></div>
+
+<p>생성하는 경로에서 .jupyter 디렉토리가 생성됨</p>
+
+<h1 id="3python3-접속해서-해쉬-암호-생성">3.python3 접속해서 해쉬 암호 생성</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$&gt; python3
+
+&gt;&gt;&gt; from notebook.auth import passwd
+&gt;&gt;&gt; passwd()
+
+
+</code></pre></div></div>
+<p><img src="/assets/imgs/2020/05/19/1.png" alt="" /></p>
+
+<h1 id="4jupyter_notebook_configpy-셋팅">4.jupyter_notebook_config.py 셋팅</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ls
+
+cd .jupyter/
+ls
+jupyter_notebook_config.py -&gt; 생성되었는지 확인 
+vi jupyter_notebook_config.py
+</code></pre></div></div>
+
+<p>jupyter_notebook_config.py 파일 마지막줄에</p>
+
+<pre><code class="language-sbtshell">c = get_config()
+c.NotebookApp.password = u'해쉬암호'
+c.NotebookApp.ip = '내부아이피'
+c.NotebookApp.port = 내부포트
+c.NotebookApp.notebook_dir = '/home/ec2-user/jupyter'
+
+</code></pre>
+
+<h1 id="5쥬피터-노트북-실행-명령어">5.쥬피터 노트북 실행 명령어</h1>
+
+<pre><code class="language-sbtshell">
+jupyter notebook --allow-root
+
+</code></pre>
+
+<h1 id="6기타-설치-명령어">6.기타 설치 명령어</h1>
+
+<p>쥬피터 노트북 이것저것 할때 은근히 설치 해야할 거 
+자바는 한글 분석용 konlpy? 이거 쓸때 필요함</p>
+
+<ul>
+  <li>폰트 셋팅
+```sbtshell</li>
+</ul>
+
+<p>yum install mkfontscale</p>
+
+<p>yum install fontconfig</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+- 자바셋팅
+
+```sbtshell
+
+sudo yum install -y java-1.8.0-openjdk-devel.x86_64
+
+</code></pre></div></div>
+
+<h1 id="7쥬피터-노트북-백그라운드-실행모드">7.쥬피터 노트북 백그라운드 실행모드</h1>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+$&gt; nohup jupyter notebook --allow-root &gt; error.log &amp;
+
+$&gt; ps -ef | grep jupyter 
+
+$&gt; kill -9 #{쥬피터 노트북 프로세스 아이디}
+
+$&gt; nohup jupyter notebook --allow-root &gt; error.log &amp; echo $!&gt; pid.txt
+
+$&gt; kill -9 $(cat pid.txt)
+
+</code></pre></div></div>
+
+<p>이제 데이터 분석을 열심히 하면됨..</p>
+
+
+  
+  <div id="post-disqus" class="container" style="width: 100%;">
+    <div id="disqus_thread"></div>
+<script>
+
+  /**
+   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://dskim-1.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </div>
+  
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+<script data-ad-client="ca-pub-7887940109436498" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</html>

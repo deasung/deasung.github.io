@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>AWS pipeline -> bitbucket cloud 베타용 연동</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>AWS pipeline -&gt; bitbucket cloud 베타용 연동 | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="AWS pipeline -&gt; bitbucket cloud 베타용 연동" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="자세한건 공식문서를 읽는게 제일 좋습니다. AWS pipeline -&gt; bitbucket cloud 베타용 연동용 공식문서 링크입니다." />
+<meta property="og:description" content="자세한건 공식문서를 읽는게 제일 좋습니다. AWS pipeline -&gt; bitbucket cloud 베타용 연동용 공식문서 링크입니다." />
+<link rel="canonical" href="http://localhost:4000/aws-codepipeline-bitbucket-cloud-connect" />
+<meta property="og:url" content="http://localhost:4000/aws-codepipeline-bitbucket-cloud-connect" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-18T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"AWS pipeline -&gt; bitbucket cloud 베타용 연동","dateModified":"2020-05-18T00:00:00+09:00","datePublished":"2020-05-18T00:00:00+09:00","url":"http://localhost:4000/aws-codepipeline-bitbucket-cloud-connect","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/aws-codepipeline-bitbucket-cloud-connect"},"author":{"@type":"Person","name":"dskim"},"description":"자세한건 공식문서를 읽는게 제일 좋습니다. AWS pipeline -&gt; bitbucket cloud 베타용 연동용 공식문서 링크입니다.","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/category"><h2 class="header-link">Category</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/tags"><h2 class="header-link">Tags</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>AWS pipeline -> bitbucket cloud 베타용 연동</h2>
+  <time datetime="2020-05-18T00:00:00+09:00" class="by-line">18 May 2020</time>
+  <div style="text-align: left; margin-top: 10px;">
+    <a href="http://hits.dwyl.com/localhost:4000/aws-codepipeline-bitbucket-cloud-connect"
+       target="_blank">
+      <img
+          src="http://hits.dwyl.com/localhost:4000/aws-codepipeline-bitbucket-cloud-connect.svg" />
+    </a>
+  </div>
+  <p>자세한건 공식문서를 읽는게 제일 좋습니다.
+AWS pipeline -&gt; bitbucket cloud 베타용 연동용 <a href="https://aws.amazon.com/ko/about-aws/whats-new/2019/12/aws-codepipeline-now-supports-atlassian-bitbucket-cloud/">공식문서</a>
+링크입니다.</p>
+
+<p>최근에 회사 기존 젠킨스 CI랑 Bitbucket Clound Pipeline으로 되어 있는 부분을</p>
+
+<p>조금씩 AWS CI로 옮기는중에 적는 내용입니다~</p>
+
+<h1 id="간단한-정리">간단한 정리</h1>
+
+<h2 id="1정책을-만들어-줍니다">1.정책을 만들어 줍니다.</h2>
+
+<p><img src="/assets/imgs/2020/05/18/1.png" alt="1" /></p>
+
+<h2 id="2정책을-json편집기로-입력해준다">2.정책을 json편집기로 입력해준다.</h2>
+
+<p><img src="/assets/imgs/2020/05/18/2.png" alt="2" /></p>
+
+<p>json 파일 내용입니다.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Effect": "Allow",
+            "Action": [
+                "codestar-connections:CreateConnection",
+                "codestar-connections:DeleteConnection",
+                "codestar-connections:GetConnection",
+                "codestar-connections:ListConnections",
+                "codestar-connections:GetInstallationUrl",
+                "codestar-connections:GetIndividualAccessToken",
+                "codestar-connections:ListInstallationTargets",
+                "codestar-connections:StartOAuthHandshake",
+                "codestar-connections:UpdateConnectionInstallation",
+                "codestar-connections:UseConnection",
+                "codestar-connections:PassConnection"
+            ],
+            "Resource": [
+                "*"
+            ]
+        }
+    ]
+}
+</code></pre></div></div>
+
+<h2 id="3파이프라인-항목으로-이동">3.파이프라인 항목으로 이동</h2>
+<p>Bitbucket 연결 버튼을 클릭해 줍니다.</p>
+
+<p><img src="/assets/imgs/2020/05/18/3.png" alt="3" /></p>
+
+<h2 id="4bitbucket-cloud랑-연동">4.Bitbucket Cloud랑 연동</h2>
+<p>창이 나오는데 연동을 해주면 됩니다</p>
+
+<p><img src="/assets/imgs/2020/05/18/4.png" alt="4" /></p>
+
+
+  
+  <div id="post-disqus" class="container" style="width: 100%;">
+    <div id="disqus_thread"></div>
+<script>
+
+  /**
+   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://dskim-1.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </div>
+  
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+<script data-ad-client="ca-pub-7887940109436498" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</html>

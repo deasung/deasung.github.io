@@ -50,6 +50,12 @@
         <ul>
     
       <li>
+          <h2><a href="/spring-message-en-jp-kr">SpringBoot 다국어 설정</a></h2>
+          <time datetime="2018-08-27T00:00:00+09:00">27 Aug 2018</time>
+          <p>SpringBoot 다국어 설정 다국어면 국가별로 properties 파일에다가 동일한코드값의 키로 셋팅해줘야 한다. 예시) messages.properties -&gt; 기본 디폴트 프로퍼티 설정 파일 일본어 properties 설정파일 한글 properties 설정파일 springboot yml 설정에서 다국어를 위한 설정을 추가해줘야 한다 국제화 메시지를 하기위한 interface 1.MessageSource를 이용해서 한 방법 2.직접 Util 서비스를 구현해서 이용하는법 3.메시지 클래스 작성 호출...</p>
+      </li>
+    
+      <li>
           <h2><a href="/aws-read-replica">AWS read replica 생성</a></h2>
           <time datetime="2018-07-08T00:00:00+09:00">08 Jul 2018</time>
           <p>AWS read replica 이렇게 한 이유는 디비 이중화를 하기위해서 이렇게 했다 read replica 옵션은 AWS RDS Aurora만 되는 걸로 알고 있지만 자세한건 공식 문서로 https://aws.amazon.com/ko/rds/details/read-replicas/ 1.디비 클릭한후 인스턴스 작업을 클릭후에 리전 간 읽기 전용 복제본 만들기 클릭 2.복제본 생성버튼 클릭 마무리를~ 여기에서 더붙이면 Route53에 디비 퍼블릭엑세스 주소를 연결해놓으면 나름 2차도메인으로...</p>
@@ -149,12 +155,6 @@ select @@time_zone;
           <h2><a href="/aws-ec2-timezone">EC2 TimeZone 변경</a></h2>
           <time datetime="2018-03-30T00:00:00+09:00">30 Mar 2018</time>
           <p>1.TimeZone ? 리눅스를 새로 설치하고 나면 (AWS EC2 AMI도 Linux와 동일) 시간대(Timezone)을 맞추지 않으면, 리눅스의 date가 미국 태평양 시간인 PST로 표시됩니다. 즉 캘리포니아 현지 시간으로 표시됩니다. 이럴경우 한국 표준시인 KST로 변경해주어야 합니다. 2. EC2 터미널에서 TimeZone 변경 [ec2-user@ip-172-31-7-180 ~]$ date Fri Aug 8 06:41:49 UTC 2014 [ec2-user@ip-172-31-7-180 ~]$ sudo date...</p>
-      </li>
-    
-      <li>
-          <h2><a href="/jenkins-gitlab">Jenkins 설치 & Gitlab 연동</a></h2>
-          <time datetime="2018-03-25T00:00:00+09:00">25 Mar 2018</time>
-          <p>Jenins 설치 자바 설치 sudo apt-add-repository ppa:webupd8team/java sudo apt-get update sudo apt-get install oracle-java8-installer gradle 설치 $ sudo apt-get install gradle $ gradle -version Jenkins 설치 패키지 주소를 apt-key에 더한후 젠킨스 다운 $ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add - OK $ echo deb http://pkg.jenkins.io/debian-stable binary/ |...</p>
       </li>
     
 </ul>

@@ -50,6 +50,23 @@
         <ul>
     
       <li>
+          <h2><a href="/aws-route53-nginx-proxy">AWS Route53 nginx proxy 연동</a></h2>
+          <time datetime="2017-05-24T00:00:00+09:00">24 May 2017</time>
+          <p>저는 삽질로 AWS Security-Group에서 80포트를 Inbound 안해놔서 안되서
+
+우선 설정으로는
+
+nginx가 설치되었다는 가정하에
+
+디렉토리로 가서cd /etc/nginx/sites-available/ vi 편집기로 default파일을 우선 복사한다음 열면
+
+
+
+설정한후 nginx 재시작sudo /etc/init.d/nginx restart
+</p>
+      </li>
+    
+      <li>
           <h2><a href="/aws-s3-static-webservice-hosting-setting">AWS S3 버킷 Permissions 정책 추가</a></h2>
           <time datetime="2017-05-17T00:00:00+09:00">17 May 2017</time>
           <p>
@@ -206,34 +223,6 @@ MFA를 활성화 하면, 로그인 할 때에 기존의 아이디/암호 입력�
           <h2><a href="/aws-iam-group-create">Amazon IAM 그룹 생성하기</a></h2>
           <time datetime="2017-05-02T00:00:00+09:00">02 May 2017</time>
           <p>IAM 사용자들을 모아놓은것 IAM 그룹에 접근제어 및 권한설정 및 IAM 그룹에 설정된 내용은 IAM 그룹 안에 포함된 모든 사용자들에게 적용됨 그룹 생성 화면 그룹 이름 설정 그룹 권한 설정 예시로 EC2에 대한 모든권한접근할수있는걸로 선택 그룹 접근 권한 정책 확인 그룹 생성 완료 이 IAM 그룹안에 속한 사용자 EC2 인스턴스만 제어가능...</p>
-      </li>
-    
-      <li>
-          <h2><a href="/aws-iam-console-access">Amazon IAM 사용자를 AWS 콘솔에 접속하기</a></h2>
-          <time datetime="2017-05-02T00:00:00+09:00">02 May 2017</time>
-          <p>
-  
-    Manage password 클릭 
-
-  
-  
-    AWS 콘솔접속 설정 및 패스워드 설정 
-
-  
-  
-    Console 링크 설정 
-
-  
-  
-    IAM 콘솔 링크 URL 설정 
-
-
-  
-  IAM롤 유저 접속확인
-  인스턴스 및 S3를 사용가능하지만 RDS는 권한을 안줘서
-
-
-</p>
       </li>
     
 </ul>

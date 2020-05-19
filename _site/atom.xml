@@ -12,6 +12,116 @@
     </author>
     
       <item>
+        <title>AWS EC2 -&gt; Jupyter 셋팅</title>
+        <description>&lt;h1 id=&quot;1설치-명령어&quot;&gt;1.설치 명령어&lt;/h1&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;sudo yum update
+python --version
+sudo yum install python3
+python --version
+python3 --version
+sudo yum install python3-pip
+pip3 --version
+history
+
+pip3 install jupyter
+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;2쥬피터-노트북-config-생성명령어&quot;&gt;2.쥬피터 노트북 config 생성명령어&lt;/h1&gt;
+
+&lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;
+jupyter notebook --generate-config
+
+&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;생성하는 경로에서 .jupyter 디렉토리가 생성됨&lt;/p&gt;
+
+&lt;h1 id=&quot;3python3-접속해서-해쉬-암호-생성&quot;&gt;3.python3 접속해서 해쉬 암호 생성&lt;/h1&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$&amp;gt; python3
+
+&amp;gt;&amp;gt;&amp;gt; from notebook.auth import passwd
+&amp;gt;&amp;gt;&amp;gt; passwd()
+
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/19/1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h1 id=&quot;4jupyter_notebook_configpy-셋팅&quot;&gt;4.jupyter_notebook_config.py 셋팅&lt;/h1&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;ls
+
+cd .jupyter/
+ls
+jupyter_notebook_config.py -&amp;gt; 생성되었는지 확인 
+vi jupyter_notebook_config.py
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;jupyter_notebook_config.py 파일 마지막줄에&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-sbtshell&quot;&gt;c = get_config()
+c.NotebookApp.password = u'해쉬암호'
+c.NotebookApp.ip = '내부아이피'
+c.NotebookApp.port = 내부포트
+c.NotebookApp.notebook_dir = '/home/ec2-user/jupyter'
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;5쥬피터-노트북-실행-명령어&quot;&gt;5.쥬피터 노트북 실행 명령어&lt;/h1&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-sbtshell&quot;&gt;
+jupyter notebook --allow-root
+
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h1 id=&quot;6기타-설치-명령어&quot;&gt;6.기타 설치 명령어&lt;/h1&gt;
+
+&lt;p&gt;쥬피터 노트북 이것저것 할때 은근히 설치 해야할 거 
+자바는 한글 분석용 konlpy? 이거 쓸때 필요함&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;폰트 셋팅
+```sbtshell&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;yum install mkfontscale&lt;/p&gt;
+
+&lt;p&gt;yum install fontconfig&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+- 자바셋팅
+
+```sbtshell
+
+sudo yum install -y java-1.8.0-openjdk-devel.x86_64
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h1 id=&quot;7쥬피터-노트북-백그라운드-실행모드&quot;&gt;7.쥬피터 노트북 백그라운드 실행모드&lt;/h1&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+$&amp;gt; nohup jupyter notebook --allow-root &amp;gt; error.log &amp;amp;
+
+$&amp;gt; ps -ef | grep jupyter 
+
+$&amp;gt; kill -9 #{쥬피터 노트북 프로세스 아이디}
+
+$&amp;gt; nohup jupyter notebook --allow-root &amp;gt; error.log &amp;amp; echo $!&amp;gt; pid.txt
+
+$&amp;gt; kill -9 $(cat pid.txt)
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;이제 데이터 분석을 열심히 하면됨..&lt;/p&gt;
+</description>
+        <pubDate>Tue, 19 May 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000//aws-ec2-jupyter-setting</link>
+        <link href="http://localhost:4000/aws-ec2-jupyter-setting"/>
+        <guid isPermaLink="true">http://localhost:4000/aws-ec2-jupyter-setting</guid>
+      </item>
+    
+      <item>
         <title>AWS pipeline -&gt; bitbucket cloud 베타용 연동</title>
         <description>&lt;p&gt;자세한건 공식문서를 읽는게 제일 좋습니다.
 AWS pipeline -&amp;gt; bitbucket cloud 베타용 연동용 &lt;a href=&quot;https://aws.amazon.com/ko/about-aws/whats-new/2019/12/aws-codepipeline-now-supports-atlassian-bitbucket-cloud/&quot;&gt;공식문서&lt;/a&gt;
@@ -439,69 +549,6 @@ AWS pipeline -&amp;gt; bitbucket cloud 베타용 연동용 &lt;a href=&quot;http
         <link>http://localhost:4000//vue-v-on</link>
         <link href="http://localhost:4000/vue-v-on"/>
         <guid isPermaLink="true">http://localhost:4000/vue-v-on</guid>
-      </item>
-    
-      <item>
-        <title>SpringBoot 다국어 설정</title>
-        <description>&lt;p&gt;SpringBoot 다국어 설정&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-01.png&quot; alt=&quot;1&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;다국어면 국가별로 properties 파일에다가 
-동일한코드값의 키로 셋팅해줘야 한다.&lt;/p&gt;
-
-&lt;p&gt;예시) messages.properties -&amp;gt; 기본 디폴트 프로퍼티 설정 파일&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-02.png&quot; alt=&quot;2&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;일본어 properties 설정파일&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-03.png&quot; alt=&quot;3&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;한글 properties 설정파일&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-04.png&quot; alt=&quot;4&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;springboot yml 설정에서 다국어를 위한 설정을 추가해줘야 한다&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-05.png&quot; alt=&quot;5&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://docs.spring.io/spring/docs/current/javadoc-api/org/springframework/context/MessageSource.html&quot;&gt;국제화 메시지를 하기위한 interface &lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-06.png&quot; alt=&quot;6&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;1.MessageSource를 이용해서 한 방법&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-07.png&quot; alt=&quot;7&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;2.직접 Util 서비스를 구현해서 이용하는법&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-08.png&quot; alt=&quot;8&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;3.메시지 클래스 작성&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-09.png&quot; alt=&quot;9&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-10.png&quot; alt=&quot;10&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;호출 했을시에&lt;/p&gt;
-
-&lt;p&gt;일본어 예시&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-11.png&quot; alt=&quot;11&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;영어 예시&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-12.png&quot; alt=&quot;12&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;한글 예시&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/08/27/2018-08-27-13.png&quot; alt=&quot;13&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 27 Aug 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000//spring-message-en-jp-kr</link>
-        <link href="http://localhost:4000/spring-message-en-jp-kr"/>
-        <guid isPermaLink="true">http://localhost:4000/spring-message-en-jp-kr</guid>
       </item>
     
   </channel>

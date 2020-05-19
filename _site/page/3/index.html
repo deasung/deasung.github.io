@@ -50,6 +50,12 @@
         <ul>
     
       <li>
+          <h2><a href="/jenkins-gitlab">Jenkins 설치 & Gitlab 연동</a></h2>
+          <time datetime="2018-03-25T00:00:00+09:00">25 Mar 2018</time>
+          <p>Jenins 설치 자바 설치 sudo apt-add-repository ppa:webupd8team/java sudo apt-get update sudo apt-get install oracle-java8-installer gradle 설치 $ sudo apt-get install gradle $ gradle -version Jenkins 설치 패키지 주소를 apt-key에 더한후 젠킨스 다운 $ wget -q -O - https://pkg.jenkins.io/debian/jenkins-ci.org.key | sudo apt-key add - OK $ echo deb http://pkg.jenkins.io/debian-stable binary/ |...</p>
+      </li>
+    
+      <li>
           <h2><a href="/ec2-swap">EC2 인스턴스 Swap 파티션 추가하는 방법</a></h2>
           <time datetime="2018-03-22T00:00:00+09:00">22 Mar 2018</time>
           <p>EC2 인스턴스 Swap 파티션 추가하는 방법 메모리가 부족한 경우를 제외하고는 Swap 자체를 안쓰는 것을 추천 EC2 인스턴스를 만들면 Swap 파티션이 없음 자바 애플리케이션 서버 2개정도 테스트서버로 돌릴려면 t1.micro로 힘들고 버겹다 그래서 Swap 메모리가 필수 방법 $ sudo dd if=/dev/zero of=/swapfile bs=1M count=512 # 512MB 스왑용 파일 생성 $ sudo chown...</p>
@@ -155,12 +161,6 @@ fi
           <h2><a href="/kotlin-02">kotlin 공부 2일차</a></h2>
           <time datetime="2017-07-22T00:00:00+09:00">22 Jul 2017</time>
           <p>코틀린 스터디하기 좋은 사이트 공식사이트 새차원 코틀린유투브강좌 공식사이트 웹환경에서 튜토리얼사이트 코틀린 디폴트 패키지를 include 합니다 Default Imports A number of packages are imported into every Kotlin file by default: kotlin.* kotlin.annotation.* kotlin.collections.* kotlin.comparisons.* (since 1.1) kotlin.io.* kotlin.ranges.* kotlin.sequences.* kotlin.text.* Additional packages are imported depending on the target platform: 추가적으로 타겟...</p>
-      </li>
-    
-      <li>
-          <h2><a href="/kotlin-01">kotlin 공부 1일차</a></h2>
-          <time datetime="2017-07-16T00:00:00+09:00">16 Jul 2017</time>
-          <p>kotlin kotlin lang 연습 fun main(args: Array&lt;String&gt;) { println("Hello, world!") println("test") } 코틀린 When -&gt; Java Switch 문법 비슷하다고함 코틀린 클래스 /** * Here we have a class with a primary constructor and a member function. * Note that there's no `new` keyword used to create an object. * See...</p>
       </li>
     
 </ul>

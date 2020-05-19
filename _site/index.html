@@ -49,6 +49,12 @@
         <ul>
     
       <li>
+          <h2><a href="/aws-ec2-jupyter-setting">AWS EC2 -> Jupyter 셋팅</a></h2>
+          <time datetime="2020-05-19T00:00:00+09:00">19 May 2020</time>
+          <p>1.설치 명령어 sudo yum update python --version sudo yum install python3 python --version python3 --version sudo yum install python3-pip pip3 --version history pip3 install jupyter 2.쥬피터 노트북 config 생성명령어 jupyter notebook --generate-config 생성하는 경로에서 .jupyter 디렉토리가 생성됨 3.python3 접속해서 해쉬 암호 생성 $&gt; python3 &gt;&gt;&gt; from notebook.auth import passwd &gt;&gt;&gt;...</p>
+      </li>
+    
+      <li>
           <h2><a href="/aws-codepipeline-bitbucket-cloud-connect">AWS pipeline -> bitbucket cloud 베타용 연동</a></h2>
           <time datetime="2020-05-18T00:00:00+09:00">18 May 2020</time>
           <p>자세한건 공식문서를 읽는게 제일 좋습니다. AWS pipeline -&gt; bitbucket cloud 베타용 연동용 공식문서 링크입니다. 최근에 회사 기존 젠킨스 CI랑 Bitbucket Clound Pipeline으로 되어 있는 부분을 조금씩 AWS CI로 옮기는중에 적는 내용입니다~ 간단한 정리 1.정책을 만들어 줍니다. 2.정책을 json편집기로 입력해준다. json 파일 내용입니다. { "Version": "2012-10-17", "Statement": [ { "Effect": "Allow",...</p>
@@ -204,12 +210,6 @@ v-on:이벤트이름=“메소드 이름”
 
 V-on: @로 대체
 </p>
-      </li>
-    
-      <li>
-          <h2><a href="/spring-message-en-jp-kr">SpringBoot 다국어 설정</a></h2>
-          <time datetime="2018-08-27T00:00:00+09:00">27 Aug 2018</time>
-          <p>SpringBoot 다국어 설정 다국어면 국가별로 properties 파일에다가 동일한코드값의 키로 셋팅해줘야 한다. 예시) messages.properties -&gt; 기본 디폴트 프로퍼티 설정 파일 일본어 properties 설정파일 한글 properties 설정파일 springboot yml 설정에서 다국어를 위한 설정을 추가해줘야 한다 국제화 메시지를 하기위한 interface 1.MessageSource를 이용해서 한 방법 2.직접 Util 서비스를 구현해서 이용하는법 3.메시지 클래스 작성 호출...</p>
       </li>
     
 </ul>

@@ -50,6 +50,30 @@
         <ul>
     
       <li>
+          <h2><a href="/devops-centos-maven-sonatype">CentOS Maven 사설 레파지토리 구축</a></h2>
+          <time datetime="2017-04-19T00:00:00+09:00">19 Apr 2017</time>
+          <p>https://www.sonatype.com/download-oss-sonatype
+
+
+  
+    jdk부터 설치를 한다
+
+  
+  
+    설치후에 java-version 확인 javac -version 
+
+  
+  
+    http://zetawiki.com/wiki/CentOS_Nexus_%EC%84%A4%EC%B9%98
+  
+
+
+여기서 etc/init.d/nexus 쉘스크립트가 잘안되었음
+
+</p>
+      </li>
+    
+      <li>
           <h2><a href="/devops-ubuntu16.04-jdk-1.8">Ubuntu 16.04 jdk 1.8설치</a></h2>
           <time datetime="2017-04-18T00:00:00+09:00">18 Apr 2017</time>
           <p>sudo apt-add-repository ppa:webupd8team/java
@@ -141,12 +165,6 @@ ifconfig로 우분투 아이피확인후 putty로 접속하면됨
           <h2><a href="/ios-app-transport-security">App Transport Security</a></h2>
           <time datetime="2016-02-24T00:00:00+09:00">24 Feb 2016</time>
           <p>애플이 iOS9부터는 http를 https로 해야지만 네트워크 연결할 수 있도록 하였습니다. 하지만 예외는 항상 존재하는 법. 특정 도메인에 대해서 http를 허용하거나 아예 http를 허용하도록 해주었습니다. Apple 문서 https://developer.apple.com/library/prerelease/ios/technotes/App-Transport-Security-Technote/index.html 1.특정 도메인 HTTP 허용 다음은 페이스북에서 다음과 같이 info.plist에 추가하라고 한 설정입니다. &lt;key&gt;NSAppTransportSecurity&lt;/key&gt; &lt;dict&gt; &lt;key&gt;NSExceptionDomains&lt;/key&gt; &lt;dict&gt; &lt;key&gt;&lt;/key&gt; &lt;dict&gt; &lt;key&gt;&lt;/key&gt; &lt;true/&gt; &lt;key&gt;&lt;/key&gt; &lt;false/&gt; &lt;/dict&gt;...</p>
-      </li>
-    
-      <li>
-          <h2><a href="/hugo-github-blog-setting">Hugo & Github 블로그 연동</a></h2>
-          <time datetime="2016-02-03T00:00:00+09:00">03 Feb 2016</time>
-          <p>휴고를 이용해서 사이트 디렉토리 생성한다. hugo new site dskim 디렉토리로 이동 cd dskim/ ls git init설정해준다. git init git remote 저장소를 추가한다 git remote add origin https://github.com/deasung/deasung.github.io.git gitignore에 public 디렉토리 안들어가도록 추가해준다 echo 'public' &gt;&gt; .gitignore gitignore 및 config.toml &lt;-알아서 추가가되어있을 것이다 git add -A git status상태 본다 git status...</p>
       </li>
     
 </ul>

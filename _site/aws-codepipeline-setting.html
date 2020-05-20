@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+  <meta name="generator" content="Jekyll">
+
+  <title>AWS -> CodePipeline 셋팅</title>
+
+  <link rel="stylesheet" href="/css/main.css">
+  
+  <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
+<title>AWS -&gt; CodePipeline 셋팅 | dskim-blog</title>
+<meta name="generator" content="Jekyll v3.8.5" />
+<meta property="og:title" content="AWS -&gt; CodePipeline 셋팅" />
+<meta name="author" content="dskim" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="CodePipeline AWS CodePipeline은 소프트웨어 릴리스에 필요한 단계를 모델링, 시각화 및 자동화하는 데 사용할 수 있는 지속적 전달 서비스입니다. 소프트웨어 릴리스 프로세스를 구성하는 여러 단계를 신속하게 모델링하고 구성할 수 있습니다. CodePipeline은 소프트웨어 변경 내용을 지속적으로 릴리스하는 데 필요한 단계를 자동화합니다 (https://docs.aws.amazon.com/ko_kr/codepipeline/latest/userguide/welcome.html)" />
+<meta property="og:description" content="CodePipeline AWS CodePipeline은 소프트웨어 릴리스에 필요한 단계를 모델링, 시각화 및 자동화하는 데 사용할 수 있는 지속적 전달 서비스입니다. 소프트웨어 릴리스 프로세스를 구성하는 여러 단계를 신속하게 모델링하고 구성할 수 있습니다. CodePipeline은 소프트웨어 변경 내용을 지속적으로 릴리스하는 데 필요한 단계를 자동화합니다 (https://docs.aws.amazon.com/ko_kr/codepipeline/latest/userguide/welcome.html)" />
+<link rel="canonical" href="http://localhost:4000/aws-codepipeline-setting" />
+<meta property="og:url" content="http://localhost:4000/aws-codepipeline-setting" />
+<meta property="og:site_name" content="dskim-blog" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2020-05-20T00:00:00+09:00" />
+<script type="application/ld+json">
+{"headline":"AWS -&gt; CodePipeline 셋팅","dateModified":"2020-05-20T00:00:00+09:00","datePublished":"2020-05-20T00:00:00+09:00","url":"http://localhost:4000/aws-codepipeline-setting","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/aws-codepipeline-setting"},"author":{"@type":"Person","name":"dskim"},"description":"CodePipeline AWS CodePipeline은 소프트웨어 릴리스에 필요한 단계를 모델링, 시각화 및 자동화하는 데 사용할 수 있는 지속적 전달 서비스입니다. 소프트웨어 릴리스 프로세스를 구성하는 여러 단계를 신속하게 모델링하고 구성할 수 있습니다. CodePipeline은 소프트웨어 변경 내용을 지속적으로 릴리스하는 데 필요한 단계를 자동화합니다 (https://docs.aws.amazon.com/ko_kr/codepipeline/latest/userguide/welcome.html)","@type":"BlogPosting","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div id="wrapper">
+    <header>
+  <div>
+    <a href="/">
+    
+    <h1>dskim@home:~$</h1>
+    </a>
+    <div class="header-links">
+      <a href="/archive"><h2 class="header-link">Archive</h2></a>
+<a href="/category"><h2 class="header-link">Category</h2></a>
+<a href="/about"><h2 class="header-link">About</h2></a>
+<a href="/tags"><h2 class="header-link">Tags</h2></a>
+<a href="/atom.xml"><h2 class="header-link">RSS</h2></a>
+    </div>
+  </div>
+</header>
+    <div class="container">
+      <section id="main_content">
+        <article>
+  <h2>AWS -> CodePipeline 셋팅</h2>
+  <time datetime="2020-05-20T00:00:00+09:00" class="by-line">20 May 2020</time>
+  <div style="text-align: left; margin-top: 10px;">
+    <a href="http://hits.dwyl.com/localhost:4000/aws-codepipeline-setting"
+       target="_blank">
+      <img
+          src="http://hits.dwyl.com/localhost:4000/aws-codepipeline-setting.svg" />
+    </a>
+  </div>
+  <h1 id="codepipeline">CodePipeline</h1>
+<blockquote>
+  <p>AWS CodePipeline은 소프트웨어 릴리스에 필요한 단계를 모델링, 시각화 및 자동화하는 데 사용할 수 있는 지속적 전달 서비스입니다. 소프트웨어 릴리스 프로세스를 구성하는 여러 단계를 신속하게 모델링하고 구성할 수 있습니다. CodePipeline은 소프트웨어 변경 내용을 지속적으로 릴리스하는 데 필요한 단계를 자동화합니다 (https://docs.aws.amazon.com/ko_kr/codepipeline/latest/userguide/welcome.html)</p>
+</blockquote>
+
+<p>셋팅 하게된 이유 회사에서 젠킨스로 구성되어 있는 부분을 조금씩 아마존 인프라쪽에서 관리하기 위해</p>
+
+<p>차근차근 정리하면서 옮기는 중..</p>
+
+<p>이건 셋팅하면서 정리한 내용일뿐입니다.</p>
+
+<h2 id="1파이프라인-생성">1.파이프라인 생성</h2>
+<p><img src="/assets/imgs/2020/05/20/1.png" alt="" /></p>
+
+<h2 id="2파이프라인-설정">2.파이프라인 설정</h2>
+<ul>
+  <li>파이프라인 이름을 적어준다.</li>
+</ul>
+
+
+  
+  <div id="post-disqus" class="container" style="width: 100%;">
+    <div id="disqus_thread"></div>
+<script>
+
+  /**
+   *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+   *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+  /*
+  var disqus_config = function () {
+  this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+  this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+  };
+  */
+  (function() { // DON'T EDIT BELOW THIS LINE
+    var d = document, s = d.createElement('script');
+    s.src = 'https://dskim-1.disqus.com/embed.js';
+    s.setAttribute('data-timestamp', +new Date());
+    (d.head || d.body).appendChild(s);
+  })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+  </div>
+  
+</article>
+      </section>
+    </div>
+  </div>
+
+   <footer>
+  <a href="https://creativecommons.org/licenses/by-nc/3.0/deed.en_US">
+    <span>
+        <b>dskim</b>
+    </span>
+    
+    <span>© 2020</span>
+  </a>
+</footer>
+
+  
+    <script type="text/javascript">
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-131141875-2', 'auto');
+  ga('send', 'pageview');
+</script>
+  
+</body>
+
+<script data-ad-client="ca-pub-7887940109436498" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</html>

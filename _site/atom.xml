@@ -31,6 +31,91 @@
 &lt;ul&gt;
   &lt;li&gt;파이프라인 이름을 적어준다.&lt;/li&gt;
 &lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/20/2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;고급설정 (딱히 건드린건 없음) 다음버튼을 눌러준다.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/20/3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3소스-스테이지-추가&quot;&gt;3.소스 스테이지 추가&lt;/h2&gt;
+&lt;p&gt;회사에서는 Bitbucket Cloud로 소스 형상 관리를 하므로 이걸로 소스 스테이지 추가&lt;/p&gt;
+
+&lt;p&gt;Bitbucket Cloud는 아직 베타라 aws iam에서 정책을 추가 해야한다.&lt;/p&gt;
+
+&lt;p&gt;정책 예시)&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;{
+    &quot;Version&quot;: &quot;2012-10-17&quot;,
+    &quot;Statement&quot;: [
+        {
+            &quot;Effect&quot;: &quot;Allow&quot;,
+            &quot;Action&quot;: [
+                &quot;codestar-connections:CreateConnection&quot;,
+                &quot;codestar-connections:DeleteConnection&quot;,
+                &quot;codestar-connections:GetConnection&quot;,
+                &quot;codestar-connections:ListConnections&quot;,
+                &quot;codestar-connections:GetInstallationUrl&quot;,
+                &quot;codestar-connections:GetIndividualAccessToken&quot;,
+                &quot;codestar-connections:ListInstallationTargets&quot;,
+                &quot;codestar-connections:StartOAuthHandshake&quot;,
+                &quot;codestar-connections:UpdateConnectionInstallation&quot;,
+                &quot;codestar-connections:UseConnection&quot;,
+                &quot;codestar-connections:PassConnection&quot;
+            ],
+            &quot;Resource&quot;: [
+                &quot;*&quot;
+            ]
+        }
+    ]
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/20/4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;4빌드-스테이지-추가&quot;&gt;4.빌드 스테이지 추가&lt;/h2&gt;
+
+&lt;p&gt;앞전에 미리 추가해놓은 빌드 공급자 (CodeBuild) 추가 해준다.&lt;/p&gt;
+
+&lt;p&gt;딱히 환경변수는 아직은 셋팅은 안하니 일단 다음 버튼을 클릭&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/20/5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;5-배포-스테이지-추가&quot;&gt;5. 배포 스테이지 추가&lt;/h2&gt;
+
+&lt;p&gt;배포는 AWS에서 다양한 공급자를 제공해준다.&lt;/p&gt;
+
+&lt;p&gt;회사에서는 Elastic Beanstalk으로 셋팅할꺼라 일단은 이걸로 선택&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/20/6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;배포 스테이지도 앞전에 추가 해놓은 Elastic Beanstalk 환경으로 구성한걸로 추가후에 다음 버튼 클릭&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/20/7.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;6-검토-단계&quot;&gt;6. 검토 단계&lt;/h2&gt;
+
+&lt;p&gt;앞전에 설정한 것들을 한번더 확인해주는 단계 놓친거 있나 다시 한번 확인을~&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/20/8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/20/9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;확인을 다한후에 파이프라인 생성 버튼을 클릭해준다.&lt;/p&gt;
+
+&lt;h2 id=&quot;7생성하자마자-한번-돌아가는중&quot;&gt;7.생성하자마자 한번 돌아가는중&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/20/10.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;파이프라인이 제대로 돌았는지 확인~&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/20/11.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;이로써 개발서버용 한셋 구성이 마무리 운영은 좀더 복잡할수도 있지만 운영도 나중에 정리를 해야겠다.&lt;/p&gt;
+
+&lt;p&gt;열심히 로직에만 신경쓰면 된다. 나머진 알아서 ~ 코드 반영 및 배포가 되므로~&lt;/p&gt;
 </description>
         <pubDate>Wed, 20 May 2020 00:00:00 +0900</pubDate>
         <link>http://localhost:4000//aws-codepipeline-setting</link>

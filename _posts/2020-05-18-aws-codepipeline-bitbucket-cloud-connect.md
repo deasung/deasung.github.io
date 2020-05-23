@@ -10,7 +10,7 @@ AWS pipeline -> bitbucket cloud 베타용 연동용 [공식문서](https://aws.a
 
 최근에 회사 기존 젠킨스 CI랑 Bitbucket Clound Pipeline으로 되어 있는 부분을 
 
-조금씩 AWS CI로 옮기는중에 적는 내용입니다~
+조금씩 AWS CI로 옮기는중에 적는 내용입니다~!
 
 # 간단한 정리 
 

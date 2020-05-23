@@ -125,7 +125,13 @@
     
       <item>
         <title>AWS EC2 -&gt; Jupyter 셋팅</title>
-        <description>&lt;h1 id=&quot;1설치-명령어&quot;&gt;1.설치 명령어&lt;/h1&gt;
+        <description>&lt;p&gt;주피터 노트북(Jupyter Notebook)은 웹 브라우저에서 파이썬 코드를 작성하고 실행해 볼 수 있는 개발도구&lt;/p&gt;
+
+&lt;p&gt;기존에는 로컬 머신에서 설치해서 했지만 여럿이서? 또는 작업물을 공유하기엔 웹에서 공유해서 쓰는게&lt;/p&gt;
+
+&lt;p&gt;좋을것 같아서 이렇게 정리한 것을 남깁니다.&lt;/p&gt;
+
+&lt;h1 id=&quot;1설치-명령어&quot;&gt;1.설치 명령어&lt;/h1&gt;
 
 &lt;div class=&quot;language-console highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;go&quot;&gt;sudo yum update
 python --version
@@ -241,7 +247,7 @@ AWS pipeline -&amp;gt; bitbucket cloud 베타용 연동용 &lt;a href=&quot;http
 
 &lt;p&gt;최근에 회사 기존 젠킨스 CI랑 Bitbucket Clound Pipeline으로 되어 있는 부분을&lt;/p&gt;
 
-&lt;p&gt;조금씩 AWS CI로 옮기는중에 적는 내용입니다~&lt;/p&gt;
+&lt;p&gt;조금씩 AWS CI로 옮기는중에 적는 내용입니다~!&lt;/p&gt;
 
 &lt;h1 id=&quot;간단한-정리&quot;&gt;간단한 정리&lt;/h1&gt;
 
@@ -299,7 +305,7 @@ AWS pipeline -&amp;gt; bitbucket cloud 베타용 연동용 &lt;a href=&quot;http
     
       <item>
         <title>처음배우는 스프링부트2 책을 읽고 요점정리</title>
-        <description>&lt;p&gt;스프링부트 프로젝트 의존성&lt;/p&gt;
+        <description>&lt;h2 id=&quot;스프링부트-프로젝트-의존성&quot;&gt;스프링부트 프로젝트 의존성&lt;/h2&gt;
 
 &lt;p&gt;https://github.com/spring-projects/spring-boot&lt;/p&gt;
 
@@ -322,7 +328,7 @@ AWS pipeline -&amp;gt; bitbucket cloud 베타용 연동용 &lt;a href=&quot;http
   &lt;li&gt;SpEL(Spring Expression Language,스프링 표현 언어) 평가: SpEL은 런타임에 객체 참조에 대해 질의하고 조작하는 기능을 지원하는 언어, 특히 메서드 호출 및 기본 문자열 템플릿기능을 제공. @Value만 사용 가능&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;스프링-부트-테스트&quot;&gt;스프링 부트 테스트&lt;/h1&gt;
+&lt;h2 id=&quot;스프링-부트-테스트&quot;&gt;스프링 부트 테스트&lt;/h2&gt;
 
 &lt;h2 id=&quot;datajpatest&quot;&gt;@DataJpaTest&lt;/h2&gt;
 
@@ -351,7 +357,7 @@ AWS pipeline -&amp;gt; bitbucket cloud 베타용 연동용 &lt;a href=&quot;http
   &lt;li&gt;JPA 테스트가 끝날때마다 자동으로 테스트에 사용한 데이터를 롤백&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h1 id=&quot;restclienttest&quot;&gt;@RestClientTest&lt;/h1&gt;
+&lt;h2 id=&quot;restclienttest&quot;&gt;@RestClientTest&lt;/h2&gt;
 
 &lt;p&gt;REST 관련 테스트를 도와주는 어노테이션&lt;/p&gt;
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;nd&quot;&gt;@RunWith&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;SpringRunner&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
@@ -470,6 +476,7 @@ AWS pipeline -&amp;gt; bitbucket cloud 베타용 연동용 &lt;a href=&quot;http
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;apply plugin: 'io.spring.dependency-management'
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 </description>
         <pubDate>Mon, 10 Jun 2019 00:00:00 +0900</pubDate>
         <link>http://localhost:4000//springboot2-summary</link>
@@ -479,13 +486,13 @@ AWS pipeline -&amp;gt; bitbucket cloud 베타용 연동용 &lt;a href=&quot;http
     
       <item>
         <title>그레이들 래퍼</title>
-        <description>&lt;h1 id=&quot;그레이들-래퍼-설정방법&quot;&gt;그레이들 래퍼 설정방법&lt;/h1&gt;
+        <description>&lt;h2 id=&quot;그레이들-래퍼-설정방법&quot;&gt;그레이들 래퍼 설정방법&lt;/h2&gt;
 
 &lt;p&gt;그레이들 설정 관련 기본 구조&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/assets/imgs/2019/03/10/2019-03-10-gradle-wrapper-01.jpeg&quot; alt=&quot;GRADLE-WRAPPER1&quot; /&gt;&lt;/p&gt;
 
-&lt;h3 id=&quot;설정-파일-용도&quot;&gt;설정 파일 용도&lt;/h3&gt;
+&lt;h2 id=&quot;설정-파일-용도&quot;&gt;설정 파일 용도&lt;/h2&gt;
 
 &lt;ul&gt;
   &lt;li&gt;
@@ -502,7 +509,7 @@ AWS pipeline -&amp;gt; bitbucket cloud 베타용 연동용 &lt;a href=&quot;http
   &lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;h3 id=&quot;그레이들-버전-올리는-방법&quot;&gt;그레이들 버전 올리는 방법&lt;/h3&gt;
+&lt;h2 id=&quot;그레이들-버전-올리는-방법&quot;&gt;그레이들 버전 올리는 방법&lt;/h2&gt;
 
 &lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$./gradle wrapper --gradle-version 4.8.1
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
@@ -518,7 +525,17 @@ AWS pipeline -&amp;gt; bitbucket cloud 베타용 연동용 &lt;a href=&quot;http
     
       <item>
         <title>QueryDSL Projections.bean</title>
-        <description>&lt;p&gt;쿼리 결과를 엔티티가 아닌 특정한 자바객체(DTO, VO)로 받고 싶은 경우 Pjojections를 사용하면 되는데 .bean()을 사용하면 Setter로 값을 채우고 .field()라고 하면 필드(멤버변수)에 직접 접근하여 값을 채우며, .constructor() 라고 하면 생성자를 통해 값을 채운다.&lt;/p&gt;
+        <description>&lt;h2 id=&quot;querydsl&quot;&gt;QueryDSL&lt;/h2&gt;
+
+&lt;p&gt;자세한건 공식문서? 여기를 참고&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://www.querydsl.com/static/querydsl/4.0.1/reference/ko-KR/html_single/&quot;&gt;공식문서&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;쿼리 결과를 엔티티가 아닌 특정한 자바객체(DTO, VO)로 받고 싶은 경우 Pjojections를 사용하면 되는데 .bean()을 사용하면 Setter로 값을 채우고 .field()라고 하면 필드(멤버변수)에 직접 접근하여 값을 채우며, .constructor() 라고 하면 생성자를 통해 값을 채운다.&lt;/p&gt;
+
+&lt;p&gt;평소에도 도메인에 맵핑되어 있는 QClass의 바인딩된 값을 써도 좋지만 가끔은&lt;/p&gt;
+
+&lt;p&gt;비지니스 요구사항에 맞춘 Class 타입도 필요하니 메모로 적어둔다.&lt;/p&gt;
 
 &lt;div class=&quot;language-java highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;select&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;Projections&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;bean&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;
   &lt;span class=&quot;n&quot;&gt;OrderRefundProcDTO_orderProduct_info&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;class&lt;/span&gt;
@@ -537,6 +554,7 @@ AWS pipeline -&amp;gt; bitbucket cloud 베타용 연동용 &lt;a href=&quot;http
   &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;$q_orderProduct&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;deliveryCharge&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;as&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;deliveryCharge&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;)&lt;/span&gt;
   &lt;span class=&quot;o&quot;&gt;))&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
 </description>
         <pubDate>Tue, 15 Jan 2019 00:00:00 +0900</pubDate>
         <link>http://localhost:4000//querydsl-projections-bean</link>

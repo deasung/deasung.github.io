@@ -5,7 +5,7 @@ comments : true
 ---
 
 
-스프링부트 프로젝트 의존성 
+## 스프링부트 프로젝트 의존성 
 
 https://github.com/spring-projects/spring-boot
 
@@ -24,7 +24,7 @@ application-{profile}.yml {profile}에 원하는 프로파일값으로 YAML 파�
 - 메타데이터 지원: 프로터피 키에 대한 정보를 메타데이터 파일(Json) 로 제공
 - SpEL(Spring Expression Language,스프링 표현 언어) 평가: SpEL은 런타임에 객체 참조에 대해 질의하고 조작하는 기능을 지원하는 언어, 특히 메서드 호출 및 기본 문자열 템플릿기능을 제공. @Value만 사용 가능
 
-# 스프링 부트 테스트
+## 스프링 부트 테스트
 
 ## @DataJpaTest
 
@@ -52,7 +52,7 @@ public class JpaTest {
 - @AutoConfigureTestDatabase 어노테이션의 기본 설정값인 Replace.Any를 사용하면 기본적으로 내장된 데이터소스를 사용함 , Replace.NONE으로 설정하면 @ActiveProfiles에 설정한 프로파일 환경값에 따라 데이터소스가 적용됨
 - JPA 테스트가 끝날때마다 자동으로 테스트에 사용한 데이터를 롤백
 
-# @RestClientTest
+## @RestClientTest
 
 REST 관련 테스트를 도와주는 어노테이션 
 ```java
@@ -174,3 +174,5 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 그레이들에서 의존성 관리 제어를 위한 플러그인
 
     apply plugin: 'io.spring.dependency-management'
+    
+    

@@ -57,13 +57,13 @@
       <li>
           <h2><a href="/aws-ec2-jupyter-setting">AWS EC2 -> Jupyter 셋팅</a></h2>
           <time datetime="2020-05-19T00:00:00+09:00">19 May 2020</time>
-          <p>1.설치 명령어 sudo yum update python --version sudo yum install python3 python --version python3 --version sudo yum install python3-pip pip3 --version history pip3 install jupyter 2.쥬피터 노트북 config 생성명령어 jupyter notebook --generate-config 생성하는 경로에서 .jupyter 디렉토리가 생성됨 3.python3 접속해서 해쉬 암호 생성 $&gt; python3 &gt;&gt;&gt; from notebook.auth import passwd &gt;&gt;&gt;...</p>
+          <p>주피터 노트북(Jupyter Notebook)은 웹 브라우저에서 파이썬 코드를 작성하고 실행해 볼 수 있는 개발도구 기존에는 로컬 머신에서 설치해서 했지만 여럿이서? 또는 작업물을 공유하기엔 웹에서 공유해서 쓰는게 좋을것 같아서 이렇게 정리한 것을 남깁니다. 1.설치 명령어 sudo yum update python --version sudo yum install python3 python --version python3 --version sudo yum install python3-pip...</p>
       </li>
     
       <li>
           <h2><a href="/aws-codepipeline-bitbucket-cloud-connect">AWS pipeline -> bitbucket cloud 베타용 연동</a></h2>
           <time datetime="2020-05-18T00:00:00+09:00">18 May 2020</time>
-          <p>자세한건 공식문서를 읽는게 제일 좋습니다. AWS pipeline -&gt; bitbucket cloud 베타용 연동용 공식문서 링크입니다. 최근에 회사 기존 젠킨스 CI랑 Bitbucket Clound Pipeline으로 되어 있는 부분을 조금씩 AWS CI로 옮기는중에 적는 내용입니다~ 간단한 정리 1.정책을 만들어 줍니다. 2.정책을 json편집기로 입력해준다. json 파일 내용입니다. { "Version": "2012-10-17", "Statement": [ { "Effect": "Allow",...</p>
+          <p>자세한건 공식문서를 읽는게 제일 좋습니다. AWS pipeline -&gt; bitbucket cloud 베타용 연동용 공식문서 링크입니다. 최근에 회사 기존 젠킨스 CI랑 Bitbucket Clound Pipeline으로 되어 있는 부분을 조금씩 AWS CI로 옮기는중에 적는 내용입니다~! 간단한 정리 1.정책을 만들어 줍니다. 2.정책을 json편집기로 입력해준다. json 파일 내용입니다. { "Version": "2012-10-17", "Statement": [ { "Effect": "Allow",...</p>
       </li>
     
       <li>
@@ -111,7 +111,7 @@ $./gradle wrapper --gradle-version 4.8.1
       <li>
           <h2><a href="/querydsl-projections-bean">QueryDSL Projections.bean</a></h2>
           <time datetime="2019-01-15T00:00:00+09:00">15 Jan 2019</time>
-          <p>쿼리 결과를 엔티티가 아닌 특정한 자바객체(DTO, VO)로 받고 싶은 경우 Pjojections를 사용하면 되는데 .bean()을 사용하면 Setter로 값을 채우고 .field()라고 하면 필드(멤버변수)에 직접 접근하여 값을 채우며, .constructor() 라고 하면 생성자를 통해 값을 채운다. .select(Projections.bean( OrderRefundProcDTO_orderProduct_info.class , $q_orderProduct.id.as("orderProductId") , $q_orderProduct.orderStatusCd.as("orderStatusCd") , $q_orderProduct.orderCancellationCd.as("orderCancellationCd") , $q_orderProduct.deliveryType.as("deliveryType") , $q_orderProduct.price.as("price") , $q_orderProduct.quantity.as("quantity") , $q_supplier.name.as("supplierName") , $q_productGoods.id.as("productGoodsId")...</p>
+          <p>QueryDSL 자세한건 공식문서? 여기를 참고 공식문서 쿼리 결과를 엔티티가 아닌 특정한 자바객체(DTO, VO)로 받고 싶은 경우 Pjojections를 사용하면 되는데 .bean()을 사용하면 Setter로 값을 채우고 .field()라고 하면 필드(멤버변수)에 직접 접근하여 값을 채우며, .constructor() 라고 하면 생성자를 통해 값을 채운다. 평소에도 도메인에 맵핑되어 있는 QClass의 바인딩된 값을 써도 좋지만 가끔은 비지니스 요구사항에...</p>
       </li>
     
       <li>

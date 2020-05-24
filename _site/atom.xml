@@ -12,6 +12,118 @@
     </author>
     
       <item>
+        <title>AWS -&gt; Codebuild 셋팅</title>
+        <description>&lt;p&gt;AWS CodeBuild는 소스 코드를 컴파일하는 단계부터 테스트 실행 후 소프트웨어 패키지를 개발하여 배포하는 단계까지 마칠 수 있는 
+완전관리형의 지속적 통합 서비스라고 공홈에서 아주 자세히 잘 나옵니다~&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://aws.amazon.com/ko/codebuild/&quot;&gt;https://aws.amazon.com/ko/codebuild/&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;1빌드-프로젝트-구성&quot;&gt;1.빌드 프로젝트 구성&lt;/h2&gt;
+
+&lt;p&gt;딱히 추가구성을 할 필요가 없어서 체크를 안했음;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/24/1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;2소스&quot;&gt;2.소스&lt;/h2&gt;
+
+&lt;p&gt;소스는 bitbucket cloud로 연동을 했음.
+소스 버전은 develop으로 개발용으로 셋팅중이니&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/24/2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;3환경&quot;&gt;3.환경&lt;/h2&gt;
+
+&lt;p&gt;이미지 버전을 standard 2.0 으로 셋팅을 Springboot2 버전 이상을 쓸수 있게 gradle
+버전이 제일 맞는게 이거라서 일단은 이걸로 셋팅을~&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/24/3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;서비스 역활은 기존에 셋팅되어 있는게 있으면 기존 역활로 써도 된다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/24/4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/24/5.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;vpc랑 시큐리티 보안그룹도 셋팅 할수 있으니 참고를~&lt;/p&gt;
+
+&lt;h2 id=&quot;4buildspec&quot;&gt;4.Buildspec&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/24/6.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;buildspec.yml 이름을 그대로 쓸수 있고 
+또한 명칭을 바꿀수도 있다.&lt;/p&gt;
+
+&lt;h2 id=&quot;5아티팩트&quot;&gt;5.아티팩트&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/24/7.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;빌드한 결과물을 어디다가 저장할지 셋팅할수도 있음?
+일단 s3에다가 저장하게 수정&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/24/8.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;6로그&quot;&gt;6.로그&lt;/h2&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/05/24/9.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;클라우드 워치랑 연동할수도 있&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[Container] 2020/05/06 01:52:05 Waiting for agent ping
+[Container] 2020/05/06 01:52:08 Waiting for DOWNLOAD_SOURCE
+[Container] 2020/05/06 01:52:13 Phase is DOWNLOAD_SOURCE
+[Container] 2020/05/06 01:52:13 CODEBUILD_SRC_DIR=/codebuild/output/src034368496/src/bitbucket.org/glowpickeng/admin-java-api
+[Container] 2020/05/06 01:52:13 Phase complete: DOWNLOAD_SOURCE State: FAILED
+[Container] 2020/05/06 01:52:13 Phase context status code: YAML_FILE_ERROR Message: YAML file does not exist
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;7codebuild-buildspecyml-셋팅&quot;&gt;7.CodeBuild buildspec.yml 셋팅&lt;/h2&gt;
+&lt;p&gt;https://docs.aws.amazon.com/codebuild/latest/userguide/build-spec-ref.html&lt;/p&gt;
+
+&lt;h2 id=&quot;8s3-올리기-iam--권한-셋팅&quot;&gt;8.S3 올리기 IAM → 권한 셋팅&lt;/h2&gt;
+&lt;p&gt;&lt;a href=&quot;https://devhaks.github.io/2019/02/16/code-build/&quot;&gt;참고하기에 좋은 블로그 글 IAM관련&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;9buildspecyml-셋팅&quot;&gt;9.buildspec.yml 셋팅&lt;/h2&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;version: 0.2
+
+phases:
+
+  install:
+    runtime-versions:
+      java: openjdk8
+
+  build:
+    commands:
+      - echo Build Starting on `date`
+      - chmod +x ./gradlew
+      - ./gradlew build
+
+#  post_build:
+#    commands:
+#      - echo $(basename ./build/libs/*.jar)
+#      - pwd
+  post_build:
+    commands:
+      - ls -al
+      - aws s3 cp --recursive ./build/libs/ s3://#{s3_bucket}
+
+#cache:
+#  paths:
+#    - '/root/.gradle/caches/**/*'
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;일단은 이렇게 개발쪽은 셋팅했다. 동료들이 편하게 로직에만 
+신경쓰면 되는 환경이 되었다~ 더 고도화를 해보자!&lt;/p&gt;
+
+</description>
+        <pubDate>Sun, 24 May 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000//aws-codebuild-setting</link>
+        <link href="http://localhost:4000/aws-codebuild-setting"/>
+        <guid isPermaLink="true">http://localhost:4000/aws-codebuild-setting</guid>
+      </item>
+    
+      <item>
         <title>AWS -&gt; CodePipeline 셋팅</title>
         <description>&lt;h1 id=&quot;codepipeline&quot;&gt;CodePipeline&lt;/h1&gt;
 &lt;blockquote&gt;
@@ -627,20 +739,6 @@ AWS pipeline -&amp;gt; bitbucket cloud 베타용 연동용 &lt;a href=&quot;http
         <link>http://localhost:4000//springboot-session-time-yml</link>
         <link href="http://localhost:4000/springboot-session-time-yml"/>
         <guid isPermaLink="true">http://localhost:4000/springboot-session-time-yml</guid>
-      </item>
-    
-      <item>
-        <title>ELB Classic Load Blancer에서 리스너 nginx proxy 같은 기능</title>
-        <description>&lt;p&gt;로드밸런서에 하위 탭보면 됨&lt;/p&gt;
-
-&lt;p&gt;저기서 편집에서 추가하면됨 로드밸런서 권한필요&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/assets/imgs/2018/10/08/2018-10-08.png&quot; alt=&quot;1&quot; /&gt;&lt;/p&gt;
-</description>
-        <pubDate>Mon, 08 Oct 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000//elb-classic-load-blancer-nginx-proxy</link>
-        <link href="http://localhost:4000/elb-classic-load-blancer-nginx-proxy"/>
-        <guid isPermaLink="true">http://localhost:4000/elb-classic-load-blancer-nginx-proxy</guid>
       </item>
     
   </channel>

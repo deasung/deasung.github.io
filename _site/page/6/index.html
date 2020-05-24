@@ -50,6 +50,43 @@
         <ul>
     
       <li>
+          <h2><a href="/aws-iam-intro">Amazon IAM란?</a></h2>
+          <time datetime="2017-05-02T00:00:00+09:00">02 May 2017</time>
+          <p>사용자와 그룹을 생성하여 접근제어 및 권한 관리를 제공하는 IAM
+
+
+  
+    IAM(Identity and Access Management) 식별 및 접근 관리
+  
+
+
+
+  
+    AWS의 각 리소스에 대해 접근제어와 권한관리를 제공
+  
+
+
+
+  
+    사용요금이 없음
+  
+
+
+
+  
+    IAM 역할(Role)
+  
+
+
+
+  
+    IAM 권한을 만들고 ec2를 만드는것을 추천함
+  
+
+</p>
+      </li>
+    
+      <li>
           <h2><a href="/aws-iam-group-create">Amazon IAM 그룹 생성하기</a></h2>
           <time datetime="2017-05-02T00:00:00+09:00">02 May 2017</time>
           <p>IAM 사용자들을 모아놓은것 IAM 그룹에 접근제어 및 권한설정 및 IAM 그룹에 설정된 내용은 IAM 그룹 안에 포함된 모든 사용자들에게 적용됨 그룹 생성 화면 그룹 이름 설정 그룹 권한 설정 예시로 EC2에 대한 모든권한접근할수있는걸로 선택 그룹 접근 권한 정책 확인 그룹 생성 완료 이 IAM 그룹안에 속한 사용자 EC2 인스턴스만 제어가능...</p>
@@ -126,19 +163,6 @@
           <h2><a href="/devops-nginx-php7-fpm-mysql-setting">nginx , php7 fpm설정된 서버에서 mysql 연동안될때</a></h2>
           <time datetime="2017-04-19T00:00:00+09:00">19 Apr 2017</time>
           <p>본인의 aws 서버환경은 nginx + php7 fpm 방식으로 간단한 테스팅할려고 셋팅하였습니다 자바로 rds연동하다가 삘받아서 php연동해서 테스트할려고했는데 안되서 우선 ec2 ubuntu서버에 pdo 설치되어있는지 확인후에 안되어잇어서 sudo apt-get install php7.0-mysql 설치후에 PDO(PHP Data Object)는 5.1.0 이상의 PHP에서 표준으로 사용하는 데이터베이스 접속방법입니다. PHP에서는 MySQL뿐만 아니라 다른 여러 데이터베이스에도 접속할 수 있습니다. MySQL 이외의...</p>
-      </li>
-    
-      <li>
-          <h2><a href="/devops-mac-hosts-update">MAC hosts 수정방법</a></h2>
-          <time datetime="2017-04-19T00:00:00+09:00">19 Apr 2017</time>
-          <p>sudo nano /private/etc/hosts
-
-
-
-127.0.0.1 http://test.co.kr 이런식으로 추가한후 nano로 열었으니 command + O , command + X키로 나온후에
-
-sudo dscacheutil -flushcache로 hosts를 다시 재갱신 시켜준다
-</p>
       </li>
     
 </ul>

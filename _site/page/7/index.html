@@ -50,6 +50,19 @@
         <ul>
     
       <li>
+          <h2><a href="/devops-mac-hosts-update">MAC hosts 수정방법</a></h2>
+          <time datetime="2017-04-19T00:00:00+09:00">19 Apr 2017</time>
+          <p>sudo nano /private/etc/hosts
+
+
+
+127.0.0.1 http://test.co.kr 이런식으로 추가한후 nano로 열었으니 command + O , command + X키로 나온후에
+
+sudo dscacheutil -flushcache로 hosts를 다시 재갱신 시켜준다
+</p>
+      </li>
+    
+      <li>
           <h2><a href="/devops-centos-nexus-repository-setting">Nexus sonatype 개발환경 설정 원격배포</a></h2>
           <time datetime="2017-04-19T00:00:00+09:00">19 Apr 2017</time>
           <p>Nexus,sonatype,remote 배포 개발 테스팅 환경 테스트 서버 VM : - OS: CentOS 5.11 - Nexus 설치 OSS 2 로컬 개발환경 - OS : MacOS Sierra - Develop Tools : IntellJ 참고 http://lahuman.jabsiri.co.kr/80 여기에보면 Repository추가 , 권한 , 유저생성 나와있음 테스트 Repository로는 기본인 release,snapshots 으로 우선 테스트 참고로 나는 개발툴 인텔리J...</p>
@@ -159,12 +172,6 @@ ifconfig로 우분투 아이피확인후 putty로 접속하면됨
           <h2><a href="/java-nohup">java 서버 프로그램 nohup 백그라운드 실행 및 종료</a></h2>
           <time datetime="2016-03-14T00:00:00+09:00">14 Mar 2016</time>
           <p>1.cat &gt; 파일명 2.자바로 만든 서버 파일이 server.jar일때 이 jar를 실행하는 방법은 다음과 같다. java -jar server.jar 그러나 이렇게 하면 백그라운드 실행이 안되므로 다음과 같이 start/stop.sh를 만들었다. [start.sh] nohup java -jar server.jar &gt;/dev/null 2&gt;&amp;1 &amp; [stop.sh] pid=`ps -ef | grep server.jar | grep -v 'grep' | awk '{print $2}'` kill...</p>
-      </li>
-    
-      <li>
-          <h2><a href="/xcode-cocoapods">xcode cocoapods 사용법</a></h2>
-          <time datetime="2016-02-24T00:00:00+09:00">24 Feb 2016</time>
-          <p>Cocoapods 는 OS X 혹은 iOS 앱을 개발할때 사용되는 라이브러리 관리를 도와주는 Android 의 Maven 같은 도구 CocoaPods 를 사용하기 위해서는 Ruby gem 이 필요함. 맥에는 Ruby가 내장되어있지만 rbenv를 설치하여 ruby 버전과 gem을 관리함 1.설치 sudo gem install cocoapods 2.설치한 후 해당 프로젝트 가서 pod init 3.Podfile을 열어서(편집기가 가능할걸로) 사용할...</p>
       </li>
     
 </ul>

@@ -49,6 +49,12 @@
         <ul>
     
       <li>
+          <h2><a href="/elastic-beanstalk-amazon-linux2-platforms-nginx-setting">AWS -> Elastic Beanstalk Amazon Linux 2 platforms nginx 설정</a></h2>
+          <time datetime="2020-06-09T00:00:00+09:00">09 Jun 2020</time>
+          <p>elastic beanstalk 로 셋팅해서 잘쓰다가 프록시 서버에서 413 에러가 떨어져서 nginx 설정점 바꿔야겠다 해서 문서보고 따라했는데.. 하루종일 삽질쓰!! 하나하나 삽질한거를 적어본다. files: "/var/proxy/staging/nginx/conf.d/01_proxy.conf": mode: "000644" owner: root group: root content: | client_max_body_size 20M; container_commands: 01_reload_nginx: command: sudo service nginx reload 하도 안되서 빈스톡으로 구성되어 있는 서버에 직접 터미널로 들어가서 $...</p>
+      </li>
+    
+      <li>
           <h2><a href="/aws-codebuild-setting">AWS -> Codebuild 셋팅</a></h2>
           <time datetime="2020-05-24T00:00:00+09:00">24 May 2020</time>
           <p>AWS CodeBuild는 소스 코드를 컴파일하는 단계부터 테스트 실행 후 소프트웨어 패키지를 개발하여 배포하는 단계까지 마칠 수 있는 완전관리형의 지속적 통합 서비스라고 공홈에서 아주 자세히 잘 나옵니다~ https://aws.amazon.com/ko/codebuild/ 1.빌드 프로젝트 구성 딱히 추가구성을 할 필요가 없어서 체크를 안했음; 2.소스 소스는 bitbucket cloud로 연동을 했음. 소스 버전은 develop으로 개발용으로 셋팅중이니 3.환경 이미지...</p>
@@ -169,15 +175,6 @@ ps -ef | grep cron
 </p>
       </li>
     
-      <li>
-          <h2><a href="/springboot-session-time-yml">SpringBoot Session 유지 시간</a></h2>
-          <time datetime="2018-10-29T00:00:00+09:00">29 Oct 2018</time>
-          <p>application.properties 파일에
-
-server.session.timeout=14400. //4시간동안 유지
-</p>
-      </li>
-    
 </ul>
 
       </section>
@@ -204,6 +201,8 @@ server.session.timeout=14400. //4시간동안 유지
     <a href="/page/7/" class="page-item">7</a>
       
     <a href="/page/8/" class="page-item">8</a>
+      
+    <a href="/page/9/" class="page-item">9</a>
       
     <a href="/page/2/" class="page-item">&raquo;</a>
     

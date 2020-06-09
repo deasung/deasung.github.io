@@ -12,6 +12,123 @@
     </author>
     
       <item>
+        <title>AWS -&gt; Elastic Beanstalk Amazon Linux 2 platforms nginx 설정</title>
+        <description>&lt;p&gt;elastic beanstalk 로 셋팅해서 잘쓰다가 프록시 서버에서 413 에러가 떨어져서 nginx 설정점 바꿔야겠다 해서&lt;/p&gt;
+
+&lt;p&gt;문서보고 따라했는데.. 하루종일 삽질쓰!!&lt;/p&gt;
+
+&lt;h1 id=&quot;하나하나-삽질한거를-적어본다&quot;&gt;하나하나 삽질한거를 적어본다.&lt;/h1&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;files:
+  &quot;/var/proxy/staging/nginx/conf.d/01_proxy.conf&quot;:
+    mode: &quot;000644&quot;
+    owner: root
+    group: root
+    content: |
+      client_max_body_size 20M;
+
+container_commands:
+  01_reload_nginx:
+    command: sudo service nginx reload
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;하도 안되서 빈스톡으로 구성되어 있는 서버에 직접 터미널로 들어가서&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ &amp;gt; cd /var/log 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/06/09/1.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;빈스톡 서버 구성이 바뀌지 않는한 eb-engine.log는 계속 쌓여 있을거다 로그파일을 보니&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[WARN] skipping nginx folder under .ebextensions 
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;먼가 설정정보가 스킵되는 듯한 느낌 구글링 해보니 스택오브 플로우에 은혜로운 님께서 남긴 댓글을 봄&lt;/p&gt;
+
+&lt;p&gt;일단 구글링한 링크는 공유&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-linux-extend.html&quot;&gt;https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/platforms-linux-extend.html&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://stackoverflow.com/questions/61580965/beanstalk-deployment-ignores-my-nginx-configuration-files-in-ebextensions&quot;&gt;https://stackoverflow.com/questions/61580965/beanstalk-deployment-ignores-my-nginx-configuration-files-in-ebextensions&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/06/09/2.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;.platform 폴더 구성해서 nginx 설정 넣어주고 하면 되는것 같다.&lt;/p&gt;
+
+&lt;p&gt;이 구조는 Amazon Linux AMI platform versions (preceding Amazon Linux 2). 기준인거 같다.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/06/09/3.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;.platform/nginx/nginx.conf&lt;/p&gt;
+
+&lt;p&gt;→ client_max_body_size 이거 추가하기위해 엄청난 삽집을 했다.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;#Elastic Beanstalk Nginx Configuration File
+
+user                    nginx;
+error_log               /var/log/nginx/error.log warn;
+pid                     /var/run/nginx.pid;
+worker_processes        auto;
+worker_rlimit_nofile    65252;
+
+events {
+  worker_connections  1024;
+}
+
+http {
+  include       /etc/nginx/mime.types;
+  default_type  application/octet-stream;
+
+  log_format  main  '$remote_addr - $remote_user [$time_local] &quot;$request&quot; '
+  '$status $body_bytes_sent &quot;$http_referer&quot; '
+  '&quot;$http_user_agent&quot; &quot;$http_x_forwarded_for&quot;';
+
+  include       conf.d/*.conf;
+
+  # Set client upload size - 100Mbyte
+  client_max_body_size 100M; 
+
+
+  map $http_upgrade $connection_upgrade {
+    default     &quot;upgrade&quot;;
+  }
+
+  server {
+    listen        80 default_server;
+    access_log    /var/log/nginx/access.log main;
+
+    client_header_timeout 60;
+    client_body_timeout   60;
+    keepalive_timeout     60;
+    gzip                  off;
+    gzip_comp_level       4;
+    gzip_types text/plain text/css application/json application/javascript application/x-javascript text/xml application/xml application/xml+rss text/javascript;
+
+    # Include the Elastic Beanstalk generated locations
+    include conf.d/elasticbeanstalk/*.conf;
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;[중요] 여기서 보니 빌드파일 명령어 실행후 프록시 구성파일을 덮어쓰는것 같다 단 .platform/nginx/* 하위정보로&lt;/p&gt;
+
+&lt;p&gt;만약에 내가 구성한 아티팩트에 저 구성이 없으면 기본구성으로 덮어쓰는 현상같음&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/assets/imgs/2020/06/09/4.png&quot; alt=&quot;&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;그래도 도움을 주신 팀장님께 감사를 그리고 역시 문서를 잘봐야한다.. 요즘은 검색하면 기술블로그만 봐서&lt;/p&gt;
+
+&lt;p&gt;앞으로 공식 문서를 더욱 잘보자 ㅠ&lt;/p&gt;
+</description>
+        <pubDate>Tue, 09 Jun 2020 00:00:00 +0900</pubDate>
+        <link>http://localhost:4000//elastic-beanstalk-amazon-linux2-platforms-nginx-setting</link>
+        <link href="http://localhost:4000/elastic-beanstalk-amazon-linux2-platforms-nginx-setting"/>
+        <guid isPermaLink="true">http://localhost:4000/elastic-beanstalk-amazon-linux2-platforms-nginx-setting</guid>
+      </item>
+    
+      <item>
         <title>AWS -&gt; Codebuild 셋팅</title>
         <description>&lt;p&gt;AWS CodeBuild는 소스 코드를 컴파일하는 단계부터 테스트 실행 후 소프트웨어 패키지를 개발하여 배포하는 단계까지 마칠 수 있는 
 완전관리형의 지속적 통합 서비스라고 공홈에서 아주 자세히 잘 나옵니다~&lt;/p&gt;
@@ -727,18 +844,6 @@ AWS pipeline -&amp;gt; bitbucket cloud 베타용 연동용 &lt;a href=&quot;http
         <link>http://localhost:4000//crontab-restart-start-stop</link>
         <link href="http://localhost:4000/crontab-restart-start-stop"/>
         <guid isPermaLink="true">http://localhost:4000/crontab-restart-start-stop</guid>
-      </item>
-    
-      <item>
-        <title>SpringBoot Session 유지 시간</title>
-        <description>&lt;p&gt;application.properties 파일에&lt;/p&gt;
-
-&lt;p&gt;server.session.timeout=14400. //4시간동안 유지&lt;/p&gt;
-</description>
-        <pubDate>Mon, 29 Oct 2018 00:00:00 +0900</pubDate>
-        <link>http://localhost:4000//springboot-session-time-yml</link>
-        <link href="http://localhost:4000/springboot-session-time-yml"/>
-        <guid isPermaLink="true">http://localhost:4000/springboot-session-time-yml</guid>
       </item>
     
   </channel>

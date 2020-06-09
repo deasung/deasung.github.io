@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="/css/main.css">
   
   <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Page 2 of 8 for dskim-blog | 개발 블로그</title>
+<title>Page 2 of 9 for dskim-blog | 개발 블로그</title>
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="dskim-blog" />
 <meta name="author" content="dskim" />
@@ -48,6 +48,15 @@
     <div class="container">
       <section id="main_content">
         <ul>
+    
+      <li>
+          <h2><a href="/springboot-session-time-yml">SpringBoot Session 유지 시간</a></h2>
+          <time datetime="2018-10-29T00:00:00+09:00">29 Oct 2018</time>
+          <p>application.properties 파일에
+
+server.session.timeout=14400. //4시간동안 유지
+</p>
+      </li>
     
       <li>
           <h2><a href="/elb-classic-load-blancer-nginx-proxy">ELB Classic Load Blancer에서 리스너 nginx proxy 같은 기능</a></h2>
@@ -176,21 +185,6 @@ AWS EC2 -&gt; 로드 밸런서 -&gt; 해당 로드밸런서 클릭후 하단탭�
           <p>1.(Keynote) 노량진 스타일로 알려주는 Build 컨퍼런스 2018 핵심 요약 1.Microsoft Build Opportunity &amp; Responsibiliy 코딩은 책임 &amp; 기회 윤리의식을 가지자 Azure AI 이미지인식 커스텀비전 API 내가가지고 있는 데이터가지고 학습을 시킨다 생각보다 쉽게 쓸수 있는 API들이 많음 키넥트 코타나 &amp; 알렉사 대화형 디바이스 MS도 모바일 First 추구 Github - App Center...</p>
       </li>
     
-      <li>
-          <h2><a href="/sms-sql">SMS 인증모듈 관련 SQL</a></h2>
-          <time datetime="2018-04-24T00:00:00+09:00">24 Apr 2018</time>
-          <p>SELECT DATE_ADD(convert_tz(now(),@@session.time_zone,'+09:00'),INTERVAL 3 MINUTE) FROM ADMIN_USER;
-
-select convert_tz(now(),@@session.time_zone,'+09:00');
-
-select UNIX_TIMESTAMP(convert_tz(now(),@@session.time_zone,'+09:00'));
-
-
-select @@time_zone;
-
-</p>
-      </li>
-    
 </ul>
 
       </section>
@@ -217,6 +211,8 @@ select @@time_zone;
     <a href="/page/7/" class="page-item">7</a>
       
     <a href="/page/8/" class="page-item">8</a>
+      
+    <a href="/page/9/" class="page-item">9</a>
       
     <a href="/page/3/" class="page-item">&raquo;</a>
     

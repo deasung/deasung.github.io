@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="/css/main.css">
   
   <link href="/atom.xml" type="application/atom+xml" rel="alternate" title="ATOM Feed" /> <!-- Begin Jekyll SEO tag v2.6.1 -->
-<title>Page 3 of 8 for dskim-blog | 개발 블로그</title>
+<title>Page 3 of 9 for dskim-blog | 개발 블로그</title>
 <meta name="generator" content="Jekyll v3.8.5" />
 <meta property="og:title" content="dskim-blog" />
 <meta name="author" content="dskim" />
@@ -48,6 +48,21 @@
     <div class="container">
       <section id="main_content">
         <ul>
+    
+      <li>
+          <h2><a href="/sms-sql">SMS 인증모듈 관련 SQL</a></h2>
+          <time datetime="2018-04-24T00:00:00+09:00">24 Apr 2018</time>
+          <p>SELECT DATE_ADD(convert_tz(now(),@@session.time_zone,'+09:00'),INTERVAL 3 MINUTE) FROM ADMIN_USER;
+
+select convert_tz(now(),@@session.time_zone,'+09:00');
+
+select UNIX_TIMESTAMP(convert_tz(now(),@@session.time_zone,'+09:00'));
+
+
+select @@time_zone;
+
+</p>
+      </li>
     
       <li>
           <h2><a href="/awscodestar-setting">AWS CodeStar 구축</a></h2>
@@ -157,12 +172,6 @@ fi
 </p>
       </li>
     
-      <li>
-          <h2><a href="/web-crawler-04">크롤러 공부 3일차</a></h2>
-          <time datetime="2017-07-23T00:00:00+09:00">23 Jul 2017</time>
-          <p>Electron으로 데스크탑 애플리케이션 작성 Electron이란? ‘웹 브라우저 안에 Node.JS를 넣은것’ Chromium + Node.js 조합해서 만든것 electron NW.js Electron의 장점과 단점 최대장점 웹 기술(HTML5/자바스크립트/CSS)을 이용하여 네이티브 애플리케이션을 쉽게 만들수 있다는 점 단점 웹 브라우저인 Chromium을 그대로 포함해야 하므로 배포 사이즈가 커져서 아무리 간단한 앱이라도 수십 ~ 수백 MB 저장공간 필요 자바스크립트로...</p>
-      </li>
-    
 </ul>
 
       </section>
@@ -189,6 +198,8 @@ fi
     <a href="/page/7/" class="page-item">7</a>
       
     <a href="/page/8/" class="page-item">8</a>
+      
+    <a href="/page/9/" class="page-item">9</a>
       
     <a href="/page/4/" class="page-item">&raquo;</a>
     

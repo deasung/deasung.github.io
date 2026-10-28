@@ -63,7 +63,7 @@ title: 퇴근길 생존자 개인정보처리방침
 
 ### 11. 개인정보 보호책임자 및 문의처
 - 개인정보 보호책임자: 김대성 (대표)
-- 이메일: deasung.kim8150@gmail.com
+- 이메일: contact@trycatchlog.com
 
 개인정보 침해에 대한 신고나 상담이 필요하면 아래 기관에 문의할 수 있습니다.
 - 개인정보침해신고센터: (국번 없이) 118, https://privacy.kisa.or.kr

@@ -1,0 +1,91 @@
+/* 대성게임즈 사이트 — 모바일 우선. 색은 퇴근길 생존자 UI 토큰과 같은 계열 */
+:root {
+  --ink: #25212E; --ink-2: #4A4458; --mute: #6B6477;
+  --cream: #FFF8EC; --paper: #FFFFFF; --line: #E6DFD2;
+  --yellow: #FFC81E; --teal: #14B8A6; --teal-ink: #0F766E; --pink: #FF7A8A;
+  --r: 20px;
+  --font: "Noto Sans KR", system-ui, -apple-system, "Apple SD Gothic Neo", sans-serif;
+  --display: "Jua", "Noto Sans KR", sans-serif;
+}
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; background: var(--cream); color: var(--ink); font: 400 16px/1.7 var(--font); word-break: keep-all; overflow-wrap: anywhere; }
+img { max-width: 100%; height: auto; display: block; }
+a { color: var(--teal-ink); text-underline-offset: 3px; }
+a:hover { color: var(--ink); }
+.wrap { max-width: 960px; margin: 0 auto; padding: 0 16px; }
+
+/* 머리말 */
+.top { position: sticky; top: 0; z-index: 10; background: rgba(255, 248, 236, .92); backdrop-filter: blur(8px); border-bottom: 2px solid var(--ink); }
+.top-in { display: flex; align-items: center; justify-content: space-between; height: 60px; gap: 12px; }
+.brand { display: flex; align-items: center; gap: 8px; color: var(--ink); text-decoration: none; }
+.brand-ko { font: 24px/1 var(--display); }
+.brand-en { display: none; font-weight: 700; font-size: 13px; color: var(--mute); letter-spacing: .02em; }
+.nav { display: flex; gap: 4px; }
+.nav a { padding: 6px 12px; border-radius: 999px; color: var(--ink); font-weight: 700; font-size: 14px; text-decoration: none; }
+.nav a:hover { background: var(--yellow); }
+
+/* 첫 화면 */
+.hero { padding: 48px 0 32px; text-align: center; background: radial-gradient(120% 90% at 50% 0%, #FFE9A8 0%, var(--cream) 70%); }
+.hero-logo { margin: 0 auto 16px; width: 88px; }
+.hero h1 { margin: 0; font: 48px/1.1 var(--display); }
+.hero h1 small { display: block; margin-top: 8px; font: 700 15px/1 var(--font); letter-spacing: .14em; text-transform: uppercase; color: var(--mute); }
+.lead { margin: 20px auto 0; max-width: 28em; font-size: 17px; color: var(--ink-2); }
+
+.sec { margin: 0 0 16px; font: 28px/1.2 var(--display); }
+.sec span { margin-left: 6px; font: 700 14px var(--font); color: var(--mute); }
+.games { padding: 24px 0 8px; }
+.cards { display: grid; gap: 16px; }
+.card { overflow: hidden; background: var(--paper); border: 3px solid var(--ink); border-radius: var(--r); box-shadow: 0 5px 0 var(--ink); }
+.card-art img { width: 100%; aspect-ratio: 1024 / 500; object-fit: cover; border-bottom: 3px solid var(--ink); }
+.card-body { padding: 16px; }
+.card-head { display: flex; align-items: center; gap: 12px; }
+.app-icon { width: 64px; height: 64px; border-radius: 16px; border: 2px solid var(--ink); flex: none; }
+.card h3 { margin: 0 0 4px; font: 24px/1.2 var(--display); }
+.badge { display: inline-block; padding: 2px 10px; border-radius: 999px; background: var(--ink); color: var(--yellow); font-size: 13px; font-weight: 700; }
+.badge-soft { background: #FFE3EA; color: #B4234A; }
+.card p { margin: 12px 0 0; color: var(--ink-2); }
+.card .links { font-size: 14px; color: var(--mute); }
+.links a { display: inline-block; margin-left: 6px; padding: 2px 10px; border: 2px solid var(--ink); border-radius: 999px; color: var(--ink); font-weight: 700; text-decoration: none; }
+.links a:hover { background: var(--yellow); }
+
+.contact { padding: 32px 0 48px; }
+.mail { display: inline-block; padding: 12px 20px; border: 3px solid var(--ink); border-radius: 999px; background: var(--yellow); color: var(--ink); font-weight: 900; text-decoration: none; box-shadow: 0 4px 0 var(--ink); }
+.mail:hover { color: var(--ink); transform: translateY(1px); box-shadow: 0 3px 0 var(--ink); }
+
+/* 방침 페이지 */
+.policy { margin: 24px 0 48px; padding: 24px 16px; background: var(--paper); border: 3px solid var(--ink); border-radius: var(--r); }
+.policy h1 { margin: 0 0 16px; font: 30px/1.25 var(--display); }
+.policy h3 { margin: 32px 0 8px; padding-top: 16px; border-top: 2px dashed var(--line); font-size: 18px; font-weight: 900; }
+.policy p, .policy li { color: var(--ink-2); }
+.policy strong { color: var(--ink); }
+.policy ul { padding-left: 1.2em; }
+.policy li { margin: 4px 0; }
+.policy table { display: block; overflow-x: auto; margin: 12px 0; border-collapse: collapse; font-size: 14px; line-height: 1.6; }
+.policy th, .policy td { padding: 10px 12px; border: 1px solid var(--line); text-align: left; vertical-align: top; min-width: 7em; }
+.policy th { background: #FFF1CC; font-weight: 900; }
+.policy tr td:first-child { font-weight: 700; color: var(--ink); }
+
+/* 바닥글 */
+.foot { border-top: 2px solid var(--ink); background: var(--ink); color: #E9E4F0; font-size: 14px; }
+.foot-in { display: grid; gap: 10px; padding-top: 24px; padding-bottom: 32px; }
+.foot a { color: #FFE08A; }
+.foot-brand { display: flex; align-items: center; gap: 8px; font: 20px var(--display); color: #fff; }
+.foot-brand span { font: 700 12px var(--font); color: #B9B3C6; letter-spacing: .08em; }
+.foot-links { display: flex; flex-wrap: wrap; gap: 6px 8px; }
+.foot-links span { width: 100%; color: #B9B3C6; }
+.foot-links a + a { margin-left: 0; }
+.foot-copy { color: #8E879A; font-size: 12px; }
+
+@media (min-width: 720px) {
+  .brand-en { display: inline; }
+  .hero { padding: 80px 0 56px; }
+  .hero h1 { font-size: 72px; }
+  .lead { font-size: 19px; }
+  .cards { grid-template-columns: 3fr 2fr; align-items: start; }
+  .policy { padding: 40px 48px; }
+  .policy h1 { font-size: 36px; }
+  .foot-in { grid-template-columns: 1fr auto; align-items: center; }
+  .foot-links span { width: auto; }
+  .foot-copy { grid-column: 1 / -1; }
+}

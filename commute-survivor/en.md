@@ -63,7 +63,7 @@ We do not run a server that stores user information. Information sent to Google 
 
 ### 11. Privacy officer and contact
 - Privacy officer: Daesung Kim (owner)
-- Email: deasung.kim8150@gmail.com
+- Email: contact@trycatchlog.com
 
 For reports or advice about privacy violations in Korea, you can also contact:
 - Personal Information Infringement Report Center: 118 (in Korea), https://privacy.kisa.or.kr

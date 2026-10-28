@@ -1,0 +1,60 @@
+<!doctype html>
+{%- assign en = false -%}{%- if page.url contains '/en' -%}{%- assign en = true -%}{%- endif -%}
+<html lang="{% if en %}en{% else %}ko{% endif %}">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.home %}{{ site.title }}{% else %}{{ page.title }} · {{ site.title }}{% endif %}</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="theme-color" content="#FFF8EC">
+  <link rel="icon" href="{{ '/assets/img/logo.svg' | relative_url }}" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Jua&family=Noto+Sans+KR:wght@400;500;700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body class="{% if page.home %}home{% else %}doc{% endif %}">
+  <header class="top">
+    <div class="wrap top-in">
+      <a class="brand" href="{{ '/' | relative_url }}">
+        <img src="{{ '/assets/img/logo.svg' | relative_url }}" alt="" width="36" height="36">
+        <span class="brand-ko">대성게임즈</span><span class="brand-en">Daesung Games</span>
+      </a>
+      <nav class="nav">
+        {%- if page.home %}
+        <a href="#games">게임</a><a href="#contact">문의</a>
+        {%- elsif en %}
+        <a href="{{ '/commute-survivor/' | relative_url }}">한국어</a><a href="{{ '/' | relative_url }}">Home</a>
+        {%- else %}
+        <a href="{{ '/commute-survivor/en' | relative_url }}">English</a><a href="{{ '/' | relative_url }}">홈</a>
+        {%- endif %}
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    {%- if page.home %}
+    {{ content }}
+    {%- else %}
+    <div class="wrap">
+      <article class="policy">
+        {{ content }}
+      </article>
+    </div>
+    {%- endif %}
+  </main>
+
+  <footer class="foot">
+    <div class="wrap foot-in">
+      <div class="foot-brand"><img src="{{ '/assets/img/logo.svg' | relative_url }}" alt="" width="28" height="28"> 대성게임즈 <span>Daesung Games</span></div>
+      <div class="foot-links">
+        <span>{% if en %}Privacy Policy{% else %}개인정보처리방침{% endif %}</span>
+        <a href="{{ '/commute-survivor/' | relative_url }}">퇴근길 생존자</a>·<a href="{{ '/commute-survivor/en' | relative_url }}">EN</a>
+        <a href="https://deasung.github.io/mallang-nonogram-policy/">말랑 노노그램</a>·<a href="https://deasung.github.io/mallang-nonogram-policy/en">EN</a>
+      </div>
+      <div class="foot-mail">{% if en %}Contact{% else %}문의{% endif %} <a href="mailto:contact@trycatchlog.com">contact@trycatchlog.com</a></div>
+      <div class="foot-copy">© 2026 대성게임즈 (Daesung Games)</div>
+    </div>
+  </footer>
+</body>
+</html>

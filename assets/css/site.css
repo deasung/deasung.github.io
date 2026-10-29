@@ -89,3 +89,31 @@ a:hover { color: var(--ink); }
   .foot-links span { width: auto; }
   .foot-copy { grid-column: 1 / -1; }
 }
+
+/* 게임 소개 페이지 */
+.more { display: inline-block; margin-top: 14px; padding: 8px 16px; border: 2px solid var(--ink); border-radius: 999px; background: var(--yellow); color: var(--ink); font-weight: 900; font-size: 14px; text-decoration: none; box-shadow: 0 3px 0 var(--ink); }
+.more:hover { color: var(--ink); transform: translateY(1px); box-shadow: 0 2px 0 var(--ink); }
+a.card-art { display: block; }
+.game-hero { padding: 32px 0 8px; background: radial-gradient(120% 90% at 50% 0%, #FFE9A8 0%, var(--cream) 70%); }
+.game-head { display: flex; align-items: center; gap: 16px; }
+.app-icon-lg { width: 88px; height: 88px; border-radius: 22px; border-width: 3px; }
+.game-hero h1 { margin: 0 0 6px; font: 36px/1.15 var(--display); }
+.game-hero .lead { margin: 16px 0 0; max-width: none; }
+.game-banner { margin-top: 20px; width: 100%; border: 3px solid var(--ink); border-radius: var(--r); box-shadow: 0 5px 0 var(--ink); }
+.game-sec { padding: 24px 0 8px; }
+.game-sec:last-child { padding-bottom: 48px; }
+.feats { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+.feats li { padding: 14px 16px; background: var(--paper); border: 2px solid var(--ink); border-radius: 16px; color: var(--ink-2); }
+.feats b { display: block; margin-bottom: 2px; color: var(--ink); font-size: 17px; font-weight: 900; }
+.gallery { display: flex; gap: 12px; margin: 0; padding: 4px 16px 16px; list-style: none; overflow-x: auto; scroll-snap-type: x mandatory; scroll-padding: 0 16px; -webkit-overflow-scrolling: touch; }
+.gallery li { flex: none; width: 62vw; max-width: 240px; scroll-snap-align: start; }
+.gallery img { width: 100%; aspect-ratio: 608 / 1080; object-fit: cover; border: 3px solid var(--ink); border-radius: 18px; background: var(--paper); }
+.back { display: inline-block; margin-top: 16px; color: var(--ink); font-weight: 700; }
+@media (min-width: 720px) {
+  .game-hero { padding: 56px 0 8px; }
+  .game-hero h1 { font-size: 48px; }
+  .app-icon-lg { width: 112px; height: 112px; border-radius: 28px; }
+  .feats { grid-template-columns: 1fr 1fr; }
+  .gallery { max-width: 960px; margin: 0 auto; }
+  .gallery li { width: 220px; }
+}

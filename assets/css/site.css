@@ -4,8 +4,8 @@
   --cream: #FFF8EC; --paper: #FFFFFF; --line: #E6DFD2;
   --yellow: #FFC81E; --teal: #14B8A6; --teal-ink: #0F766E; --pink: #FF7A8A;
   --r: 20px;
-  --font: "Noto Sans KR", system-ui, -apple-system, "Apple SD Gothic Neo", sans-serif;
-  --display: "Jua", "Noto Sans KR", sans-serif;
+  --font: "Pretendard Variable", Pretendard, system-ui, -apple-system, "Apple SD Gothic Neo", sans-serif;
+  --display: "Jua", "Pretendard Variable", Pretendard, sans-serif;
 }
 * { box-sizing: border-box; }
 html { -webkit-text-size-adjust: 100%; }

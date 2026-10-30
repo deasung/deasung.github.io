@@ -1,6 +1,8 @@
 ---
 layout: default
 title: Commute Survivor Privacy Policy
+lang: en
+lang_alt: /commute-survivor/
 ---
 
 # Commute Survivor Privacy Policy
@@ -70,4 +72,4 @@ For reports or advice about privacy violations in Korea, you can also contact:
 - Personal Information Dispute Mediation Committee: 1833-6972, https://www.kopico.go.kr
 
 ### 12. Changes to this policy
-If this policy changes, we will announce it on this page and in the App's update notes at least 7 days before it takes effect. Previous versions are available at the bottom of this page.
+If this policy changes, we will announce it on this page and in the App's update notes at least 7 days before it takes effect. When a previous version exists, it will be linked at the bottom of this page.

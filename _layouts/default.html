@@ -1,5 +1,6 @@
 <!doctype html>
-{%- assign en = false -%}{%- if page.url contains '/en' -%}{%- assign en = true -%}{%- endif -%}
+{%- comment -%} 언어는 front matter의 lang(en이면 영어), 언어 전환 짝 주소는 lang_alt 로 페이지마다 지정 {%- endcomment -%}
+{%- assign en = false -%}{%- if page.lang == 'en' -%}{%- assign en = true -%}{%- endif -%}
 <html lang="{% if en %}en{% else %}ko{% endif %}">
 <head>
   <meta charset="utf-8">
@@ -27,10 +28,10 @@
         <a href="#games">게임</a><a href="#contact">문의</a>
         {%- elsif page.game %}
         <a href="{{ '/#games' | relative_url }}">게임</a><a href="{{ '/' | relative_url }}">홈</a>
-        {%- elsif en %}
-        <a href="{{ '/commute-survivor/' | relative_url }}">한국어</a><a href="{{ '/' | relative_url }}">Home</a>
+        {%- elsif page.lang_alt %}
+        <a href="{{ page.lang_alt | relative_url }}">{% if en %}한국어{% else %}English{% endif %}</a><a href="{{ '/' | relative_url }}">{% if en %}Home{% else %}홈{% endif %}</a>
         {%- else %}
-        <a href="{{ '/commute-survivor/en' | relative_url }}">English</a><a href="{{ '/' | relative_url }}">홈</a>
+        <a href="{{ '/' | relative_url }}">{% if en %}Home{% else %}홈{% endif %}</a>
         {%- endif %}
       </nav>
     </div>

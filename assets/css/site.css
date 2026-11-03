@@ -118,3 +118,7 @@ a.card-art { display: block; }
   .gallery { max-width: 960px; margin: 0 auto; }
   .gallery li { width: 220px; }
 }
+
+.badge-live { background: #1E8E3E; color: #fff; }
+.more-play { margin-right: 8px; background: var(--ink); color: #fff; }
+.more-play:hover { color: #fff; }

@@ -83,6 +83,7 @@ a:hover { color: var(--ink); }
   .hero h1 { font-size: 72px; }
   .lead { font-size: 19px; }
   .cards { grid-template-columns: 3fr 2fr; align-items: start; }
+  .cards .card:first-child { grid-row: span 2; }
   .policy { padding: 40px 48px; }
   .policy h1 { font-size: 36px; }
   .foot-in { grid-template-columns: 1fr auto; align-items: center; }

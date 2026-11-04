@@ -51,7 +51,7 @@ We do not share your information with anyone other than as described in sections
 
 ### 7. How to opt out of personalized ads and usage statistics
 - **Turn off usage statistics:** In the App, go to Settings and turn off "Send usage data" ("분석 정보 보내기" on a Korean screen). Firebase Analytics data will no longer be sent from then on. Data already sent is deleted after the retention period in section 6. This setting does not apply to ads (AdMob).
-- **Opt out of personalized ads:** On your device, go to Settings > Google > Ads and choose "Delete advertising ID" (Android 12 or later) or "Reset advertising ID". Menu names may vary by device. Ads will still appear, but they will not be based on your interests.
+- **Opt out of personalized ads:** On your device, go to Settings > Google > Ads and choose "Delete advertising ID" (Android 12 or later) or "Reset advertising ID". Menu names may vary by device. Ads will still appear, but they will not be based on your interests. On Android 13 or later, you can also turn off ad topics in your device's ad privacy settings (menu names may vary).
 - Rewarded ads appear only when you choose to watch one by tapping a button.
 
 ### 8. Children
@@ -61,7 +61,7 @@ The App is not directed at children under 13. We do not directly collect informa
 You may request access to, correction, deletion or suspension of processing of your information. Because the App has no accounts, we cannot identify or look up information about a specific user. Please use the methods in section 7 (turning off usage statistics, deleting your advertising ID) and the tools Google provides. For any other request, contact us below and we will respond.
 
 ### 10. Security
-We do not run a server that stores user information. Information sent to Google is encrypted in transit (TLS). The App requests only these permissions: internet access, network state, advertising ID and vibration.
+We do not run a server that stores user information. Information sent to Google is encrypted in transit (TLS). All permissions the App requests are normal permissions granted automatically at install. The App does not request any permission that needs your separate approval, such as location, contacts, photos, camera, microphone or storage. The App uses permissions for internet access and network state (INTERNET, ACCESS_NETWORK_STATE); the advertising ID and Android advertising features (advertising ID, ad measurement and interest topics: AD_ID, ACCESS_ADSERVICES_AD_ID, ATTRIBUTION, TOPICS); keeping the device awake while the ad and analytics tools finish their work (WAKE_LOCK, FOREGROUND_SERVICE); checking where the App was installed from (Google Play install referrer, BIND_GET_INSTALL_REFERRER_SERVICE, used by Firebase Analytics); and protecting signals inside the App (DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION). Vibration uses the device's touch feedback and needs no separate permission.
 
 ### 11. Privacy officer and contact
 - Privacy officer: Daesung Kim (owner)

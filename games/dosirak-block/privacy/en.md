@@ -2,14 +2,14 @@
 layout: default
 title: 도시락 블록 Privacy Policy
 lang: en
-lang_alt: /bento_block/
+lang_alt: /games/dosirak-block/privacy/
 ---
 
 # 도시락 블록 Privacy Policy
 
 Daesung Kim ("we") complies with the Personal Information Protection Act of the Republic of Korea and other applicable laws, and handles information about users of the "도시락 블록" app (the "App") as described below. If this English version differs from the Korean version, the Korean version prevails.
 
-**Effective date: {{effective date}}**
+**Effective date: November 6, 2026**
 
 ### 1. Information the App collects directly
 The App has no sign-up, no login and no payments (in-app purchases). We do not receive your name, phone number, email address or any other information that directly identifies you. Your current game, best score, cumulative records, collection, Daily Challenge records (such as daily best scores and streaks), settings (sound, music, vibration, "Send usage data") and a count of ads shown are **stored only on your device** and are never sent to us. They are deleted when you uninstall the App or clear the App's data in your device settings. If Android backup is turned on, this information may be included in your own Google account backup.

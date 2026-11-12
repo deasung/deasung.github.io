@@ -2,6 +2,11 @@
 layout: default
 title: 편의점 진열 정리 개인정보처리방침
 lang: ko
+lang_links:
+  - url: /games/conv-store/privacy/en
+    label: "English"
+  - url: /games/conv-store/privacy/ja
+    label: "日本語"
 ---
 
 # 편의점 진열 정리 개인정보처리방침

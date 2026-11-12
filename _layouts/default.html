@@ -1,7 +1,9 @@
 <!doctype html>
 {%- comment -%} 언어는 front matter의 lang(en이면 영어), 언어 전환 짝 주소는 lang_alt 로 페이지마다 지정 {%- endcomment -%}
 {%- assign en = false -%}{%- if page.lang == 'en' -%}{%- assign en = true -%}{%- endif -%}
-<html lang="{% if en %}en{% else %}ko{% endif %}">
+{%- assign ja = false -%}{%- if page.lang == 'ja' -%}{%- assign ja = true -%}{%- endif -%}
+{%- comment -%} lang_links: [{url, label}] 가 있으면 여러 언어 전환 링크를 그대로 보여 준다 {%- endcomment -%}
+<html lang="{% if en %}en{% elsif ja %}ja{% else %}ko{% endif %}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,6 +30,8 @@
         <a href="#games">게임</a><a href="#contact">문의</a>
         {%- elsif page.game %}
         <a href="{{ '/#games' | relative_url }}">게임</a><a href="{{ '/' | relative_url }}">홈</a>
+        {%- elsif page.lang_links %}
+        {%- for l in page.lang_links %}<a href="{{ l.url | relative_url }}">{{ l.label }}</a>{% endfor %}<a href="{{ '/' | relative_url }}">{% if en %}Home{% elsif ja %}ホーム{% else %}홈{% endif %}</a>
         {%- elsif page.lang_alt %}
         <a href="{{ page.lang_alt | relative_url }}">{% if en %}한국어{% else %}English{% endif %}</a><a href="{{ '/' | relative_url }}">{% if en %}Home{% else %}홈{% endif %}</a>
         {%- else %}
